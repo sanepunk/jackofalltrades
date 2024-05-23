@@ -1,0 +1,1 @@
+from .test.tests import LinearTest, LogisticTest

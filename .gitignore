@@ -4,3 +4,4 @@ __pycache__/
 *.pyc
 jackofalltradespy/app/main.py
 help.py
+.idea/

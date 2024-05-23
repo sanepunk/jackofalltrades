@@ -4,7 +4,7 @@ import os
 
 # Add the src directory to the system path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from src.Models import LogisticRegression , LinearRegression
+from Models import LogisticRegression , LinearRegression
 import numpy as np
 import pandas as pd
 import unittest

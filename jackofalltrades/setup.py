@@ -52,13 +52,6 @@ setup(
     author_email = "punk00pp@gmail.com",
     url = "https://github.com/lazy-punk/jackofalltrades",  # Replace with your project URL
     version = "0.0.1",
-    install_requires=['pandas >= 2.2.2',
-                      'numpy >= 1.26.4',
-                      'scikit-learn >= 1.5.0',
-                      'matplotlib >= 3.9.0',
-                      'jax[cpu] >= 0.4.28',
-                      'tqdm >= 4.66.4'                     
-                      ],
     package_data={'jackofalltrades': ['datasets/*.csv','*.txt']},
     include_package_data=True,
     test_suite='test',

@@ -5,3 +5,5 @@ __pycache__/
 jackofalltradespy/app/main.py
 help.py
 .idea/
+testing.py
+.ipynb_checkpoints/

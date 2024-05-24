@@ -1,0 +1,980 @@
+id,bedrooms,bathrooms,tenure,garden,street,size_sqft,price_pounds,nearest_station_name,nearest_station_miles,postcode_outer
+132180206,5.0,4.0,freehold,0,"Ladbroke Grove, London",,10500000,Holland Park Station,0.2 ,
+134996630,6.0,5.0,freehold,0,"Murray Road, Wimbledon Village, SW19",,8950000,Wimbledon Station,0.3 ,SW19
+134169233,7.0,5.0,freehold,1,"Southside Common, Wimbledon Village, SW19",,11950000,Wimbledon Station,0.7 ,SW19
+132180206,5.0,4.0,freehold,0,"Ladbroke Grove, London",,10500000,Holland Park Station,0.2 ,
+134996630,6.0,5.0,freehold,0,"Murray Road, Wimbledon Village, SW19",,8950000,Wimbledon Station,0.3 ,SW19
+134169233,7.0,5.0,freehold,1,"Southside Common, Wimbledon Village, SW19",,11950000,Wimbledon Station,0.7 ,SW19
+124365635,6.0,6.0,freehold,1,"Chesterfield Hill, London, W1J",4460.0,10950000,Green Park Station,0.3 ,W1J
+132654419,6.0,4.0,freehold,1,"Cottesmore Gardens, London, W8",,18500000,High Street Kensington Station,0.3 ,W8
+125741042,3.0,3.0,leasehold,0,"The Regents Crescent, Park Crescent West, Marylebone, London, W1B",,8950000,Regent's Park Station,0.0 ,W1B
+125069459,6.0,6.0,freehold,1,"Wilton Street, Belgravia, SW1X",4563.0,11750000,Hyde Park Corner Station,0.3 ,SW1X
+136488719,6.0,5.0,freehold,1,"Highwood Lodge Farm Estate, Highwood Hill, London, NW7",,20000000,Mill Hill Broadway Station,1.1 ,NW7
+134329280,6.0,7.0,leasehold,0,"Belgravia Gate, Grosvenor Crescent, Belgravia, London, SW1X",,43700000,Hyde Park Corner Station,0.1 ,SW1X
+132180206,5.0,4.0,freehold,0,"Ladbroke Grove, London",,10500000,Holland Park Station,0.2 ,
+134996630,6.0,5.0,freehold,0,"Murray Road, Wimbledon Village, SW19",,8950000,Wimbledon Station,0.3 ,SW19
+134169233,7.0,5.0,freehold,1,"Southside Common, Wimbledon Village, SW19",,11950000,Wimbledon Station,0.7 ,SW19
+124365635,6.0,6.0,freehold,1,"Chesterfield Hill, London, W1J",4460.0,10950000,Green Park Station,0.3 ,W1J
+132654419,6.0,4.0,freehold,1,"Cottesmore Gardens, London, W8",,18500000,High Street Kensington Station,0.3 ,W8
+125741042,3.0,3.0,leasehold,0,"The Regents Crescent, Park Crescent West, Marylebone, London, W1B",,8950000,Regent's Park Station,0.0 ,W1B
+125069459,6.0,6.0,freehold,1,"Wilton Street, Belgravia, SW1X",4563.0,11750000,Hyde Park Corner Station,0.3 ,SW1X
+136488719,6.0,5.0,freehold,1,"Highwood Lodge Farm Estate, Highwood Hill, London, NW7",,20000000,Mill Hill Broadway Station,1.1 ,NW7
+134329280,6.0,7.0,leasehold,0,"Belgravia Gate, Grosvenor Crescent, Belgravia, London, SW1X",,43700000,Hyde Park Corner Station,0.1 ,SW1X
+133352759,5.0,4.0,leasehold,0,"Chelsea Creek Tower, Chelsea Creek, SW6",3599.0,6500000,Imperial Wharf Station,0.1 ,SW6
+134251604,3.0,3.0,leasehold,2,"Onslow Gardens, South Kensington, London, SW7",,6950000,South Kensington Station,0.3 ,SW7
+135167453,,,leasehold,3,"Hampstead, NW3",,20000000,Hampstead Station,0.3 ,NW3
+134173892,3.0,3.0,leasehold,0,"Lowndes Square, Knightsbridge, London, SW1X",,6400000,Knightsbridge Station,0.1 ,SW1X
+134474939,4.0,4.0,freehold,0,"Pear Tree Street, London, EC1V",4161.0,6950000,Barbican Station,0.4 ,EC1V
+129771491,4.0,3.0,leasehold,0,"1 Palace Gate, London",2880.0,6950000,High Street Kensington Station,0.4 ,
+128135639,5.0,4.0,leasehold,0,"Duke Street, 
+Mayfair, W1K",3466.0,8450000,Bond Street Station,0.1 ,W1K
+129333710,6.0,8.0,freehold,1,"Claremont Park, Esher, Surrey, KT10",,7950000,Claygate Station,0.9 ,KT10
+134618414,3.0,3.0,share of freehold,1,"King Street, St James's, London, SW1Y.",,8750000,Piccadilly Circus Station,0.2 ,W1Y.
+135746777,9.0,6.0,freehold,2,"Frognal, Hampstead Village",,22000000,Hampstead Station,0.2 ,
+125632259,4.0,4.0,leasehold,2,"Lillie Square, Seagrave Road, London, SW6 1GA.",,7250000,West Brompton Station,0.1 ,1GA.
+128781077,6.0,4.0,freehold,1,"Cheyne Row, Chelsea, London, SW3",,6450000,South Kensington Station,0.7 ,SW3
+132527951,4.0,4.0,leasehold,0,"St. Mary Abbots Place, London, W8",2763.0,9500000,Kensington Olympia Station,0.3 ,W8
+132527951,4.0,4.0,leasehold,0,"St. Mary Abbots Place, London, W8",2763.0,9500000,Kensington Olympia Station,0.3 ,W8
+132390830,3.0,3.0,leasehold,2,"Apartment 20, Regent's Crescent, 27 Park Crescent, London, W1B",2146.0,9450000,Regent's Park Station,0.0 ,W1B
+110037263,5.0,5.0,leasehold,0,"Cambridge Gate, Regents Park, London, NW1",,25500000,Great Portland Street Station,0.2 ,NW1
+85301866,6.0,6.0,leasehold,0,"Eaton Place, Belgravia, London, SW1X",,19950000,Hyde Park Corner Station,0.3 ,SW1X
+128882795,3.0,3.0,leasehold,0,"2 Principal Place, Worship Street, London",,9500000,Shoreditch High Street Station,0.2 ,
+136807226,3.0,2.0,freehold,1,"Wellington Avenue, Chingford",,650000,Chingford Station,1.2 ,
+114372095,4.0,3.0,leasehold,3,"Residence 23, Lancer Square, Kensington Church Street, London, W8",3117.0,15020000,High Street Kensington Station,0.2 ,W8
+136450523,3.0,3.0,leasehold,1,"Grosvenor Square, Mayfair, London, W1K",,22900000,Bond Street Station,0.2 ,W1K
+136450523,3.0,3.0,leasehold,1,"Grosvenor Square, Mayfair, London, W1K",,22900000,Bond Street Station,0.2 ,W1K
+136450523,3.0,3.0,leasehold,1,"Grosvenor Square, Mayfair, London, W1K",,22900000,Bond Street Station,0.2 ,W1K
+133128575,3.0,3.0,leasehold,0,"The Mellier, Albemarle Street, Mayfair, W1S",3500.0,14000000,Green Park Station,0.4 ,W1S
+122351189,3.0,,leasehold,0,"Moxon Street, W1U",1831.0,9117000,Bond Street Station,0.3 ,W1U
+134479895,6.0,7.0,freehold,1,"Theobald Street, Radlett, Hertfordshire, WD7",,9950000,Radlett Station,0.9 ,WD7
+136631420,3.0,3.0,leasehold,2,"15 Indescon Square, Canary Wharf, London, E14",,795000,South Quay Station,0.2 ,E14
+124514705,3.0,4.0,ask agent,1,"Boiler House, Battersea Power Station",,9200000,Battersea Power Underground Station,0.2 ,
+86130159,4.0,4.0,freehold,0,"Moore Street, SW3",,7650000,Sloane Square Station,0.3 ,SW3
+135126512,6.0,4.0,freehold,0,"Regent's Park Road, Primrose Hill, London, NW1",,7500000,Camden Town Station,0.4 ,NW1
+132217055,5.0,2.0,freehold,0,"Willow Bridge Road, London, N1",,6750000,Essex Road Station,0.2 ,N1
+132749876,7.0,6.0,freehold,1,"Lingfield Road, Wimbledon, London, SW19",5683.0,8750000,Wimbledon Station,0.6 ,SW19
+116783558,2.0,2.0,leasehold,0,"Lancelot Place, Knightsbridge, London, SW7",,6950000,Knightsbridge Station,0.1 ,SW7
+127931210,4.0,5.0,share of freehold,0,"Connaught Place, Connaught Village, London, W2",3650.0,15000000,Marble Arch Station,0.1 ,W2
+113431481,5.0,5.0,leasehold,2,"Cambridge Gate, Regent's Park, London, NW1",4388.0,8500000,Great Portland Street Station,0.2 ,NW1
+122351207,3.0,2.0,leasehold,0,"Moxon Street, W1U",2042.0,7695000,Bond Street Station,0.3 ,W1U
+131511062,4.0,5.0,leasehold,0,"One St. John's Wood, St. John's Wood, London, NW8",2661.0,7250000,Edgware Road (Bakerloo) Station,0.9 ,NW8
+136419338,24.0,,freehold,0,"119 & 121 Warwick Road, Earl's Court, London, Kensington and Chelsea, SW5 9EF",,8500000,Earls Court Station,0.3 ,9EF
+124395656,4.0,4.0,freehold,0,"Wilton Street, London, SW1X",2942.0,8950000,Hyde Park Corner Station,0.3 ,SW1X
+134386673,5.0,5.0,freehold,0,"Clifton Hill, St John's Wood, London, NW8",,6500000,South Hampstead Station,0.3 ,NW8
+135106937,3.0,4.0,leasehold,0,"The Hanover, The Westin Residences, London, EC4V",2893.0,6250000,Mansion House Station,0.1 ,EC4V
+134400281,7.0,5.0,freehold,0,"Addison Road, London, W14",6557.0,15000000,Kensington Olympia Station,0.2 ,W14
+132753140,5.0,4.0,freehold,0,"Wilton Street, Belgravia, London, SW1X",4399.0,9650000,Victoria Station,0.3 ,SW1X
+135790055,4.0,4.0,share of freehold,2,"Rose Square, The Bromptons, London, SW3",,6950000,South Kensington Station,0.2 ,SW3
+133808642,12.0,12.0,freehold,0,"Denham Place, Denham, Buckinghamshire, UB9 5BL",,75000000,Denham Station,0.4 ,5BL
+135396506,8.0,4.0,freehold,2,"Gloucester Square, London, W2.",,7500000,Lancaster Gate Station,0.3 ,W2.
+128769485,2.0,2.0,leasehold,1,"Marylebone Square, London, W1U",,5380000,Baker Street Station,0.3 ,W1U
+68254527,6.0,7.0,leasehold,1,"Benham House, Coleridge Gardens, 552 Kings Road, Kings Chelsea, SW10",,7350000,Fulham Broadway Station,0.3 ,SW10
+127734923,3.0,3.0,freehold,0,"Eaton Mews North, London, SW1X",3200.0,9750000,Sloane Square Station,0.3 ,SW1X
+136665059,6.0,5.0,freehold,1,"Hyde Park Gate, Kensington, London",,15950000,Gloucester Road Station,0.4 ,
+131506475,7.0,6.0,freehold,0,"Parkside, Wimbledon, SW19",,7950000,Southfields Station,0.9 ,SW19
+136766990,6.0,2.0,freehold,1,"Queen Anne's Gate, London, SW1H",7348.0,12500000,St. James's Park Station,0.1 ,SW1H
+130612463,4.0,4.0,leasehold,0,"Park Street, Mayfair",,9000000,Marble Arch Station,0.2 ,
+81530655,5.0,3.0,leasehold,1,"Damac Tower, Vauxhall, SW8",2.0,12310000,Vauxhall Station,0.1 ,SW8
+129012407,5.0,4.0,freehold,2,"Hanover Terrace, Regents Park, London NW1",,22500000,Marylebone Station,0.4 ,NW1
+135357629,5.0,4.0,freehold,1,"Wetherby Place, South Kensington SW7",,6350000,Gloucester Road Station,0.1 ,SW7
+135945455,7.0,6.0,freehold,1,"Thornfield, Vine Road, London, SW13",,6375000,Barnes Station,0.3 ,SW13
+127673525,5.0,5.0,freehold,2,"Pelham Street, London, SW7.",,7500000,South Kensington Station,0.0 ,SW7.
+124186883,4.0,3.0,freehold,0,"Clifton Villas, Little Venice, London, W9",2860.0,8750000,Warwick Avenue Station,0.1 ,W9
+118972286,6.0,5.0,freehold,1,"East Road, St George's Hill, Weybridge, Surrey, KT13",,12950000,Weybridge Station,0.7 ,KT13
+136823078,3.0,5.0,share of freehold,0,"South Audley Street, London, W1K",2865.0,14750000,Hyde Park Corner Station,0.3 ,W1K
+132113480,6.0,4.0,freehold,1,"Holland Villas Road, Holland Park, London, W14",,25000000,Kensington Olympia Station,0.2 ,W14
+123757412,5.0,4.0,leasehold,1,"For Sale Five Bedroom Duplex Penthouse, Damac Tower, Nine Elms, London SW8 ",,12310000,Vauxhall Station,0.2 ,SW8
+119387291,8.0,8.0,freehold,0,"Totteridge Green, Totteridge, London, N20",,19995000,Totteridge & Whetstone Station,0.7 ,N20
+135803519,3.0,1.0,freehold,1,"Pine Cottage, Yew Tree Bottom Road, Epsom",,1000000,Epsom Downs Station,0.5 ,
+90624263,4.0,4.0,leasehold,0,"North Row, London, W1K",2828.0,6950000,Marble Arch Station,0.1 ,W1K
+122686493,5.0,5.0,leasehold,2,"Inverforth House, London, NW3",8262.0,13950000,Hampstead Station,0.6 ,NW3
+123926423,8.0,8.0,freehold,2,"Upper Brook Street, London, W1K",4959.0,11950000,Bond Street Station,0.2 ,W1K
+127510295,9.0,9.0,,0,"Winnington Road, N2",20246.0,11950000,Golders Green Station,0.9 ,N2
+132452222,10.0,10.0,freehold,1,"Ennismore Gardens, Knightsbridge, London, SW7",,23950000,Knightsbridge Station,0.4 ,SW7
+131506319,3.0,3.0,leasehold,0,"Arlington Street, St James",3946.0,15000000,Green Park Station,0.2 ,
+133603946,6.0,5.0,leasehold,2,"Hanover Terrace, Regent's Park, London, NW1",7459.0,21500000,Marylebone Station,0.4 ,NW1
+123648968,5.0,5.0,ask agent,1,"Ref: PP - Damac Tower, Parry St, Nine Elms, SW8 1SF",,12000000,Vauxhall Station,0.2 ,1SF
+86184270,7.0,8.0,freehold,0,"Totteridge Common, London, N20",,8000000,Mill Hill Broadway Station,1.5 ,N20
+134541398,5.0,4.0,freehold,2,"Harley Gardens, London, SW10",,14950000,Gloucester Road Station,0.4 ,SW10
+125430209,5.0,4.0,leasehold,0,"Cumberland Terrace, Regent's Park, London, NW1",,11250000,Mornington Crescent Station,0.3 ,NW1
+131846453,7.0,5.0,freehold,1,"Pitt Street, London, W8",11010.0,44000000,High Street Kensington Station,0.2 ,W8
+83622660,5.0,4.0,leasehold,1,Damac Tower - Nine Elms,,11863000,Vauxhall Station,0.2 ,
+134134619,3.0,3.0,ask agent,0,"The Buckingham, St James's, SW1E",3158.0,9500000,Victoria Station,0.3 ,SW1E
+128022866,7.0,9.0,freehold,1,"Herbert Crescent, London, SW1X",7535.0,24950000,Knightsbridge Station,0.2 ,SW1X
+126758615,3.0,4.0,ask agent,1,"Boiler House, Battersea Power Station, London SW8",,9000000,Battersea Power Underground Station,0.2 ,SW8
+136270721,7.0,4.0,freehold,4,"Highbury Place, Highbury, London, N5",6104.0,8000000,Highbury & Islington Station,0.2 ,N5
+135565115,3.0,2.0,freehold,1,"Devereux Road, Grays, Essex, RM16",,360000,Grays Station,1.0 ,RM16
+135927161,3.0,3.0,leasehold,1,"Canary Wharf,
+London, 
+E14 9QG",1887.0,3350000,South Quay Station,0.2 ,9QG
+134758322,3.0,3.0,leasehold,0,"Court Lodge, Sloane Square, Belgravia, London, SW1W",1898.0,6250000,Sloane Square Station,0.0 ,SW1W
+134487440,4.0,4.0,leasehold,2,Thames City Carnation Way,2842.0,6650000,Nine Elms Station,0.2 ,
+122334164,3.0,3.0,leasehold,0,"Moxon Street, London, W1U",1936.0,8047000,Baker Street Station,0.3 ,W1U
+134322077,3.0,3.0,leasehold,0,"Grosvenor Square, Mayfair, London, W1K",,11000000,Bond Street Station,0.3 ,W1K
+133736828,3.0,3.0,share of freehold,0,"Basil Mansions, Basil Street, London, SW3",,9500000,Knightsbridge Station,0.1 ,SW3
+130686101,2.0,2.0,leasehold,1,"De Vere Gardens, Kensington Road, London, Greater London, W8 5AU",,9500000,High Street Kensington Station,0.3 ,5AU
+86025582,6.0,4.0,freehold,1,"Winnington Close, N2",4171.0,6950000,East Finchley Station,0.7 ,N2
+134756090,2.0,2.0,leasehold,0,"Buckingham Palace Road, London, SW1W",,8750000,Victoria Station,0.2 ,SW1W
+86048049,4.0,4.0,freehold,0,"Headfort Place, Belgravia, London, SW1X",3994.0,6950000,Hyde Park Corner Station,0.2 ,SW1X
+128360126,6.0,5.0,leasehold,1,"Chester Terrace, Regent's Park, NW1",,9950000,Great Portland Street Station,0.5 ,NW1
+121058054,4.0,5.0,leasehold,0,"Blenheim House, One Tower Bridge, London",0.0,6900000,London Bridge Station,0.1 ,
+85704597,6.0,5.0,freehold,3,"Greville Road, St John's Wood, London, NW6",4740.0,7250000,Kilburn High Road Station,0.2 ,NW6
+125216420,10.0,10.0,freehold,0,"Ennismore Gardens, London, SW7",10606.0,23950000,Knightsbridge Station,0.4 ,SW7
+130333274,6.0,8.0,freehold,1,"Herbert Crescent, Knightsbridge, SW1X",4638.0,19950000,Knightsbridge Station,0.2 ,SW1X
+132333959,6.0,5.0,freehold,1,"Roedean Crescent, Putney, London, SW15",7004.0,7250000,Mortlake Station,0.9 ,SW15
+86228406,6.0,3.0,freehold,1,"Hollycroft Avenue, Hampstead, NW3",,6750000,Hampstead Station,0.6 ,NW3
+136111262,7.0,6.0,freehold,1,Northwood,,6750000,Northwood Station,0.6 ,
+122168183,7.0,6.0,leasehold,0,"Hanover Terrace, Regent's Park, London, NW1",,22500000,Marylebone Station,0.4 ,NW1
+124411883,4.0,4.0,leasehold,0,"St. Mary Abbots Place, London, W8",,9950000,Kensington Olympia Station,0.3 ,W8
+134368826,6.0,6.0,freehold,1,"Pembroke Road, Kensington, London",,9500000,Earls Court Station,0.3 ,
+124227578,2.0,2.0,share of freehold,0,"One Kensington Gardens, 11 Victoria Road, Kensington, London, W8",,6750000,High Street Kensington Station,0.3 ,W8
+125940578,6.0,6.0,freehold,0,"Cheniston Gardens, London, W8",,7500000,High Street Kensington Station,0.1 ,W8
+134390057,3.0,4.0,ask agent,0,"The Bryanston, Hyde Park",,19000000,Marble Arch Station,0.1 ,
+86001534,3.0,3.0,leasehold,0,"Euston Road, London, NW1",,9950000,St. Pancras Station,0.0 ,NW1
+133194068,4.0,4.0,freehold,0,"Lyall Street, Belgravia SW1X",3131.0,10950000,Sloane Square Station,0.3 ,SW1X
+123105857,7.0,7.0,freehold,1,"White Lodge Close, The Bishops Avenue, Hampstead Garden Suburb, London, N2",,8250000,East Finchley Station,0.7 ,N2
+127186547,4.0,4.0,leasehold,1,"The Lancasters, Lancaster Gate, London, W2.",,7950000,Queensway Station,0.2 ,W2.
+121268927,6.0,5.0,freehold,1,"South Street, Mayfair",,15500000,Bond Street Station,0.4 ,
+134805794,5.0,6.0,freehold,0,"Claremont Drive, Esher, Surrey, KT10",13227.0,7950000,Claygate Station,1.0 ,KT10
+133700708,6.0,6.0,freehold,1,"Carlile Place, 
+Richmond, TW10",,6500000,Richmond Station,0.5 ,TW10
+131117165,6.0,5.0,leasehold,1,"Wimpole Street, Marylebone",9408.0,11500000,Bond Street Station,0.3 ,
+130477295,4.0,3.0,freehold,0,"Headfort Place, Belgravia, London, SW1X",,6950000,Hyde Park Corner Station,0.2 ,SW1X
+86091549,5.0,5.0,leasehold,2,"Damac Tower, Nine Elms, SW8",3449.0,12669000,Vauxhall Station,0.2 ,SW8
+132172286,5.0,5.0,leasehold,0,Park Street Chelsea Creek SW6,0.0,16000000,Imperial Wharf Station,0.1 ,SW6
+134803838,3.0,3.0,leasehold,0,"St Edmunds Terrace, London, NW8",,6900000,Chalk Farm Station,0.6 ,NW8
+132995375,3.0,3.0,leasehold,3,"Residence 27, Lancer Square, Kensington Church Street, London, W8",2976.0,18230000,High Street Kensington Station,0.2 ,W8
+129244925,3.0,4.0,ask agent,1,"Chesham Street, SW1X",,8750000,Sloane Square Station,0.2 ,SW1X
+74844066,5.0,5.0,leasehold,1,"Cambridge Gate, Regent's Park, London, NW1",5746.0,25500000,Great Portland Street Station,0.2 ,NW1
+124193657,3.0,5.0,ask agent,0,"Beaufort Gardens, Knightsbridge, SW3",3306.0,13500000,Knightsbridge Station,0.3 ,SW3
+128360135,6.0,7.0,leasehold,0,"Albion Riverside, Chelsea, SW11",,9000000,Imperial Wharf Station,0.7 ,SW11
+133396913,1.0,1.0,freehold,2,"Redhill Street, Regent's Park, London, NW1",516.0,11000000,Mornington Crescent Station,0.4 ,NW1
+132011600,7.0,7.0,freehold,1,"The Bishops Avenue, Hampstead Garden Suburb, London, N2",,19950000,East Finchley Station,0.5 ,N2
+130468328,5.0,4.0,leasehold,0,"Park Street, Chelsea Creek Tower",3.0,6500000,Imperial Wharf Station,0.1 ,
+135000392,3.0,3.0,leasehold,1,"Sky Villa, Boiler House, Battersea Power Station, Nine Elms, SW8 5BN",,8500000,Nine Elms Station,0.7 ,5BN
+136604348,6.0,4.0,freehold,1,"Atherton Drive, Wimbledon, SW19",,6500000,Wimbledon Park Station,0.8 ,SW19
+129584516,3.0,3.0,leasehold,1,"Great Portland Street, London, W1W",,6500000,Great Portland Street Station,0.1 ,W1W
+135496103,6.0,7.0,freehold,0,"Linksway, Northwood, HA6",,12000000,Northwood Station,0.6 ,HA6
+129659648,5.0,5.0,freehold,2,"Canons Close, N2",5210.0,7000000,East Finchley Station,0.8 ,N2
+120174536,3.0,3.0,leasehold,0,"South Bank Tower, Southbank, London",,7300000,Southwark Station,0.3 ,
+135873626,7.0,7.0,freehold,1,"Thornfield, Vine Road, Barnes, London, SW13",,6375000,Barnes Station,0.3 ,SW13
+123767987,3.0,4.0,share of freehold,0,"Beaufort Gardens, SW3",,14500000,Knightsbridge Station,0.3 ,SW3
+132253457,2.0,2.0,share of freehold,0,"Holland Park, London, W11",2512.0,6500000,Holland Park Station,0.2 ,W11
+130554113,3.0,4.0,ask agent,0,"Principal Tower, Shoreditch, London",2855.0,9500000,Shoreditch High Street Station,0.2 ,
+136329155,3.0,4.0,ask agent,1,"Battersea Power Station, Nine Elms, London SW8",,7250000,Battersea Power Underground Station,0.2 ,SW8
+136394144,3.0,3.0,leasehold,1,"Harrington Road, South Kensington, SW7",3065.0,7250000,South Kensington Station,0.1 ,SW7
+134686349,6.0,7.0,leasehold,2,"Park Square West, London, NW1",6423.0,17950000,Regent's Park Station,0.1 ,NW1
+131929205,7.0,7.0,freehold,1,"Brick Street, Mayfair W1J",12960.0,35000000,Hyde Park Corner Station,0.2 ,W1J
+85949439,11.0,6.0,freehold,1,"Parkside, Wimbledon, London, SW19",,7495000,Wimbledon Station,1.1 ,SW19
+128742146,7.0,6.0,leasehold,2,"Hanover Terrace, Regent's Park, NW1",6103.0,22500000,Marylebone Station,0.4 ,NW1
+110802398,3.0,3.0,leasehold,0,"Moxon Street, London, W1U",,8201000,Baker Street Station,0.4 ,W1U
+131476754,8.0,8.0,freehold,0,"The Bishops Avenue, East Finchley N2",10623.0,13500000,East Finchley Station,0.1 ,yN2
+131215919,7.0,7.0,freehold,0,"Lygon Place, 
+Belgravia, SW1W",,19000000,Victoria Station,0.2 ,SW1W
+86223624,,,ask agent,0,"Keel House, 1 Cowley Business Park, Highstreet, Uxbridge, UB8",,10000000,Uxbridge Station,0.9 ,UB8
+135023246,4.0,3.0,leasehold,0,"Sky Villa, Boiler House, Battersea Power Station, Nine Elms, SW8 5BN",,6950000,Nine Elms Station,0.7 ,5BN
+132756632,3.0,4.0,leasehold,0,"Sugar Quay, London EC3R",,13500000,Fenchurch Street Station,0.2 ,EC3R
+136642493,10.0,10.0,freehold,0,"Lowndes Street, London, SW1X",7656.0,16500000,Knightsbridge Station,0.3 ,SW1X
+120687515,6.0,6.0,leasehold,0,"Trevor Square, Knightsbridge SW7",6404.0,18000000,Knightsbridge Station,0.2 ,SW7
+133641845,7.0,4.0,leasehold,2,"Connaught Square, 
+Hyde Park, W2",4319.0,8000000,Marble Arch Station,0.2 ,W2
+128132231,5.0,5.0,freehold,0,"Lyall Mews, Belgravia, London, SW1X",,9000000,Sloane Square Station,0.3 ,SW1X
+129555296,5.0,5.0,leasehold,1,"Queenstown Road, London, SW11",,8550000,Battersea Park Station,0.1 ,SW11
+134371613,3.0,3.0,leasehold,0,"Lowndes Square, London, SW1X",2092.0,6995000,Knightsbridge Station,0.1 ,SW1X
+134371613,3.0,3.0,leasehold,0,"Lowndes Square, London, SW1X",2092.0,6995000,Knightsbridge Station,0.1 ,SW1X
+132144443,6.0,7.0,freehold,0,"Wadham Gardens, Primrose Hill, London, NW3",0.0,18950000,Swiss Cottage Station,0.3 ,NW3
+132595856,6.0,7.0,freehold,1,"Winnington Road, London",10086.0,17999999,East Finchley Station,0.4 ,
+86168595,4.0,5.0,leasehold,0,"Devonshire Place Mews, Marylebone, W1G",2706.0,6500000,Regent's Park Station,0.2 ,W1G
+133762274,,1.0,leasehold,0,"Eustace Building, 372 Queenstown Road, London, SW11",,415000,Battersea Park Station,0.3 ,SW11
+126385241,,,leasehold,0,"Fulham Road, Chelsea, London, SW10",0.0,6350000,West Brompton Station,0.6 ,SW10
+134867033,3.0,3.0,leasehold,1,"10 Broadway,
+London,
+SW1H 0BP",1841.0,5685000,St. James's Park Station,0.1 ,0BP
+128490644,5.0,4.0,leasehold,0,"Montrose Place, London, SW1X",0.0,14950000,Hyde Park Corner Station,0.2 ,SW1X
+135162191,9.0,5.0,freehold,1,"Woodchurch Road, 
+West Hampstead, NW6",,7000000,West Hampstead Station,0.3 ,NW6
+136788230,4.0,4.0,share of freehold,0,"Hyde Park Gardens, London, W2.",,15000000,Lancaster Gate Station,0.3 ,W2.
+135505862,7.0,5.0,freehold,2,"Barnsbury Park, Islington, London, N1",0.0,9500000,Caledonian Road & Barnsbury Station,0.2 ,N1
+119545715,3.0,3.0,leasehold,0,"Moxon Street, Marylebone, W1U",,7618000,Baker Street Station,0.3 ,W1U
+125871074,5.0,2.0,leasehold,0,"Duke Street, Mayfair",,8450000,Bond Street Station,0.1 ,
+122351192,2.0,,leasehold,0,"Moxon Street, W1U",1440.0,6520000,Bond Street Station,0.3 ,W1U
+124457660,4.0,4.0,leasehold,1,"Residence 21, Lancer Square, 5A Kensington Church St, W8",,16020000,High Street Kensington Station,0.2 ,W8
+84082359,6.0,3.0,ask agent,1,"Guildens, Courtenay Avenue, N6",9858.0,19500000,East Finchley Station,0.8 ,N6
+124422485,5.0,4.0,leasehold,1,71 Bondway,3538.0,12310000,Vauxhall Station,0.1 ,
+136638629,,,,0,"Bellerive House, 3 Muirfield Crescent, London",,15000000,Crossharbour & London Arena Station,0.2 ,
+128360123,4.0,4.0,freehold,1,"Adams Row, Mayfair, W1K",,11950000,Bond Street Station,0.3 ,W1K
+135927335,3.0,3.0,leasehold,1,"Canary Wharf,
+London, 
+E14 9QG",1908.0,3500000,South Quay Station,0.2 ,9QG
+122450216,5.0,3.0,leasehold,0,"Damac Tower, Bondway, London SW8",,11500000,Vauxhall Station,0.1 ,SW8
+135839828,4.0,4.0,leasehold,1,"St James's Close, London, NW8",,9150000,St. John's Wood Station,0.6 ,NW8
+136068464,7.0,5.0,freehold,1,"Riverside, Twickenham, TW1",6677.0,7000000,Twickenham Station,0.5 ,TW1
+119024456,7.0,7.0,freehold,1,"South Ridge, St George's Hill, Weybridge, Surrey, KT13",,6950000,Weybridge Station,1.1 ,KT13
+130184396,5.0,5.0,freehold,2,"Wilton Crescent, Belgravia",,17650000,Knightsbridge Station,0.2 ,
+122351186,3.0,,leasehold,0,"Moxon Street, W1U",1676.0,8548000,Bond Street Station,0.3 ,W1U
+133138586,2.0,2.0,share of freehold,0,"10 Finchley Road, London, NW3",936.0,895000,Finchley Road & Frognal Station,0.4 ,NW3
+131943506,4.0,4.0,freehold,0,"Southbank Place, Belvedere Road, London, SE1",,7850000,Waterloo Station,0.2 ,SE1
+136310108,3.0,4.0,freehold,2,"Harrington Rd, SW7",,7250000,South Kensington Station,0.1 ,SW7
+134539001,5.0,7.0,freehold,1,"Pont Street Mews, London, SW1X",,17000000,Knightsbridge Station,0.3 ,SW1X
+135790082,7.0,5.0,freehold,1,"Dawson Place, London, W2",6649.0,21500000,Notting Hill Gate Station,0.3 ,W2
+136223183,5.0,6.0,freehold,0,"Belsize Place, London, NW3",,20000000,Belsize Park Station,0.3 ,NW3
+136254242,5.0,5.0,freehold,1,"Clifton Hill, 
+St. John's Wood, NW8",4267.0,7950000,Kilburn High Road Station,0.3 ,NW8
+71560296,3.0,3.0,share of freehold,1,"Chesham Street, SW1X",2645.0,8950000,Sloane Square Station,0.2 ,SW1X
+123757202,5.0,4.0,leasehold,1,"For Sale 5 Bed Duplex Penthouse, Damac Tower, Nine Elms, London SW8 ",,11756000,Vauxhall Station,0.2 ,SW8
+136039634,5.0,5.0,leasehold,1,"Cadogan Square, London, SW1X",,19500000,Sloane Square Station,0.3 ,SW1X
+136742144,3.0,1.0,leasehold,0,"Lewisham Road, Lewisham, SE13",,400000,Lewisham Station,0.2 ,SE13
+131009342,8.0,8.0,freehold,2,"Old Church Street, London, SW3",5227.0,11000000,South Kensington Station,0.6 ,SW3
+132097715,3.0,3.0,leasehold,0,"Marylebone High Street, London, W1U",3633.0,27000000,Baker Street Station,0.4 ,W1U
+128633252,3.0,3.0,leasehold,1,"Trevor Square, SW7",,15950000,Knightsbridge Station,0.2 ,SW7
+133507022,8.0,6.0,freehold,2,"Cheyne Place, London, SW3",,14950000,Sloane Square Station,0.6 ,SW3
+90086233,3.0,3.0,leasehold,0,"The Tower, One St George Wharf, London",0.0,9950000,Vauxhall Station,0.2 ,
+134632259,3.0,3.0,leasehold,0,"Upper Grosvenor Street, 
+Mayfair, W1K",1803.0,6350000,Bond Street Station,0.3 ,W1K
+120364379,5.0,5.0,freehold,1,"Montpelier Square, Knightsbridge SW7",4613.0,9750000,Knightsbridge Station,0.3 ,SW7
+132941201,6.0,6.0,freehold,1,"Totteridge Common, London, N20",7036.0,8000000,High Barnet Station,1.4 ,N20
+135618473,3.0,2.0,freehold,0,"Kensington Park Road, Notting Hill, London",,6500000,Ladbroke Grove Station,0.3 ,
+135548921,6.0,6.0,freehold,0,"The Bishops Avenue, Hampstead, N2",4676.0,9000000,East Finchley Station,0.6 ,N2
+126871934,4.0,3.0,leasehold,2,"DAMAC Tower, Nine Elms, London, SW8",,11251000,Vauxhall Station,0.1 ,SW8
+128509451,3.0,3.0,leasehold,0,"Davies Street, Mayfair, London, W1K",,8500000,Bond Street Station,0.2 ,W1K
+135257315,4.0,4.0,leasehold,0,"New Cavendish Street, Marylebone W1G",,8000000,Regent's Park Station,0.3 ,W1G
+135799190,5.0,6.0,freehold,1,"Park Street, Mayfair",,25000000,Marble Arch Station,0.2 ,
+131998652,3.0,3.0,leasehold,1,"Harrington Road, South Kensington",,7250000,South Kensington Station,0.1 ,
+134488676,4.0,4.0,share of freehold,0,"Westbourne Grove Mews, London, W11",4871.0,9250000,Notting Hill Gate Station,0.4 ,W11
+131302508,4.0,3.0,freehold,1,"Lancelot Place, Knightsbridge",2736.0,16000000,Knightsbridge Station,0.1 ,
+116356187,4.0,4.0,leasehold,0,"Southbank Place, Belvedere Road, London, SE1",,17000000,Waterloo Station,0.2 ,SE1
+134394059,3.0,3.0,leasehold,1,"10 Broadway,
+London,
+SW1H 0BP",2336.0,8450000,St. James's Park Station,0.1 ,0BP
+135522455,2.0,1.0,leasehold,2,"Parkhill Court, Oakleigh Park South, Whetstone, London, N20",,500000,Oakleigh Park Station,0.5 ,N20
+136383227,6.0,6.0,freehold,0,"Culross House, Mayfair, W1K",8060.0,23950000,Marble Arch Station,0.2 ,W1K
+125699780,5.0,5.0,freehold,3,"Egerton Crescent, Knightsbridge, London, SW3",,12950000,South Kensington Station,0.3 ,SW3
+128580794,6.0,5.0,freehold,0,"Coombe Park, Kingston Upon Thames, KT2",,6750000,Norbiton Station,1.3 ,KT2
+134449994,7.0,5.0,freehold,0,"Royal Westminster, London",11065.0,35000000,St. James's Park Station,0.4 ,
+120393836,4.0,3.0,ask agent,2,"Albert Hall Mansions, Kensington Gore, SW7",,6500000,South Kensington Station,0.5 ,SW7
+132651824,3.0,3.0,leasehold,0,"190, The Strand, WC2R",,6500000,Temple Station,0.1 ,WC2R
+133194983,5.0,5.0,leasehold,0,"Lowndes Close, Belgravia, London, SW1X",,9450000,Sloane Square Station,0.4 ,SW1X
+127616747,4.0,4.0,leasehold,0,"Damac Tower, 71 Bondway, Nine Elms, SW8",,12846000,Vauxhall Station,0.2 ,SW8
+136181888,3.0,2.0,freehold,2,"Markham Square, Chelsea, London, SW3",,7950000,Sloane Square Station,0.4 ,SW3
+135301022,4.0,4.0,freehold,1,"Derby Road, London, E9",4.0,6500000,London Fields Station,0.5 ,E9
+129446774,3.0,4.0,leasehold,0,"Marylebone Square, Moxon Street, Marylebone, London, W1U ",3638.0,8201000,Baker Street Station,0.4 ,W1U
+110802395,3.0,3.0,leasehold,0,"Moxon Street, London, W1U",,7618000,Bond Street Station,0.4 ,W1U
+83697752,3.0,3.0,leasehold,1,"Montrose Place, Belgravia, London",,11795000,Hyde Park Corner Station,0.2 ,
+123505373,6.0,5.0,freehold,3,"South Street, Mayfair, London, W1K",,15500000,Bond Street Station,0.4 ,W1K
+128360117,5.0,3.0,freehold,2,"Montpelier Square, Knightsbridge, SW7",,16950000,Knightsbridge Station,0.2 ,SW7
+133084916,5.0,5.0,share of freehold,0,"Chesham Place, Belgravia SW1",4410.0,17500000,Sloane Square Station,0.3 ,SW1
+134188604,5.0,3.0,freehold,1,"Alexander Square, London, SW3",0.0,9250000,South Kensington Station,0.2 ,SW3
+136316720,5.0,5.0,share of freehold,1,"Cadogan Square, London",4404.0,19500000,Sloane Square Station,0.2 ,
+134353040,5.0,6.0,leasehold,0,"Portland Place, Marylebone, W1B",8174.0,19750000,Regent's Park Station,0.2 ,W1B
+135821411,7.0,5.0,freehold,1,"Dawson Place, London, W2",,21500000,Notting Hill Gate Station,0.3 ,W2
+135281699,7.0,7.0,freehold,1,"Cottesmore Gardens, London, W8",,36000000,High Street Kensington Station,0.3 ,W8
+81588900,,,freehold,1,"Eyre Road, St John's Wood, London, NW8",0.0,12500000,Maida Vale Station,0.3 ,NW8
+102976385,4.0,4.0,freehold,1,"Adams Row, Mayfair, London, W1K",,11950000,Bond Street Station,0.3 ,W1K
+128153609,4.0,4.0,share of freehold,1,"Charles Street, Mayfair",3380.0,9250000,Green Park Station,0.3 ,
+132488741,7.0,4.0,freehold,1,"Lyford Road, London, SW18",,6500000,Wandsworth Common Station,0.4 ,SW18
+134507318,2.0,1.0,freehold,1,"Macaulay Road, Caterham on the Hill",,387500,Caterham Station,0.9 ,
+130702874,4.0,4.0,freehold,0,"Down Street Mews, Mayfair, W1J",6964.0,15000000,Green Park Station,0.2 ,W1J
+136226813,4.0,5.0,leasehold,0,"Henry Moore Court, Manresa Road, London, SW3",,13450000,South Kensington Station,0.5 ,SW3
+114052802,9.0,6.0,freehold,1,"Heathview Gardens, Putney, London, SW15",0.0,7950000,Putney Station,1.0 ,SW15
+117016757,16.0,1.0,ask agent,0,"Canary Wharf, Canary Wharf, E14",,7350000,South Quay Station,0.1 ,E14
+123780068,4.0,4.0,share of freehold,0,"One Kensington Gardens, Kensington, London, W8",,13000000,High Street Kensington Station,0.3 ,W8
+136479545,4.0,3.0,,0,"Sky View, Drapers Corner, Greensted, Essex CM5",2200.0,895000,Epping Station,4.4 ,CM5
+132145202,4.0,3.0,leasehold,1,"Pearson Square, Fitzroy Place, W1T",,11500000,Goodge Street Station,0.2 ,W1T
+132326420,6.0,6.0,freehold,0,"Mallord Street, London, SW3",0.0,10500000,South Kensington Station,0.5 ,SW3
+126306764,3.0,3.0,leasehold,0,"Rutland Court, South Kensington",,6750000,Knightsbridge Station,0.3 ,
+130337972,10.0,11.0,freehold,0,"Kenwood House, Harper Lane, Radlett, WD7",15000.0,20000000,Radlett Station,0.9 ,WD7
+127768037,4.0,3.0,freehold,0,"Eaton Mews North, London, SW1X",,9750000,Sloane Square Station,0.3 ,SW1X
+129007952,6.0,6.0,freehold,3,"Tite Street, London, SW3",,11950000,Sloane Square Station,0.5 ,SW3
+136386995,7.0,,freehold,1,"Chiswick Mall, London, W4",0.0,16500000,Stamford Brook Station,0.4 ,W4
+134166164,5.0,5.0,leasehold,1,"Connaught Place, Hyde Park, London, W2.",,15950000,Marble Arch Station,0.2 ,W2.
+135598112,3.0,3.0,leasehold,1,"Marylebone Square, Moxon Street, Marylebone W1U",2336.0,13395000,Baker Street Station,0.3 ,W1U
+135724235,,,freehold,1,"Eaton Place, London, SW1X",10704.0,19500000,Sloane Square Station,0.3 ,SW1X
+133496300,5.0,5.0,leasehold,1,"Gloucester Gate, Regent's Park, London, NW1",,12500000,Mornington Crescent Station,0.4 ,NW1
+136479545,4.0,3.0,,0,"Sky View, Drapers Corner, Greensted, Essex CM5",2200.0,895000,Epping Station,4.4 ,CM5
+135786980,4.0,4.0,ask agent,1,"The Bromptons, Rose Square, London",,6950000,South Kensington Station,0.2 ,
+136458860,6.0,5.0,freehold,1,"Winnington Road, Hampstead, London, N2",,9295000,East Finchley Station,0.8 ,N2
+129123527,6.0,7.0,freehold,1,"Broomhouse Lane, Fulham SW6",,15000000,Putney Bridge Station,0.4 ,SW6
+85991733,8.0,5.0,freehold,1,"Totteridge Common, Totteridge, London, N20",,8000000,High Barnet Station,1.5 ,N20
+130873091,4.0,4.0,leasehold,0,"Regent's Crescent, Park Crescent West, Marylebone, London, W1B 1AA",,19750000,Regent's Park Station,0.0 ,1AA
+135621365,6.0,6.0,share of freehold,0,"Princes Gate Court, London, SW7",,12300000,South Kensington Station,0.5 ,SW7
+132171380,4.0,6.0,leasehold,1,"Weymouth Street, London, W1G",0.0,8950000,Regent's Park Station,0.2 ,W1G
+124631273,6.0,6.0,freehold,0,"Cheniston Lodge, Cheniston Gardens, Kensington, W8",,7500000,High Street Kensington Station,0.1 ,W8
+132946886,3.0,3.0,leasehold,0,"The Westin, Upper Thames St, London, EC4V",,6250000,Mansion House Station,0.1 ,EC4V
+134849864,3.0,3.0,freehold,2,"Hays Mews, Mayfair, London, W1J",,6250000,Green Park Station,0.3 ,W1J
+132423944,6.0,6.0,freehold,1,"South Street, Mayfair W1K",8.0,35000000,Hyde Park Corner Station,0.4 ,W1K
+127678304,2.0,3.0,freehold,2,"Warwick Place, Warwick Avenue, Little Venice, London, W9",,9750000,Warwick Avenue Station,0.1 ,W9
+86611816,3.0,3.0,leasehold,0,"Pavilion Apartments, 34 St John's Wood, London, NW8",,7995000,St. John's Wood Station,0.4 ,NW8
+132734252,5.0,6.0,leasehold,1,"71 Bondway, London, SW8",,11251000,Vauxhall Station,0.2 ,SW8
+123489902,3.0,1.0,leasehold,0,"Marylebone Lane, London, W1U",2042.0,7618000,Bond Street Station,0.3 ,W1U
+122158586,4.0,4.0,share of freehold,1,"Northumberland Avenue, London, WC2N",,14950000,Embankment Station,0.1 ,WC2N
+136692887,7.0,5.0,freehold,1,"Elsworthy Road, London, NW3",,16950000,Swiss Cottage Station,0.4 ,NW3
+132065345,4.0,3.0,leasehold,0,"St. Katharines Precinct, Regent's Park, London, NW1",0.0,10950000,Mornington Crescent Station,0.3 ,NW1
+114542921,7.0,9.0,leasehold,1,"Lanson Building, Chelsea Bridge Wharf, London, SW11",0.0,18000000,Battersea Park Station,0.2 ,SW11
+128194742,3.0,3.0,leasehold,1,"Chesham Street, Belgravia, SW1X",1980.0,7950000,Sloane Square Station,0.2 ,SW1X
+124490246,3.0,4.0,leasehold,1,"Southbank Place, Casson Square, London, SE1",2286.0,7850000,Waterloo Station,0.2 ,SE1
+133589489,7.0,5.0,freehold,1,"Lyford Road, London, SW18",0.0,6500000,Wandsworth Common Station,0.4 ,SW18
+127844474,3.0,4.0,leasehold,1,"Lowndes Square, London, SW1X",3700.0,11500000,Knightsbridge Station,0.1 ,SW1X
+129278144,3.0,3.0,leasehold,1,"Sherrin House, London, W14",2442.0,6500000,West Kensington Station,0.3 ,W14
+88799482,4.0,5.0,freehold,0,"Adams Row, Mayfair, London, W1K",3927.0,11950000,Bond Street Station,0.3 ,W1K
+132526673,4.0,3.0,leasehold,0,"Corinthia Residences, 10 Whitehall Place London, SW1A",3733.0,17000000,Embankment Station,0.1 ,SW1A
+124992377,3.0,3.0,leasehold,0,"Sloane Street, London",,8950000,Knightsbridge Station,0.2 ,
+134921705,3.0,3.0,leasehold,0,"55 Knightsbridge Gate, Knightsbridge, London, SW1X",,10950000,Knightsbridge Station,0.2 ,SW1X
+124513175,4.0,4.0,freehold,1,"Thurloe Street, South Kensington, SW7",3199.0,7850000,South Kensington Station,0.1 ,SW7
+136811120,4.0,3.0,share of freehold,0,"Portland Place, Marylebone, W1B",4966.0,12000000,Regent's Park Station,0.2 ,W1B
+132138446,5.0,5.0,freehold,0,"Cannon Lane, Hampstead, NW3",7940.0,17250000,Hampstead Station,0.3 ,NW3
+126734519,6.0,5.0,freehold,2,"Chapel Street, Belgravia SW1X",6773.0,28000000,Hyde Park Corner Station,0.2 ,SW1X
+135967733,3.0,1.0,freehold,1,"Springfield Road, London, N15",,599995,Tottenham Hale Station,0.3 ,N15
+130767335,3.0,3.0,leasehold,0,"South Street, Mayfair, London, W1K",,9500000,Bond Street Station,0.3 ,W1K
+118997003,2.0,2.0,ask agent,0,"Lancelot Place, Knightsbridge, SW7",1970.0,6950000,Knightsbridge Station,0.1 ,SW7
+124411850,4.0,4.0,leasehold,0,"St. Mary Abbots Place, London, W8",,9500000,Kensington Olympia Station,0.3 ,W8
+134062361,3.0,3.0,leasehold,1,"Holland Park Gate, 257-265 Kensington High Street, London, W8 6NA",,7350000,High Street Kensington Station,0.3 ,6NA
+131520806,4.0,3.0,freehold,1,"Alexander Square, London, SW3",0.0,8250000,South Kensington Station,0.2 ,SW3
+136631324,7.0,4.0,freehold,0,"Chiswick Mall, London, W4",,16500000,Stamford Brook Station,0.4 ,W4
+131883788,2.0,2.0,leasehold,0,"Richmond Hill, Richmond, Surrey, TW10",0.0,1300000,Richmond Station,0.9 ,TW10
+130863098,4.0,4.0,leasehold,1,"St. James Close, St. John's Wood, London, NW8",0.0,9150000,St. John's Wood Station,0.6 ,NW8
+130786868,4.0,4.0,freehold,0,"Wilton Street, London, SW1X",,8950000,Hyde Park Corner Station,0.3 ,SW1X
+110087600,4.0,4.0,freehold,1,"Princes Gate Mews, London, SW7.",,6950000,South Kensington Station,0.3 ,SW7.
+85721796,3.0,1.0,leasehold,0,"One Queen Anne's Gate, Westminster, London, SW1H",2979.0,9450000,St. James's Park Station,0.1 ,SW1H
+136688189,5.0,4.0,freehold,2,"Walton Place, London, SW3",,12950000,Knightsbridge Station,0.2 ,SW3
+124980071,5.0,4.0,freehold,0,"Eaton Terrace, Belgravia, London, SW1W",0.0,6950000,Sloane Square Station,0.2 ,SW1W
+134302040,4.0,2.0,freehold,2,"Clarendon Road, London, W11",,6450000,Holland Park Station,0.1 ,W11
+86091546,5.0,6.0,leasehold,2,"Damac Tower, Nine Elms, SW8",3382.0,12846000,Vauxhall Station,0.2 ,SW8
+130200836,5.0,5.0,freehold,0,"Pelham Street, South Kensington",,7500000,South Kensington Station,0.0 ,
+131833544,6.0,4.0,freehold,1,"Winnington Close, Hampstead Garden Suburb",4684.0,6950000,East Finchley Station,0.7 ,
+134380817,2.0,3.0,leasehold,1,"10 Broadway,
+London,
+SW1H 0BP",1087.0,3365000,St. James's Park Station,0.1 ,0BP
+131727791,3.0,3.0,leasehold,1,"Centre Point, 103 New Oxford Street, London, WC1A",,8325000,Tottenham Court Road Station,0.1 ,WC1A
+85963149,3.0,3.0,leasehold,1,"Regent's Crescent, Park Crescent West, Marylebone, London, W1B 1AA",,9450000,Regent's Park Station,0.0 ,1AA
+134864336,4.0,2.0,freehold,0,"Navarino Road, 
+London Fields, E8",,6500000,Hackney Downs Station,0.3 ,E8
+133474496,7.0,5.0,freehold,0,"Hyver Hill, Mill Hill, London, NW7",,12500000,Elstree & Borehamwood Station,1.6 ,NW7
+134970101,4.0,5.0,freehold,0,"Abingdon Road, Kensington, London",,8250000,High Street Kensington Station,0.2 ,
+132263414,4.0,4.0,leasehold,1,"St Katharine's Precinct, Regent's Park, NW1",6183.0,16500000,Mornington Crescent Station,0.4 ,NW1
+136482317,6.0,4.0,freehold,1,"Lyndhurst Road, Hampstead, NW3",,8000000,Hampstead Station,0.4 ,NW3
+123925652,8.0,6.0,freehold,1,"Upper Brook Street, Mayfair",,11950000,Bond Street Station,0.2 ,
+135125774,3.0,3.0,share of freehold,0,"Rutland Court, Knightsbridge, SW7",2137.0,7250000,Knightsbridge Station,0.3 ,SW7
+134094488,4.0,4.0,share of freehold,2,"Inverforth House, Hampstead, NW3",5440.0,11950000,Hampstead Station,0.6 ,NW3
+136502552,7.0,8.0,ask agent,1,"Hill House Drive, Weybridge, KT13",,9250000,Byfleet & New Haw Station,1.0 ,KT13
+129730451,2.0,2.0,freehold,1,"Eaton Mews South, Belgravia, SW1W",2991.0,7450000,Victoria Station,0.2 ,SW1W
+130661735,4.0,4.0,leasehold,0,"Southbank Place, Belvedere Road, London, SE1",3862.0,17000000,Waterloo Station,0.2 ,SE1
+134204180,6.0,5.0,ask agent,0,"Curzon Street, Mayfair, London, W1J",,9750000,Green Park Station,0.2 ,W1J
+124457726,4.0,4.0,leasehold,1,"Residence 26, Lancer Square, 5A Kensington Church St, W8",,12850000,High Street Kensington Station,0.2 ,W8
+120924869,5.0,4.0,freehold,0,"Fulham Road, Chelsea, London, SW10",0.0,10000000,Fulham Broadway Station,0.4 ,SW10
+122334167,3.0,3.0,leasehold,0,"Moxon Street, London, W1U",1938.0,8201000,Baker Street Station,0.3 ,W1U
+123780185,5.0,5.0,share of freehold,0,"One Kensington Gardens, Kensington, London, W8",,23000000,High Street Kensington Station,0.3 ,W8
+119387318,6.0,6.0,freehold,1,"Totteridge Common, Totteridge, London, N20",,8000000,High Barnet Station,1.5 ,N20
+128615171,11.0,6.0,freehold,0,"Parkside, Wimbledon, SW19",,7495000,Wimbledon Station,0.9 ,SW19
+122351237,3.0,2.0,leasehold,0,"Moxon Street, W1U",1936.0,8130000,Bond Street Station,0.3 ,W1U
+130664042,7.0,5.0,freehold,0,"Tilehouse Lane, Denham, England",,6750000,Denham Golf Club Station,1.2 ,
+131793479,7.0,6.0,freehold,1,"St. Mary's Road, London, SW19",,6950000,Wimbledon Station,0.3 ,SW19
+106185638,6.0,6.0,freehold,1,"Totteridge Common, London, N20",,8000000,High Barnet Station,1.5 ,N20
+134757551,4.0,3.0,freehold,0,"Loudoun Road, London, NW8",,6450000,St. John's Wood Station,0.2 ,NW8
+133876580,4.0,3.0,freehold,1,"Templewood Avenue, Hampstead, London, NW3",,8500000,Hampstead Station,0.5 ,NW3
+119865155,4.0,5.0,leasehold,1,"The Knightsbridge Apartments, 199 Knightsbridge, SW7",,15000000,Knightsbridge Station,0.1 ,SW7
+133245716,3.0,2.0,leasehold,0,"Dudden Hill, London, Nw10",,650000,Neasden Station,0.2 ,Nw10
+135905741,5.0,3.0,freehold,1,"The Ridgeway, Northaw,",,1000000,Cuffley Station,1.6 ,
+85758966,5.0,5.0,freehold,0,"Eaton Terrace, Belgravia, London",,6950000,Sloane Square Station,0.2 ,
+107688047,6.0,7.0,freehold,0,"Vicarage Gate, Kensington, London",,20000000,High Street Kensington Station,0.3 ,
+134087792,9.0,9.0,freehold,1,"Oxshott, Surrey, KT22",,12500000,Oxshott Station,0.1 ,KT22
+134996579,6.0,5.0,freehold,1,"Murray Road, Wimbledon, London, SW19",0.0,8950000,Wimbledon Station,0.6 ,SW19
+85944714,3.0,2.0,leasehold,0,"Montrose Place, Belgravia, London, SW1X",,11000000,Hyde Park Corner Station,0.2 ,SW1X
+130570982,4.0,3.0,leasehold,0,"Sloane Street, Knightsbridge, SW1X",,8950000,Knightsbridge Station,0.2 ,SW1X
+135741770,6.0,5.0,freehold,0,"Chester Street, London, SW1X",4236.0,10950000,Hyde Park Corner Station,0.3 ,SW1X
+134379200,3.0,3.0,leasehold,1,"Knightsbridge Gate, Knightsbridge, London, SW1X",,15715000,Knightsbridge Station,0.2 ,SW1X
+129619127,5.0,6.0,freehold,1,"Kensington and Chelsea, SW7",,15500000,South Kensington Station,0.1 ,SW7
+124019321,2.0,1.0,leasehold,0,"Byton Road, London",,475000,Tooting Station,0.2 ,
+122334161,3.0,3.0,leasehold,0,"Moxon Street, London, W1U",1938.0,7618000,Baker Street Station,0.3 ,W1U
+113409026,4.0,3.0,ask agent,0,"Park Street, London, W1K",2749.0,7750000,Marble Arch Station,0.2 ,W1K
+132892601,,,,1,"Golf Club Road, St George's Hill, Weybridge, Surrey, KT13",,17000000,Weybridge Station,0.8 ,KT13
+131745737,5.0,2.0,share of freehold,0,"Lancaster Gate, Bayswater, W2",3196.0,6950000,Lancaster Gate Station,0.1 ,W2
+134462744,5.0,6.0,freehold,1,"Hampstead Lane, Hampstead, London, NW3",0.0,14500000,Golders Green Station,0.9 ,NW3
+102292856,4.0,3.0,freehold,1,"Adams Row, London, W1K",4000.0,11950000,Bond Street Station,0.3 ,W1K
+132124346,6.0,6.0,freehold,0,"Wadham Gardens, Primrose Hill, London, NW3",,18950000,Swiss Cottage Station,0.3 ,NW3
+133208318,3.0,3.0,leasehold,1,"Arlington Street, St. James's",,15500000,Green Park Station,0.2 ,
+127529432,13.0,19.0,freehold,0,"Winnington Road, London, N2",0.0,11950000,Golders Green Station,0.9 ,N2
+132071141,5.0,5.0,leasehold,1,"3 Merchant Square, London, W2",3900.0,9000000,Edgware Road (Bakerloo) Station,0.2 ,W2
+134967788,4.0,4.0,freehold,0,"Derby Road, London, E9",,6500000,London Fields Station,0.5 ,E9
+130709786,7.0,6.0,leasehold,0,"Park Street, Mayfair",,15000000,Marble Arch Station,0.1 ,
+134455154,4.0,3.0,freehold,1,"Sebastian Avenue, Shenfield, Brentwood",,1075000,Shenfield Station,0.3 ,
+125201711,5.0,5.0,share of freehold,1,"Apartment 9, The Sloane Building, Hortensia Road, London, SW10",6039.0,12500000,Imperial Wharf Station,0.5 ,SW10
+124997756,7.0,6.0,freehold,2,"Westbourne Terrace, Bayswater, London, W2.",,11000000,Lancaster Gate Station,0.2 ,W2.
+134348807,,,freehold,0,"Arlington Street, St James's",,8500000,Green Park Station,0.2 ,
+85829640,3.0,4.0,ask agent,1,"Damac Tower, Vauxhall, SW8",3538.0,11863000,Vauxhall Station,0.2 ,SW8
+85114587,4.0,3.0,leasehold,1,"Eaton Square, London, SW1W",0.0,8250000,Sloane Square Station,0.2 ,SW1W
+131401916,4.0,3.0,freehold,1,"Burtonhole Lane, London, NW7",,7000000,Mill Hill East Station,1.1 ,NW7
+135779303,5.0,4.0,leasehold,0,"Chester Terrace, Regents Park, London, NW1",4425.0,12500000,Great Portland Street Station,0.4 ,NW1
+136206797,6.0,4.0,freehold,1,"Hamilton Terrace, St. John's Wood, London, NW8",,9950000,Maida Vale Station,0.2 ,NW8
+131842259,3.0,,leasehold,0,"Buckingham Gate, London",,9500000,Victoria Station,0.3 ,
+131663882,,,freehold,1,"Lymington Road, London, NW6",0.0,6250000,West Hampstead Thameslink Station,0.2 ,NW6
+129074174,3.0,3.0,leasehold,0,"PENTHOUSE, W1 Place, Great Portland Street, Marylebone W1W",1537.0,6595000,Great Portland Street Station,0.1 ,W1W
+136637612,2.0,3.0,ask agent,1,"Canary Wharf,
+London, 
+E14 9QG",2080.0,4700000,South Quay Station,0.2 ,9QG
+122351219,3.0,2.0,leasehold,0,"Moxon Street, W1U",1938.0,8285000,Bond Street Station,0.3 ,W1U
+135853796,3.0,3.0,ask agent,0,"King Street, Mayfair",,8750000,Piccadilly Circus Station,0.2 ,
+135766439,5.0,2.0,freehold,2,"Chilberton Drive, Merstham, Redhill, Surrey",,515000,Merstham Station,0.8 ,
+133859420,3.0,3.0,leasehold,1,"Hollandgreen Place, Kensington, London, W8",,6250000,High Street Kensington Station,0.3 ,W8
+135837899,2.0,3.0,ask agent,0,"Grosvenor Square, Mayfair",,8500000,Bond Street Station,0.2 ,
+135699254,10.0,4.0,freehold,1,"Castelnau, Barnes, London, SW13",0.0,7950000,Barnes Bridge Station,0.7 ,SW13
+128075894,4.0,4.0,freehold,0,"Swains Lane, Highgate, London, N6",,7000000,Archway Station,0.7 ,N6
+115212518,3.0,3.0,leasehold,0,"Queen Anne's Gate, Westminster, SW1H",2979.0,9450000,St. James's Park Station,0.1 ,SW1H
+132560018,3.0,4.0,freehold,1,"Paultons Square, London, SW3",0.0,6450000,South Kensington Station,0.7 ,SW3
+86191854,4.0,4.0,freehold,1,"Devonshire Place Mews, London, W1G",0.0,6500000,Regent's Park Station,0.2 ,W1G
+136143284,6.0,6.0,freehold,3,"Upper Addison Gardens, Holland Park, London, W14",,9500000,Shepherd's Bush (Central) Station,0.2 ,W14
+126371027,3.0,3.0,leasehold,0,"Southbank Place, Belvedere Road, London, SE1",,12950000,Waterloo Station,0.2 ,SE1
+126919400,3.0,3.0,leasehold,2,"Chesham Street, Belgravia, SW1X",2604.0,8950000,Sloane Square Station,0.2 ,SW1X
+135721637,3.0,1.0,freehold,1,"Mead Way, Bromley",1077.0,550000,Hayes Station,0.9 ,
+129241502,8.0,8.0,freehold,1,"Charles Street, Mayfair, W1J",,16500000,Green Park Station,0.3 ,W1J
+133466396,7.0,4.0,leasehold,3,"Bathurst Street, London, W2.",,6750000,Lancaster Gate Station,0.1 ,W2.
+121355711,4.0,3.0,leasehold,1,"Belgrave Square, London, SW1X",,6950000,Hyde Park Corner Station,0.3 ,SW1X
+127444667,6.0,6.0,leasehold,1,"Davies Street, Mayfair, London, W1K.",,15950000,Bond Street Station,0.2 ,W1K.
+119024405,6.0,8.0,freehold,0,"South Ridge, St Georges Hill, Weybridge, Surrey, KT13",0.0,6950000,Weybridge Station,1.1 ,KT13
+135798875,7.0,5.0,freehold,1,"Parkside, London, SW19",,9495500,Wimbledon Station,0.8 ,SW19
+128911697,4.0,5.0,leasehold,1,"Blenheim House, One Tower Bridge, Crown Square, London, SE1",,6900000,London Bridge Station,0.4 ,SE1
+133859039,4.0,4.0,freehold,0,"Norfolk Road, London, NW8",,6250000,St. John's Wood Station,0.2 ,NW8
+127284668,7.0,6.0,leasehold,2,"Hanover Terrace, London, NW1",,22500000,Marylebone Station,0.4 ,NW1
+133823450,6.0,6.0,freehold,1,"Rutland Gardens, London, SW7",0.0,21950000,Knightsbridge Station,0.2 ,SW7
+124537235,7.0,5.0,freehold,1,"Daleham Gardens, Hampstead, London, NW3",0.0,12500000,Finchley Road Station,0.3 ,NW3
+134698919,3.0,5.0,share of freehold,1,"Allingham Court, 44 The Bishops Avenue, London, N2",0.0,7400000,East Finchley Station,0.5 ,N2
+131927141,7.0,5.0,freehold,0,"Brick Street, Mayfair, London, W1J",0.0,35000000,Hyde Park Corner Station,0.2 ,W1J
+86166573,7.0,7.0,freehold,1,"Leinster Gardens, Bayswater, London, W2.",,9000000,Bayswater Station,0.2 ,W2.
+132478400,4.0,4.0,leasehold,0,"St. Mary Abbots Place, London, W8",0.0,9950000,Kensington Olympia Station,0.3 ,W8
+119433863,4.0,4.0,freehold,1,"Adams Row, Mayfair",,11950000,Bond Street Station,0.3 ,
+136619492,5.0,4.0,freehold,0,"Gerald Road, London, SW1W",,7950000,Sloane Square Station,0.2 ,SW1W
+136456484,5.0,3.0,freehold,0,"Woodside Avenue, Woodside Park, N12",,1699950,Woodside Park Station,0.4 ,N12
+134940281,3.0,3.0,leasehold,0,"Lancelot Place, SW7",,8999950,Knightsbridge Station,0.1 ,SW7
+134062454,4.0,4.0,leasehold,0,"Holland Park Gate, 257-265 Kensington High Street, London, W8 6NA",,23500000,High Street Kensington Station,0.3 ,6NA
+135027587,7.0,6.0,freehold,0,"Loom Lane, Radlett, Hertfordshire, WD7",,7950000,Radlett Station,0.4 ,WD7
+126542639,6.0,5.0,freehold,3,"Hyde Park Crescent, Hyde Park Estate, London, W2.",,8950000,Lancaster Gate Station,0.4 ,W2.
+131687600,5.0,4.0,ask agent,0,Bondway,3622.0,12846000,Vauxhall Station,0.1 ,
+136265114,3.0,3.0,leasehold,0,"North Audley Street, Mayfair, London, W1K",,6950000,Bond Street Station,0.2 ,W1K
+134622464,6.0,5.0,freehold,2,"Melina Place, St. John's Wood, London, NW8",,10500000,Maida Vale Station,0.4 ,NW8
+129685634,6.0,6.0,freehold,1,"Moore Street, Chelsea, SW3",,6500000,Sloane Square Station,0.3 ,SW3
+126821273,3.0,3.0,share of freehold,0,"Blandford Street, Marylebone, London, W1U",,8395000,Baker Street Station,0.4 ,W1U
+136213397,3.0,3.0,leasehold,0,"Montrose House, Montrose Place, SW1X",,6500000,Hyde Park Corner Station,0.2 ,SW1X
+86135793,4.0,3.0,freehold,2,"Courtnell Street, Bayswater, Westminster, W2",,6500000,Westbourne Park Station,0.3 ,W2
+134155481,7.0,5.0,ask agent,1,"Princes Gate, Kensington, London, SW7",,30000000,South Kensington Station,0.4 ,SW7
+135553982,5.0,5.0,freehold,0,"Hillside, Wimbledon Village, SW19",,7500000,Dundonald Road Tram Stop0.5 milesStation,0.5 ,SW19
+128150369,5.0,6.0,freehold,1,"South Street, London",,35000000,Hyde Park Corner Station,0.4 ,
+127510295,9.0,9.0,,0,"Winnington Road, N2",20246.0,11950000,Golders Green Station,0.9 ,N2
+136612736,4.0,5.0,freehold,0,"Penthouse at Thames City, Nine Elms, SW8",3700.0,6000000,Nine Elms Station,0.2 ,SW8
+131906246,5.0,6.0,leasehold,0,"Cambridge Gate, Regent's Park, London, NW1",,8500000,Great Portland Street Station,0.2 ,NW1
+134414513,3.0,4.0,leasehold,0,"Davies Street, London, W1K",0.0,6900000,Bond Street Station,0.2 ,W1K
+134916701,4.0,2.0,freehold,2,"Lansdowne Road, Notting Hill, London, W11",,6750000,Holland Park Station,0.3 ,W11
+131051519,6.0,7.0,leasehold,1,"Coleridge Gardens, London SW10",,7350000,Fulham Broadway Station,0.3 ,SW10
+135904277,4.0,3.0,freehold,1,"Norfolk Road, St John's Wood, London, NW8",,15500000,St. John's Wood Station,0.3 ,NW8
+120678155,3.0,2.0,ask agent,1,"Moxon Street, London, W1U",2053.0,8201000,Bond Street Station,1.4 ,W1U
+131676899,3.0,4.0,leasehold,1,"Park Lane, Mayfair, London",2897.0,6500000,Marble Arch Station,0.7 ,
+136367312,3.0,3.0,leasehold,0,"Franklins Row, Chelsea, London, SW3",,8500000,Sloane Square Station,0.2 ,SW3
+117033140,10.0,8.0,freehold,1,"Hamilton Terrace, St. John's Wood, London, NW8",,15000000,Maida Vale Station,0.2 ,NW8
+134740892,8.0,11.0,freehold,0,"Hadley Common, Hertfordshire, EN5",,12000000,High Barnet Station,0.6 ,EN5
+124930529,6.0,6.0,freehold,0,"Bourdon Street, Mayfair, W1K",5788.0,19750000,Bond Street Station,0.3 ,W1K
+135969098,4.0,4.0,freehold,3,"Boyne Terrace Mews, London, W11",,6750000,Holland Park Station,0.1 ,W11
+128916896,5.0,7.0,leasehold,1,"Pont Street, Knightsbridge",,20000000,Knightsbridge Station,0.3 ,
+125373278,4.0,3.0,ask agent,2,"Pearce House South, Circus Road West, Battersea Power Station",,8250000,Battersea Power Underground Station,0.2 ,
+127728065,3.0,3.0,leasehold,3,"Residence 11, Lancer Square, Kensington Church Street, London, W8",0.0,12180000,High Street Kensington Station,0.2 ,W8
+93970547,5.0,5.0,leasehold,0,"Bathurst Street, Hyde Park Estate, London, W2",3523.0,7950000,Lancaster Gate Station,0.1 ,W2
+131417660,8.0,4.0,leasehold,3,"Connaught Square, Hyde Park Estate, London, W2.",,8000000,Marble Arch Station,0.2 ,W2.
+126648752,3.0,2.0,leasehold,1,"Cumberland Terrace, Regent's Park, London, NW1",0.0,7500000,Mornington Crescent Station,0.3 ,NW1
+132921404,6.0,3.0,freehold,2,"Navarino Road, London, E8",,6500000,Hackney Downs Station,0.3 ,E8
+135985745,5.0,3.0,freehold,1,"Scarsdale Villas, London, W8",2671.0,6500000,High Street Kensington Station,0.2 ,W8
+133973492,6.0,3.0,freehold,0,"Sheffield Terrace, Kensington, W8",,6350000,Notting Hill Gate Station,0.2 ,W8
+125934725,5.0,3.0,ask agent,0,"Duke Street, London, W1K",3466.0,8450000,Bond Street Station,0.1 ,W1K
+134582801,7.0,6.0,freehold,1,"Hans Place, 
+Knightsbridge, SW1X",4275.0,13500000,Knightsbridge Station,0.3 ,SW1X
+136648247,4.0,5.0,freehold,1,"Old Church Street, London, SW3",0.0,10250000,South Kensington Station,0.4 ,SW3
+132219137,5.0,4.0,freehold,2,"Gerald Road, London, SW1W",,7500000,Sloane Square Station,0.2 ,SW1W
+127855313,3.0,2.0,share of freehold,0,"South Lodge, Knightsbridge, London SW7",1850.0,6250000,Knightsbridge Station,0.3 ,SW7
+135737633,5.0,5.0,freehold,1,"Wigley Bush Lane, South Weald, Brentwood, Essex, CM14",0.0,7000000,Brentwood Station,1.4 ,CM14
+86137569,3.0,3.0,freehold,1,"Courtnell Street, London",,6500000,Westbourne Park Station,0.4 ,
+129124130,3.0,3.0,leasehold,1,"Arlington Street, Mayfair, London, SW1A",,6950000,Green Park Station,0.2 ,SW1A
+111896183,4.0,5.0,ask agent,1,"Damac Tower, Nine Elms, London",,10000000,Vauxhall Station,0.2 ,
+129729956,4.0,4.0,leasehold,1,"1 Ebury Square, Belgravia, London SW1W",3698.0,11750000,Sloane Square Station,0.3 ,SW1W
+135078500,4.0,,leasehold,0,"Davies Street, Mayfair, W1K",,7000000,Bond Street Station,0.2 ,W1K
+128166905,6.0,5.0,freehold,2,"Earls Terrace, London, W8",4802.0,9000000,Kensington Olympia Station,0.4 ,W8
+134573765,5.0,4.0,freehold,1,"Chester Row, 
+Belgravia, SW1W",2951.0,6850000,Sloane Square Station,0.2 ,SW1W
+128815631,5.0,3.0,share of freehold,1,"Ennismore Gardens, 
+Knightsbridge, SW7",3405.0,6500000,South Kensington Station,0.4 ,SW7
+134939954,8.0,3.0,freehold,1,"Peek Crescent, Wimbledon, London, SW19",0.0,8500000,Wimbledon Station,0.8 ,SW19
+132537128,6.0,6.0,freehold,1,"West Lodge, Compton Avenue, N6",6900.0,9500000,Highgate Station,0.8 ,N6
+131017301,6.0,6.0,ask agent,1,"Herbert Crescent, Knightsbridge, SW1X",4430.0,19950000,Knightsbridge Station,0.2 ,SW1X
+125853209,3.0,3.0,share of freehold,1,"Chesham Street, SW1X",,7950000,Sloane Square Station,0.2 ,SW1X
+136646210,3.0,3.0,leasehold,1,"Lowndes Square, SW1",,6400000,Knightsbridge Station,0.1 ,SW1
+134126141,7.0,5.0,freehold,0,"Warren Rise, Coombe, KT3",,8000000,New Malden Station,0.8 ,KT3
+135626417,2.0,1.0,leasehold,1,"87 Bromley Road, Shortlands, BROMLEY, BR2",,400000,Shortlands Station,0.3 ,BR2
+134337335,6.0,4.0,freehold,2,"Winnington Close, Hampstead Garden Suburb, London, N2",4684.0,6950000,East Finchley Station,0.7 ,N2
+132965129,8.0,7.0,freehold,0,"Thurloe Square, London",4674.0,9250000,South Kensington Station,0.1 ,
+85766535,3.0,4.0,leasehold,1,"Marylebone Square, Moxon Street, Marylebone, W1U",,7695000,Baker Street Station,0.4 ,W1U
+135926999,3.0,3.0,leasehold,1,"Canary Wharf,
+London, 
+E14 9QG",1334.0,2400000,South Quay Station,0.2 ,9QG
+134761853,7.0,7.0,freehold,2,"Kelso Place, London, W8",,14950000,High Street Kensington Station,0.2 ,W8
+131449529,6.0,6.0,freehold,0,"Orchard View, Theobald Street",,9950000,Radlett Station,0.9 ,
+130463732,3.0,4.0,leasehold,0,"The Westin, London City EC4V",2888.0,6655000,Mansion House Station,0.1 ,EC4V
+132571376,5.0,5.0,freehold,1,"Smith Terrace, London",,8500000,Sloane Square Station,0.4 ,
+135691817,5.0,4.0,leasehold,2,"Chester Terrace, Regent's Park, London, NW1",0.0,12500000,Great Portland Street Station,0.4 ,NW1
+136392137,5.0,4.0,leasehold,1,"Chester Terrace, Regent's Park, London, NW1",0.0,10500000,Great Portland Street Station,0.4 ,NW1
+79465992,4.0,4.0,ask agent,1,"Damac Tower, Nine Elms, London",,11000000,Vauxhall Station,0.2 ,
+132924305,4.0,4.0,leasehold,1,"Palace Gate, Kensington, W8",2880.0,6950000,High Street Kensington Station,0.3 ,W8
+124333580,3.0,3.0,leasehold,0,"Bryanston Street, London, W1H",,13500000,Marble Arch Station,0.1 ,W1H
+127533161,5.0,4.0,freehold,3,"Yeomans Row, London, SW3",,10950000,South Kensington Station,0.4 ,SW3
+115141595,5.0,5.0,leasehold,1,"Connaught Place, Connaught Village, London, W2",0.0,15950000,Marble Arch Station,0.1 ,W2
+124576808,6.0,4.0,freehold,1,"Abingdon Road, Kensington, W8",6146.0,10995000,High Street Kensington Station,0.2 ,W8
+129354692,1.0,1.0,leasehold,0,"Kennington Lane, Oval Village, Vauxhall, SE11",567.0,610000,Vauxhall Station,0.2 ,SE11
+135592292,6.0,6.0,freehold,1,"Marlborough Place, London, NW8",,14950000,St. John's Wood Station,0.2 ,NW8
+136719080,3.0,3.0,freehold,3,"Orchard Way, Potters Bar, EN6 1NT",,775000,Potters Bar Station,1.1 ,1NT
+134940281,3.0,3.0,leasehold,0,"Lancelot Place, SW7",,8999950,Knightsbridge Station,0.1 ,SW7
+134062454,4.0,4.0,leasehold,0,"Holland Park Gate, 257-265 Kensington High Street, London, W8 6NA",,23500000,High Street Kensington Station,0.3 ,6NA
+135027587,7.0,6.0,freehold,0,"Loom Lane, Radlett, Hertfordshire, WD7",,7950000,Radlett Station,0.4 ,WD7
+126542639,6.0,5.0,freehold,3,"Hyde Park Crescent, Hyde Park Estate, London, W2.",,8950000,Lancaster Gate Station,0.4 ,W2.
+131687600,5.0,4.0,ask agent,0,Bondway,3622.0,12846000,Vauxhall Station,0.1 ,
+136265114,3.0,3.0,leasehold,0,"North Audley Street, Mayfair, London, W1K",,6950000,Bond Street Station,0.2 ,W1K
+134622464,6.0,5.0,freehold,2,"Melina Place, St. John's Wood, London, NW8",,10500000,Maida Vale Station,0.4 ,NW8
+129685634,6.0,6.0,freehold,1,"Moore Street, Chelsea, SW3",,6500000,Sloane Square Station,0.3 ,SW3
+126821273,3.0,3.0,share of freehold,0,"Blandford Street, Marylebone, London, W1U",,8395000,Baker Street Station,0.4 ,W1U
+136213397,3.0,3.0,leasehold,0,"Montrose House, Montrose Place, SW1X",,6500000,Hyde Park Corner Station,0.2 ,SW1X
+86135793,4.0,3.0,freehold,2,"Courtnell Street, Bayswater, Westminster, W2",,6500000,Westbourne Park Station,0.3 ,W2
+134155481,7.0,5.0,ask agent,1,"Princes Gate, Kensington, London, SW7",,30000000,South Kensington Station,0.4 ,SW7
+135553982,5.0,5.0,freehold,0,"Hillside, Wimbledon Village, SW19",,7500000,Dundonald Road Tram Stop0.5 milesStation,0.5 ,SW19
+128150369,5.0,6.0,freehold,1,"South Street, London",,35000000,Hyde Park Corner Station,0.4 ,
+127510295,9.0,9.0,,0,"Winnington Road, N2",20246.0,11950000,Golders Green Station,0.9 ,N2
+136612736,4.0,5.0,freehold,0,"Penthouse at Thames City, Nine Elms, SW8",3700.0,6000000,Nine Elms Station,0.2 ,SW8
+131906246,5.0,6.0,leasehold,0,"Cambridge Gate, Regent's Park, London, NW1",,8500000,Great Portland Street Station,0.2 ,NW1
+134414513,3.0,4.0,leasehold,0,"Davies Street, London, W1K",0.0,6900000,Bond Street Station,0.2 ,W1K
+134916701,4.0,2.0,freehold,2,"Lansdowne Road, Notting Hill, London, W11",,6750000,Holland Park Station,0.3 ,W11
+131051519,6.0,7.0,leasehold,1,"Coleridge Gardens, London SW10",,7350000,Fulham Broadway Station,0.3 ,SW10
+135904277,4.0,3.0,freehold,1,"Norfolk Road, St John's Wood, London, NW8",,15500000,St. John's Wood Station,0.3 ,NW8
+120678155,3.0,2.0,ask agent,1,"Moxon Street, London, W1U",2053.0,8201000,Bond Street Station,1.4 ,W1U
+131676899,3.0,4.0,leasehold,1,"Park Lane, Mayfair, London",2897.0,6500000,Marble Arch Station,0.7 ,
+136367312,3.0,3.0,leasehold,0,"Franklins Row, Chelsea, London, SW3",,8500000,Sloane Square Station,0.2 ,SW3
+117033140,10.0,8.0,freehold,1,"Hamilton Terrace, St. John's Wood, London, NW8",,15000000,Maida Vale Station,0.2 ,NW8
+134740892,8.0,11.0,freehold,0,"Hadley Common, Hertfordshire, EN5",,12000000,High Barnet Station,0.6 ,EN5
+124930529,6.0,6.0,freehold,0,"Bourdon Street, Mayfair, W1K",5788.0,19750000,Bond Street Station,0.3 ,W1K
+135969098,4.0,4.0,freehold,3,"Boyne Terrace Mews, London, W11",,6750000,Holland Park Station,0.1 ,W11
+128916896,5.0,7.0,leasehold,1,"Pont Street, Knightsbridge",,20000000,Knightsbridge Station,0.3 ,
+125373278,4.0,3.0,ask agent,2,"Pearce House South, Circus Road West, Battersea Power Station",,8250000,Battersea Power Underground Station,0.2 ,
+127728065,3.0,3.0,leasehold,3,"Residence 11, Lancer Square, Kensington Church Street, London, W8",0.0,12180000,High Street Kensington Station,0.2 ,W8
+93970547,5.0,5.0,leasehold,0,"Bathurst Street, Hyde Park Estate, London, W2",3523.0,7950000,Lancaster Gate Station,0.1 ,W2
+131417660,8.0,4.0,leasehold,3,"Connaught Square, Hyde Park Estate, London, W2.",,8000000,Marble Arch Station,0.2 ,W2.
+126648752,3.0,2.0,leasehold,1,"Cumberland Terrace, Regent's Park, London, NW1",0.0,7500000,Mornington Crescent Station,0.3 ,NW1
+132921404,6.0,3.0,freehold,2,"Navarino Road, London, E8",,6500000,Hackney Downs Station,0.3 ,E8
+135985745,5.0,3.0,freehold,1,"Scarsdale Villas, London, W8",2671.0,6500000,High Street Kensington Station,0.2 ,W8
+133973492,6.0,3.0,freehold,0,"Sheffield Terrace, Kensington, W8",,6350000,Notting Hill Gate Station,0.2 ,W8
+125934725,5.0,3.0,ask agent,0,"Duke Street, London, W1K",3466.0,8450000,Bond Street Station,0.1 ,W1K
+134582801,7.0,6.0,freehold,1,"Hans Place, 
+Knightsbridge, SW1X",4275.0,13500000,Knightsbridge Station,0.3 ,SW1X
+136648247,4.0,5.0,freehold,1,"Old Church Street, London, SW3",0.0,10250000,South Kensington Station,0.4 ,SW3
+132219137,5.0,4.0,freehold,2,"Gerald Road, London, SW1W",,7500000,Sloane Square Station,0.2 ,SW1W
+127855313,3.0,2.0,share of freehold,0,"South Lodge, Knightsbridge, London SW7",1850.0,6250000,Knightsbridge Station,0.3 ,SW7
+135737633,5.0,5.0,freehold,1,"Wigley Bush Lane, South Weald, Brentwood, Essex, CM14",0.0,7000000,Brentwood Station,1.4 ,CM14
+86137569,3.0,3.0,freehold,1,"Courtnell Street, London",,6500000,Westbourne Park Station,0.4 ,
+129124130,3.0,3.0,leasehold,1,"Arlington Street, Mayfair, London, SW1A",,6950000,Green Park Station,0.2 ,SW1A
+111896183,4.0,5.0,ask agent,1,"Damac Tower, Nine Elms, London",,10000000,Vauxhall Station,0.2 ,
+129729956,4.0,4.0,leasehold,1,"1 Ebury Square, Belgravia, London SW1W",3698.0,11750000,Sloane Square Station,0.3 ,SW1W
+135078500,4.0,,leasehold,0,"Davies Street, Mayfair, W1K",,7000000,Bond Street Station,0.2 ,W1K
+128166905,6.0,5.0,freehold,2,"Earls Terrace, London, W8",4802.0,9000000,Kensington Olympia Station,0.4 ,W8
+134573765,5.0,4.0,freehold,1,"Chester Row, 
+Belgravia, SW1W",2951.0,6850000,Sloane Square Station,0.2 ,SW1W
+128815631,5.0,3.0,share of freehold,1,"Ennismore Gardens, 
+Knightsbridge, SW7",3405.0,6500000,South Kensington Station,0.4 ,SW7
+134939954,8.0,3.0,freehold,1,"Peek Crescent, Wimbledon, London, SW19",0.0,8500000,Wimbledon Station,0.8 ,SW19
+132537128,6.0,6.0,freehold,1,"West Lodge, Compton Avenue, N6",6900.0,9500000,Highgate Station,0.8 ,N6
+131017301,6.0,6.0,ask agent,1,"Herbert Crescent, Knightsbridge, SW1X",4430.0,19950000,Knightsbridge Station,0.2 ,SW1X
+125853209,3.0,3.0,share of freehold,1,"Chesham Street, SW1X",,7950000,Sloane Square Station,0.2 ,SW1X
+136646210,3.0,3.0,leasehold,1,"Lowndes Square, SW1",,6400000,Knightsbridge Station,0.1 ,SW1
+134126141,7.0,5.0,freehold,0,"Warren Rise, Coombe, KT3",,8000000,New Malden Station,0.8 ,KT3
+135626417,2.0,1.0,leasehold,1,"87 Bromley Road, Shortlands, BROMLEY, BR2",,400000,Shortlands Station,0.3 ,BR2
+134337335,6.0,4.0,freehold,2,"Winnington Close, Hampstead Garden Suburb, London, N2",4684.0,6950000,East Finchley Station,0.7 ,N2
+132965129,8.0,7.0,freehold,0,"Thurloe Square, London",4674.0,9250000,South Kensington Station,0.1 ,
+85766535,3.0,4.0,leasehold,1,"Marylebone Square, Moxon Street, Marylebone, W1U",,7695000,Baker Street Station,0.4 ,W1U
+135926999,3.0,3.0,leasehold,1,"Canary Wharf,
+London, 
+E14 9QG",1334.0,2400000,South Quay Station,0.2 ,9QG
+134761853,7.0,7.0,freehold,2,"Kelso Place, London, W8",,14950000,High Street Kensington Station,0.2 ,W8
+131449529,6.0,6.0,freehold,0,"Orchard View, Theobald Street",,9950000,Radlett Station,0.9 ,
+130463732,3.0,4.0,leasehold,0,"The Westin, London City EC4V",2888.0,6655000,Mansion House Station,0.1 ,EC4V
+132571376,5.0,5.0,freehold,1,"Smith Terrace, London",,8500000,Sloane Square Station,0.4 ,
+135691817,5.0,4.0,leasehold,2,"Chester Terrace, Regent's Park, London, NW1",0.0,12500000,Great Portland Street Station,0.4 ,NW1
+136392137,5.0,4.0,leasehold,1,"Chester Terrace, Regent's Park, London, NW1",0.0,10500000,Great Portland Street Station,0.4 ,NW1
+79465992,4.0,4.0,ask agent,1,"Damac Tower, Nine Elms, London",,11000000,Vauxhall Station,0.2 ,
+132924305,4.0,4.0,leasehold,1,"Palace Gate, Kensington, W8",2880.0,6950000,High Street Kensington Station,0.3 ,W8
+124333580,3.0,3.0,leasehold,0,"Bryanston Street, London, W1H",,13500000,Marble Arch Station,0.1 ,W1H
+127533161,5.0,4.0,freehold,3,"Yeomans Row, London, SW3",,10950000,South Kensington Station,0.4 ,SW3
+115141595,5.0,5.0,leasehold,1,"Connaught Place, Connaught Village, London, W2",0.0,15950000,Marble Arch Station,0.1 ,W2
+124576808,6.0,4.0,freehold,1,"Abingdon Road, Kensington, W8",6146.0,10995000,High Street Kensington Station,0.2 ,W8
+129354692,1.0,1.0,leasehold,0,"Kennington Lane, Oval Village, Vauxhall, SE11",567.0,610000,Vauxhall Station,0.2 ,SE11
+135592292,6.0,6.0,freehold,1,"Marlborough Place, London, NW8",,14950000,St. John's Wood Station,0.2 ,NW8
+136719080,3.0,3.0,freehold,3,"Orchard Way, Potters Bar, EN6 1NT",,775000,Potters Bar Station,1.1 ,1NT
+123674906,5.0,6.0,freehold,0,"South Street, Mayfair, London, W1K",0.0,14950000,Bond Street Station,0.4 ,W1K
+128675852,1.0,1.0,leasehold,1,"King William Court, Chelmsford",,280000,Chelmsford Station,6.1 ,
+135804017,4.0,4.0,leasehold,0,"South Street, Mayfair, W1K",3051.0,11500000,Bond Street Station,0.3 ,W1K
+127390289,7.0,7.0,freehold,0,"Brick Street, Mayfair, London, W1J",,35000000,Hyde Park Corner Station,0.2 ,W1J
+79907820,3.0,3.0,leasehold,0,"Lancelot Place, London, SW7",,9000000,Knightsbridge Station,0.1 ,SW7
+130703801,4.0,5.0,freehold,0,"Down Street Mews, Mayfair, London, W1J",,15000000,Green Park Station,0.2 ,W1J
+85851732,5.0,5.0,leasehold,1,"Bathurst Street, London, W2.",,7950000,Lancaster Gate Station,0.1 ,W2.
+134750441,5.0,4.0,freehold,3,"Tite Street, Chelsea, London, SW3",,7500000,Sloane Square Station,0.5 ,SW3
+136690595,7.0,4.0,freehold,0,"Elsworthy Road, Primrose Hill, London, NW3",,16950000,Swiss Cottage Station,0.4 ,NW3
+132307187,3.0,3.0,share of freehold,2,"The Bishops Avenue, London, N2",,7400000,East Finchley Station,0.6 ,N2
+130496990,3.0,4.0,leasehold,0,"Marylebone Square, Moxon Street, Marylebone, London, W1U",1938.0,8201000,Baker Street Station,0.4 ,W1U
+134806151,4.0,2.0,freehold,1,"Cheyne Row, Chelsea, London, SW3",3797.0,7950000,South Kensington Station,0.7 ,SW3
+133044953,5.0,5.0,freehold,1,"Earls Terrace, London, W8",0.0,9000000,Kensington Olympia Station,0.4 ,W8
+135118154,5.0,4.0,freehold,1,"The Vale, London, SW3",0.0,12250000,South Kensington Station,0.6 ,SW3
+131953019,6.0,7.0,freehold,0,"Wycombe Square, London, W8",0.0,11950000,Notting Hill Gate Station,0.3 ,W8
+129121088,3.0,3.0,leasehold,1,"One Crown Place, Hackney, EC2A",,8625000,Shoreditch High Street Station,0.4 ,EC2A
+127058603,7.0,7.0,freehold,1,"White Lodge Close, Off The Bishops Avenue, London, N2",,8250000,East Finchley Station,0.7 ,N2
+134824115,4.0,6.0,leasehold,1,"Prospect Place, Battersea Power Station, SW11",3063.0,6950000,Battersea Power Underground Station,0.2 ,SW11
+106242428,4.0,5.0,ask agent,1,"Damac Tower, Nine Elms, London",,11500000,Vauxhall Station,0.2 ,
+134186678,5.0,5.0,freehold,2,"Hereford Square, South Kensington SW7",,7950000,Gloucester Road Station,0.2 ,SW7
+136135571,5.0,6.0,freehold,1,"Astell Street, Chelsea, London, SW3",,7500000,South Kensington Station,0.6 ,SW3
+135214124,3.0,4.0,ask agent,1,"Battersea Park Road, London, SW11",,8300000,Battersea Power Underground Station,0.0 ,SW11
+72410810,3.0,2.0,leasehold,0,"Mount Street, Mayfair",2380.0,7950000,Bond Street Station,0.3 ,
+133858337,4.0,5.0,leasehold,1,"Oceanic House, St James's, SW1Y",5496.0,12950000,Piccadilly Circus Station,0.2 ,SW1Y
+134763968,6.0,3.0,freehold,0,"Somerset Road, Wimbledon Common, SW19",,7995000,Wimbledon Park Station,0.9 ,SW19
+136290005,5.0,5.0,leasehold,1,Grosvenor Square London W1K,,22000000,Bond Street Station,0.2 ,W1K
+136789988,3.0,1.0,freehold,0,"Parkfield Road, Northolt",,510000,Northolt Station,1.2 ,
+127510283,9.0,9.0,,0,"Winnington Road, N2",14770.0,6500000,Golders Green Station,1.3 ,N2
+131122520,3.0,3.0,leasehold,0,"W1 Place, Great Portland Street, London, W1W",0.0,6595000,Great Portland Street Station,0.1 ,W1W
+124478279,4.0,6.0,leasehold,1,"Beaufort Gardens, Knightsbridge, SW3",4042.0,22500000,Knightsbridge Station,0.3 ,SW3
+130395503,10.0,9.0,freehold,0,"Radlett, Hertfordshire, WD7",14890.0,20000000,Radlett Station,1.0 ,WD7
+126321926,3.0,3.0,freehold,0,"Kingston House North, London, SW7",2130.0,6950000,Knightsbridge Station,0.4 ,SW7
+135729869,1.0,1.0,leasehold,1,"Cockfosters, London",,200000,Cockfosters Station,0.3 ,
+134006672,10.0,10.0,freehold,1,"Lowndes Square, Belgravia, SW1X",1350.0,25000000,Knightsbridge Station,0.1 ,SW1X
+135271403,7.0,4.0,freehold,2,"Chester Square, London, SW1W",,14850000,Sloane Square Station,0.3 ,SW1W
+131184809,8.0,5.0,freehold,2,"Cheyne Walk, London, SW10",,10000000,Imperial Wharf Station,0.5 ,SW10
+134349242,6.0,6.0,freehold,0,"Surrey Lane, London, SW11",0.0,9950000,Imperial Wharf Station,0.7 ,SW11
+116235035,6.0,6.0,freehold,0,"Bourdon Street, Mayfair, London, W1K",,19750000,Bond Street Station,0.3 ,W1K
+134379209,5.0,5.0,leasehold,1,"Knightsbridge Gate, Knightsbridge, London, SW1X",,22500000,Knightsbridge Station,0.2 ,SW1X
+112271429,6.0,5.0,freehold,1,"Heath Drive, Hampstead, London, NW3",,8750000,Finchley Road & Frognal Station,0.4 ,NW3
+129581204,3.0,2.0,share of freehold,0,"Knightsbridge, South Kensington",,6250000,Knightsbridge Station,0.2 ,
+128372429,14.0,20.0,freehold,1,"Lexham Gardens, 
+Kensington, W8",12575.0,22000000,Earls Court Station,0.3 ,W8
+134636840,6.0,6.0,freehold,1,"Belgravia, London, SW1W",6131.0,18950000,Sloane Square Station,0.2 ,SW1W
+132040598,4.0,4.0,share of freehold,1,"The Buckingham, St James's, SW1E",3829.0,11000000,Victoria Station,0.3 ,SW1E
+113291858,4.0,2.0,ask agent,0,"WELLINGTON COURT, KNIGHTSBRIDGE, London, SW1X",,7750000,Knightsbridge Station,0.1 ,SW1X
+129933329,4.0,3.0,leasehold,1,"King's Road Park, King's Road, SW6",2685.0,6825000,Imperial Wharf Station,0.2 ,SW6
+134893916,6.0,5.0,freehold,1,"Longwood Drive, London, SW15",,6700000,Barnes Station,1.0 ,SW15
+135626972,4.0,2.0,freehold,2,"Lansdowne Road, Notting Hill, London",,6750000,Holland Park Station,0.3 ,
+135934964,4.0,,leasehold,0,"Apartment 9, 10 Montrose Place, London, SW1X 7DU",,7750000,Hyde Park Corner Station,0.2 ,7DU
+130008152,5.0,4.0,freehold,0,"Elsworthy Road, London, NW3",,25000000,Swiss Cottage Station,0.4 ,NW3
+136133951,5.0,4.0,freehold,2,"Woronzow Road, St Johns Wood, London, NW8",,15000000,St. John's Wood Station,0.3 ,NW8
+132415628,3.0,4.0,leasehold,0,"Picton Place, Marylebone, W1U",,9000000,Bond Street Station,0.1 ,W1U
+132691949,5.0,5.0,freehold,1,"Totteridge Common, Totteridge, London, N20",,8000000,High Barnet Station,1.6 ,N20
+85935759,4.0,4.0,leasehold,0,"New Cavendish Street, Marylebone, London, W1G",0.0,8000000,Regent's Park Station,0.3 ,W1G
+115774055,8.0,8.0,freehold,2,"Charles Street, Mayfair, London, W1J",,16500000,Green Park Station,0.3 ,W1J
+110374760,3.0,3.0,leasehold,0,"Cork Street, Mayfair",,7850000,Piccadilly Circus Station,0.3 ,
+86166927,4.0,4.0,leasehold,2,"Prince Albert Road, St John's Wood, London, NW8",,6950000,St. John's Wood Station,0.4 ,NW8
+135772316,6.0,5.0,freehold,1,"The Bishops Avenue, London, N2",,16500000,East Finchley Station,0.8 ,N2
+135457688,5.0,3.0,freehold,1,"Mill Road, Cobham, Surrey, KT11",,3500000,Cobham & Stoke D'Abernon Station,1.0 ,KT11
+132859838,3.0,3.0,share of freehold,2,"Holland Park Villas, London, W8",,7500000,Holland Park Station,0.3 ,W8
+129680447,11.0,8.0,freehold,2,"Court Road, Eltham, London, SE9",,6500000,Mottingham Station,0.5 ,SE9
+134730689,4.0,4.0,share of freehold,0,"Shad Thames, London, SE1",,7500000,Tower Hill Station,0.4 ,SE1
+127631861,4.0,4.0,freehold,0,"Wilton Lodge, Wilton Street, Belgravia, SW1X",,8950000,Hyde Park Corner Station,0.3 ,SW1X
+135846185,7.0,7.0,freehold,0,"The Bishops Avenue, Hampstead, N2",11008.0,16500000,East Finchley Station,0.8 ,N2
+136516325,4.0,4.0,leasehold,1,"Great Marlborough Street, London, W1F",2361.0,6500000,Oxford Circus Station,0.2 ,W1F
+123467228,11.0,,leasehold,0,"Circus Road East, SW11",6515.0,11080000,Battersea Power Underground Station,0.1 ,SW11
+125712578,3.0,3.0,leasehold,0,"Residence 602, The Lucan, 2 Lucan Place, London, SW3",0.0,8250000,South Kensington Station,0.3 ,SW3
+136152131,5.0,4.0,freehold,1,"Woronzow Road, St John's Wood, London, NW8",0.0,15000000,St. John's Wood Station,0.3 ,NW8
+130170980,2.0,2.0,leasehold,0,"Clarges Street, Mayfair, London, W1J",,11500000,Green Park Station,0.1 ,W1J
+86226438,5.0,4.0,freehold,1,"Prince Arthur Road, Hampstead Village",,7500000,Hampstead Station,0.2 ,
+135499598,8.0,7.0,freehold,1,"Clapham Common West Side, London, SW4",0.0,19500000,Clapham South Station,0.2 ,SW4
+135728090,6.0,4.0,freehold,1,"Old Church Street, London, SW3",3287.0,8950000,South Kensington Station,0.4 ,SW3
+135817358,3.0,3.0,freehold,1,"Burnsall Street, Chelsea, London, SW3",2720.0,6250000,South Kensington Station,0.4 ,SW3
+124503350,7.0,6.0,freehold,0,"Daleham Gardens, Hampstead, London, NW3",,12500000,Finchley Road Station,0.3 ,NW3
+136418861,4.0,1.0,freehold,0,"Kemsing Road, Greenwich, London, SE10",1415.0,975000,Westcombe Park Station,0.1 ,SE10
+129686582,2.0,3.0,leasehold,0,"Grosvenor Square, Mayfair",,10000000,Bond Street Station,0.1 ,
+130679201,3.0,4.0,leasehold,0,"Southbank Place, 30 Casson Square, SE1",2268.0,7850000,Waterloo Station,0.2 ,SE1
+131856722,6.0,5.0,freehold,2," Pitt Street, Kensington, W8",11010.0,44000000,High Street Kensington Station,0.2 ,W8
+130834238,5.0,,leasehold,0,"Holland Park Villas, 6 Campden Hill, London",,12800000,High Street Kensington Station,0.4 ,
+134856350,9.0,11.0,freehold,0,"Golders Green, NW11",,9000000,Brent Cross Station,0.6 ,NW11
+128360147,6.0,6.0,freehold,1,Long Pond House,,8000000,High Barnet Station,1.5 ,
+127267181,6.0,4.0,freehold,2,"Winnington Close, Hampstead Garden Suburb, N2",,6950000,East Finchley Station,0.7 ,N2
+83288769,5.0,4.0,leasehold,0,"Chelsea Harbour, London, SW10",4019.0,6500000,Imperial Wharf Station,0.1 ,SW10
+119465732,3.0,3.0,leasehold,1,"The Courthouse, 70 Horseferry Road",2402.0,6500000,St. James's Park Station,0.4 ,
+123493079,8.0,8.0,freehold,1,"Winnington Road, Hampstead, London, N2",0.0,17999999,East Finchley Station,0.4 ,N2
+136011494,7.0,,freehold,1,"Farm Street, 
+Mayfair, W1J",4180.0,12500000,Bond Street Station,0.3 ,W1J
+127331258,3.0,4.0,leasehold,1,"Lowndes Square, London, SW1X",,11500000,Knightsbridge Station,0.1 ,SW1X
+136656164,3.0,3.0,ask agent,0,"Knightsbridge, SW7",,6250000,Knightsbridge Station,0.1 ,SW7
+86091576,5.0,6.0,leasehold,2,"Damac Tower, Nine Elms, SW8",2857.0,11251000,Vauxhall Station,0.2 ,SW8
+134603342,3.0,4.0,ask agent,1,"Boiler House, Battersea Power Station, London, SW11",,8500000,Battersea Power Underground Station,0.3 ,SW11
+129647783,5.0,4.0,share of freehold,2,Palace Boulevard ,2800.0,6450000,Bayswater Station,0.2 ,
+133421858,3.0,4.0,share of freehold,1,"Chesham Street, London, SW1X",,9000000,Sloane Square Station,0.2 ,SW1X
+135828728,3.0,3.0,leasehold,0,"King Street, 
+St. James, SW1Y",3537.0,8750000,Piccadilly Circus Station,0.2 ,SW1Y
+114862964,3.0,3.0,leasehold,2,"Pavilion Apartments, 34 St. Johns Wood Road, London, NW8",0.0,7995000,St. John's Wood Station,0.4 ,NW8
+85705614,2.0,2.0,leasehold,0,"Lancelot Place, London, SW7",1959.0,6950000,Knightsbridge Station,0.1 ,SW7
+86228907,4.0,3.0,leasehold,0,"Cadogan Gardens, Chelsea, London, SW3",,6950000,Sloane Square Station,0.2 ,SW3
+127510241,9.0,9.0,,0,"Winnington Road, N2",27790.0,11950000,Golders Green Station,1.3 ,N2
+131343725,3.0,3.0,leasehold,0,"Principal Place, London",2855.0,9900000,Shoreditch High Street Station,0.2 ,
+115215950,7.0,5.0,freehold,0,"Palace Court, Notting Hill, W2",6899.0,21500000,Queensway Station,0.2 ,W2
+131380418,5.0,5.0,freehold,1,"Barlby Road, London, W10",,12950000,Latimer Road Station,0.6 ,W10
+134363762,3.0,3.0,freehold,0,"Marylebone Lane, London ",2357.0,6595000,Bond Street Station,0.3 ,
+134043629,3.0,4.0,leasehold,2,"Arlington Street, St. James's, London, SW1A",0.0,15500000,Green Park Station,0.2 ,SW1A
+131550512,4.0,5.0,leasehold,0,"St. Katharines Precinct, London, NW1",,16500000,Mornington Crescent Station,0.4 ,NW1
+135023351,6.0,7.0,freehold,0,"Kentish Lane, Brookmans Park, Hertfordshire, AL9",,6750000,Brookmans Park Station,1.3 ,AL9
+134881544,7.0,6.0,freehold,2,"Hans Place, Knightsbridge, SW1X",4303.0,13500000,Knightsbridge Station,0.3 ,SW1X
+125473367,6.0,4.0,freehold,2,"Warrington Crescent, Little Venice, London, W9",5280.0,8000000,Warwick Avenue Station,0.2 ,W9
+132144437,5.0,6.0,freehold,1,"Elm Tree Road, St. John's Wood, London, NW8",0.0,12000000,St. John's Wood Station,0.3 ,NW8
+119865110,4.0,5.0,ask agent,2,"Versace Tower, Vauxhall, SW8",,7000000,Vauxhall Station,0.1 ,SW8
+132339737,5.0,6.0,freehold,1,"16 Wotton Road, Cricklewood, NW2",12.0,6500000,Cricklewood Station,0.5 ,NW2
+135739664,6.0,7.0,freehold,1,"Vicarage Gate, Kensington, London, W8.",,20000000,High Street Kensington Station,0.3 ,W8.
+136802729,4.0,4.0,leasehold,1,"Chester Place, Regents Park, London, NW1",,7950000,Mornington Crescent Station,0.4 ,NW1
+136788734,2.0,1.0,freehold,1,"Iverson Road, West Hampstead, NW6",,900000,West Hampstead Thameslink Station,0.0 ,NW6
+113299661,5.0,5.0,leasehold,0,"Park Lane, Mayfair",,19950000,Marble Arch Station,0.2 ,
+136182755,7.0,5.0,freehold,0,"Ilchester Place, London, W14",,22500000,Kensington Olympia Station,0.4 ,W14
+122351195,3.0,,leasehold,0,"Moxon Street, W1U",1951.0,8887000,Bond Street Station,0.3 ,W1U
+135105395,7.0,7.0,freehold,0,"Herbert Crescent, London",5860.0,22500000,Knightsbridge Station,0.2 ,
+131379293,6.0,4.0,leasehold,0,"Embankment Gardens, Chelsea, London, SW3",0.0,6250000,Sloane Square Station,0.5 ,SW3
+135687671,9.0,6.0,freehold,1,"Cross Deep, Twickenham, TW1",0.0,8500000,Strawberry Hill Station,0.5 ,TW1
+131269532,6.0,5.0,leasehold,1,"hanover terrace, Regent's Park, NW1",6800.0,16950000,Marylebone Station,0.4 ,NW1
+135192764,5.0,5.0,leasehold,2,"Park Village West, Regent's Park, London, NW1",0.0,14500000,Mornington Crescent Station,0.2 ,NW1
+130909622,3.0,3.0,leasehold,1,"W1 Place, Great Portland Street, W1W",,6595000,Great Portland Street Station,0.1 ,W1W
+133418693,,,freehold,1,"Soho Square, Soho, London, W1D",,9500000,Tottenham Court Road Station,0.1 ,W1D
+136503887,3.0,2.0,share of freehold,0,"Provost Street, London, N1",,1400000,Old Street Station,0.2 ,N1
+132888608,3.0,,leasehold,0,Holland Park Villas ,2176.0,7500000,High Street Kensington Station,0.4 ,
+136766879,5.0,5.0,leasehold,0,"DAMAC TOWER NINE ELMS, Bondway, Nine Elms, London, SW8",,11251000,Vauxhall Station,0.2 ,SW8
+134089559,,,freehold,1,"Piccadilly, Mayfair, London, W1J",,35000000,Hyde Park Corner Station,0.2 ,W1J
+129089573,10.0,8.0,freehold,0,"Hamilton Terrace, St John's Wood, London, NW8",,15000000,Maida Vale Station,0.2 ,NW8
+131346971,5.0,,leasehold,1,"Bondway, Parry St, London",3483.0,11863000,Vauxhall Station,0.1 ,
+75661713,5.0,5.0,leasehold,1,"St Edmund's Terrace, St. John's Wood, London, NW8",0.0,9500000,St. John's Wood Station,0.5 ,NW8
+85271913,3.0,3.0,share of freehold,1,"St. James's Place, London, SW1A",,8950000,Green Park Station,0.2 ,SW1A
+133149284,4.0,4.0,share of freehold,0,"Burton Court, Franklins Row, London, SW3",,9000000,Sloane Square Station,0.2 ,SW3
+136330853,5.0,2.0,freehold,1,"Willow Bridge Road, 
+Canonbury, N1",,6750000,Essex Road Station,0.2 ,N1
+127563452,3.0,3.0,leasehold,0,"Marylebone Square, London, W1U 2PX",,11000000,Bond Street Station,0.3 ,2PX
+131708876,3.0,3.0,leasehold,0,"Regent's Park, London, NW1",0.0,10500000,Regent's Park Station,0.1 ,NW1
+133877807,4.0,4.0,freehold,3,"Templewood Avenue, Hampstead",,8500000,Hampstead Station,0.5 ,
+135575708,4.0,4.0,freehold,0,"Pond Place, 
+Chelsea, SW3",4355.0,8250000,South Kensington Station,0.2 ,SW3
+130579463,3.0,3.0,freehold,1,"Allingham Court, The Bishops Avenue, N2",4100.0,7400000,East Finchley Station,0.5 ,N2
+133847111,8.0,8.0,freehold,0,"Pembroke Gardens, 
+Kensington, W8",12415.0,22950000,Earls Court Station,0.4 ,W8
+130792901,28.0,17.0,freehold,0,"Nottingham Place, 
+Marylebone, W1U",12667.0,23000000,Baker Street Station,0.2 ,W1U
+123489758,3.0,3.0,leasehold,1,"Worship Street, London, EC2A",2852.0,9900000,Old Street Station,0.4 ,EC2A
+132892601,,,,1,"Golf Club Road, St George's Hill, Weybridge, Surrey, KT13",,17000000,Weybridge Station,0.8 ,KT13
+132158759,6.0,6.0,freehold,1,"Montpelier Square, London, SW7",0.0,11750000,Knightsbridge Station,0.2 ,SW7
+119248877,3.0,3.0,ask agent,1,"Principal Tower, PRINCIPAL PLACE, WORSHIP STREET, London, EC2A",,9900000,Old Street Station,0.3 ,EC2A
+128360102,6.0,6.0,freehold,1,Chester Square,,26950000,Victoria Station,0.2 ,
+131747534,2.0,2.0,leasehold,1,"Marylebone Square, Marylebone, W1U",,14950000,Baker Street Station,0.3 ,W1U
+126668372,4.0,5.0,leasehold,0,"Oceanic House, Cockspur Street, London",5496.0,12950000,Piccadilly Circus Station,0.2 ,
+133731062,4.0,3.0,freehold,0,"Old Church Street, London, SW3",,6325000,South Kensington Station,0.7 ,SW3
+135009938,7.0,6.0,freehold,1,"Hans Place, Knightsbridge",4176.0,13500000,Knightsbridge Station,0.3 ,
+134039081,6.0,5.0,freehold,1,"Chesterfield Hill, Mayfair, London, W1J",0.0,8600000,Green Park Station,0.3 ,W1J
+85971672,5.0,3.0,freehold,2,"Alexander Square, Knightsbridge, London, SW3",,8250000,South Kensington Station,0.2 ,SW3
+136378289,5.0,5.0,leasehold,2,"Chester Terrace, Marylebone, NW1",4185.0,10500000,Great Portland Street Station,0.4 ,NW1
+133680785,4.0,4.0,leasehold,0,Waterfront Drive,,6300000,Imperial Wharf Station,0.2 ,
+135514562,1.0,1.0,leasehold,1,"20 Station Road,
+Orpington,
+Greater London
+BR6 0FJ",,488950,Orpington Station,0.2 ,0FJ
+135985841,5.0,4.0,leasehold,0,"Park Lane Area, Mayfair",5070.0,30000000,Green Park Station,0.6 ,
+131030768,6.0,6.0,freehold,3,"Hyde Park Gate, South Kensington, London, SW7",,11950000,Gloucester Road Station,0.4 ,SW7
+133118489,3.0,3.0,leasehold,0,"Fitzhardinge Street, Marylebone,W1",2725.0,11950000,Bond Street Station,0.2 ,eW1
+128027264,6.0,8.0,freehold,1,"Lindfield Gardens, Hampstead, London, NW3",,12250000,Finchley Road & Frognal Station,0.1 ,NW3
+127805309,3.0,4.0,leasehold,0,"Centre Point, 103 New Oxford Street, London, WC1A",,7375000,Tottenham Court Road Station,0.1 ,WC1A
+126985571,7.0,6.0,freehold,3,"Lindfield Gardens, Hampstead",,12250000,Finchley Road & Frognal Station,0.2 ,
+135343187,8.0,11.0,ask agent,1,"Tregunter Road, Chelsea, SW10",10551.0,32500000,West Brompton Station,0.5 ,SW10
+131277035,5.0,5.0,freehold,1,"Elsworthy Road, St John's Wood, London, NW3",0.0,25000000,Swiss Cottage Station,0.4 ,NW3
+127406930,3.0,2.0,leasehold,0,"Mount Street, Mayfair, London, W1K",,7950000,Bond Street Station,0.3 ,W1K
+126034178,7.0,7.0,leasehold,1,"Buxmead, 67 The Bishops Avenue, London, N2",0.0,13400000,East Finchley Station,0.9 ,N2
+135363767,7.0,5.0,freehold,2,"Parkside, Wimbledon Village, SW19",,6500000,Wimbledon Station,0.8 ,SW19
+133769975,12.0,8.0,freehold,0,"Queen's Gate Place, London, SW7",8791.0,14000000,Gloucester Road Station,0.2 ,SW7
+123695549,6.0,6.0,freehold,0,"Theobald Street, Radlett, Hertfordshire, WD7",,9950000,Radlett Station,0.9 ,WD7
+114826319,1.0,1.0,share of freehold,1,"Alderney Street, London, SW1V",,525000,Pimlico Station,0.4 ,SW1V
+135838475,7.0,6.0,freehold,1,"Marlborough Place, London, NW8",,10950000,Maida Vale Station,0.3 ,NW8
+85156008,3.0,4.0,leasehold,1,"St. James's Place, London, SW1A",2196.0,8950000,Green Park Station,0.1 ,SW1A
+85156008,3.0,4.0,leasehold,1,"St. James's Place, London, SW1A",2196.0,8950000,Green Park Station,0.1 ,SW1A
+104427443,4.0,4.0,leasehold,0,"Bruton Place, Mayfair, London, W1J",0.0,10950000,Bond Street Station,0.3 ,W1J
+130424984,4.0,3.0,freehold,0,"Headfort Place, Belgravia, London, SW1X",4038.0,6950000,Hyde Park Corner Station,0.2 ,SW1X
+135049232,5.0,6.0,freehold,1,"Wotton Road, London, NW2",,6500000,Cricklewood Station,0.5 ,NW2
+128360372,6.0,6.0,leasehold,1,Chester Terrace,,16950000,Great Portland Street Station,0.4 ,
+128479973,5.0,5.0,leasehold,2,"Montrose Place, Belgravia, London, SW1X",,14950000,Hyde Park Corner Station,0.2 ,SW1X
+134728292,5.0,5.0,share of freehold,1,"Lyndhurst Gardens, London, NW3",3.0,7500000,Belsize Park Station,0.3 ,NW3
+132516416,3.0,3.0,leasehold,1,"Charles Street, Mayfair, W1J",3438.0,11500000,Green Park Station,0.3 ,W1J
+114396908,2.0,3.0,freehold,1,"Warwick Place, Little Venice, London, W9",0.0,9750000,Warwick Avenue Station,0.1 ,W9
+128291918,3.0,3.0,leasehold,2,"Boiler House Square, Battersea Power Station, SW11",2825.0,9500000,Battersea Power Underground Station,0.3 ,SW11
+134248544,3.0,2.0,leasehold,0,"Rutland Court, London, SW7",2290.0,7950000,Knightsbridge Station,0.3 ,SW7
+130878182,3.0,3.0,share of freehold,0,"Holland Park, Kensington, London, W11",,7250000,Holland Park Station,0.1 ,W11
+132057584,2.0,2.0,leasehold,1,"Cumberland Terrace, Regent's Park, London, NW1",0.0,6250000,Mornington Crescent Station,0.3 ,NW1
+86169663,4.0,5.0,leasehold,1,"Devonshire Place Mews, Marylebone, London, W1G",,6500000,Regent's Park Station,0.2 ,W1G
+132886310,7.0,8.0,freehold,1,"Thurloe Square, South Kensington, SW7",4730.0,9250000,South Kensington Station,0.1 ,SW7
+133722545,6.0,5.0,freehold,2,"Cliveden Place, Belgravia, London, SW1W",3141.0,7250000,Sloane Square Station,0.1 ,SW1W
+135082784,15.0,14.0,leasehold,1,"Imperial Wharf, 
+Fulham, SW6",18208.0,17000000,Imperial Wharf Station,0.2 ,SW6
+128611049,5.0,5.0,share of freehold,1,"Lennox Gardens, London, SW1X",0.0,17950000,Sloane Square Station,0.4 ,SW1X
+129675377,12.0,9.0,freehold,0,"Coombe Ridings, Kingston upon Thames, Surrey, KT2",0.0,10500000,Norbiton Station,1.1 ,KT2
+86091558,5.0,5.0,leasehold,2,"Damac Tower, Nine Elms, SW8",3449.0,11863000,Vauxhall Station,0.2 ,SW8
+129392183,5.0,5.0,leasehold,1,"Langham Street, Fitzrovia, London, W1W",,9950000,Oxford Circus Station,0.3 ,W1W
+130751417,10.0,10.0,freehold,1,"Carbone Hill, Cuffley, Herts, EN6.",,6950000,Cuffley Station,1.0 ,EN6.
+127529423,9.0,11.0,freehold,0,"Winnington Road, London, N2",0.0,11950000,Golders Green Station,0.9 ,N2
+132158585,6.0,5.0,freehold,1,"Montpelier Square, Knightsbridge SW7",4488.0,11750000,Knightsbridge Station,0.2 ,SW7
+133708385,5.0,5.0,leasehold,0,"Cadogan Square, Knightsbridge, SW1X",4404.0,19500000,Sloane Square Station,0.2 ,SW1X
+133837763,3.0,1.0,leasehold,0,"Rokesby Place, Wembley",,335000,Wembley Central Station,0.4 ,
+135885674,4.0,3.0,leasehold,1,"Clarges Street, London, W1J",0.0,7950000,Green Park Station,0.2 ,W1J
+134470718,4.0,4.0,freehold,1,"Pear Tree Street, London, EC1V",,6950000,Barbican Station,0.4 ,EC1V
+131559326,4.0,4.0,leasehold,1,"St. Katharines Precinct, Regent's Park, London, NW1",0.0,16500000,Mornington Crescent Station,0.3 ,NW1
+136329137,3.0,4.0,ask agent,1,"Boiler House, Battersea Power Station",,8000000,Battersea Power Underground Station,0.2 ,
+128508293,5.0,4.0,leasehold,1,"Kings Gate Walk, London, SW1E",0.0,10950000,St. James's Park Station,0.1 ,SW1E
+125870024,5.0,2.0,leasehold,0,"Duke Street, Mayfair, London, W1K",,8450000,Bond Street Station,0.1 ,W1K
+136267982,5.0,4.0,freehold,1,"Elm Walk, Hampstead, NW3",,7500000,Golders Green Station,0.6 ,NW3
+133697669,6.0,5.0,freehold,1,"Stanley Road, London, SW14",0.0,6250000,North Sheen Station,0.5 ,SW14
+134651615,6.0,6.0,freehold,0,"Wiseton Road, London, SW17",,5750000,Wandsworth Common Station,0.2 ,SW17
+122623859,3.0,3.0,leasehold,1,"Cork Street, London, W1S",,7950000,Piccadilly Circus Station,0.3 ,W1S
+136679294,2.0,2.0,leasehold,0,"Exchange Gardens, London, SW8",816.0,895000,Vauxhall Station,0.3 ,SW8
+132595508,4.0,,freehold,1,"Winnington Road, London, N2",,7250000,East Finchley Station,0.6 ,N2
+134717759,7.0,7.0,freehold,0,"Newlands Avenue, Radlett, WD7",,7999950,Radlett Station,0.5 ,WD7
+135292055,6.0,4.0,freehold,0,"Winnington Close, Hampstead Garden Suburb N2",,6950000,East Finchley Station,0.7 ,bN2
+129433877,5.0,5.0,leasehold,1,"Trevor Square, London, SW7",0.0,18000000,Knightsbridge Station,0.2 ,SW7
+121921571,6.0,6.0,leasehold,0,"Coleridge Gardens, London, SW10",,7350000,Fulham Broadway Station,0.3 ,SW10
+132533939,10.0,8.0,freehold,0,"Hamilton Terrace, London, NW8",,15000000,Maida Vale Station,0.2 ,NW8
+136776695,4.0,4.0,leasehold,0,"Chester Place, Regent's Park, London, NW1",,7950000,Mornington Crescent Station,0.5 ,NW1
+127510283,9.0,9.0,,0,"Winnington Road, N2",14770.0,6500000,Golders Green Station,1.3 ,N2
+69095352,4.0,4.0,leasehold,1,"Bolsover Street, Fitzrovia, London, W1W",0.0,11000000,Great Portland Street Station,0.0 ,W1W
+109396778,3.0,3.0,leasehold,2,"Holland Park Villas, Campden Hill, London, W8",0.0,8250000,High Street Kensington Station,0.4 ,W8
+133499453,5.0,5.0,leasehold,0,"Carnation Way,London",2745.0,7053000,Nine Elms Station,0.3 ,
+136288562,5.0,6.0,leasehold,1,"Grosvenor Square, Mayfair",,22000000,Bond Street Station,0.2 ,
+122589941,6.0,7.0,leasehold,0,"Albion Riverside, London, SW11.",,9000000,Imperial Wharf Station,0.7 ,W11.
+133608815,2.0,3.0,leasehold,1,"Cheyne Terrace, Chelsea Manor Street, London, SW3",0.0,6950000,Sloane Square Station,0.6 ,SW3
+131115293,6.0,5.0,leasehold,0,"Wimpole Street, Marylebone, London, W1G",,11500000,Bond Street Station,0.3 ,W1G
+106201646,6.0,6.0,freehold,1,"Totteridge Common, N20",,8000000,High Barnet Station,1.5 ,N20
+128617883,3.0,3.0,leasehold,0,"Sloane Street, 
+Knightsbridge, SW1X",3577.0,8950000,Knightsbridge Station,0.2 ,SW1X
+116807648,2.0,2.0,leasehold,0,"Lancelot Place, Knightsbridge, London, SW7",0.0,6950000,Knightsbridge Station,0.1 ,SW7
+128510834,7.0,4.0,share of freehold,0,"Albert Hall Mansions, South Kensington",,6950000,South Kensington Station,0.5 ,
+133822685,10.0,9.0,freehold,0,"Lowndes Square, London, SW1X",0.0,25000000,Knightsbridge Station,0.2 ,SW1X
+136671752,3.0,3.0,leasehold,1,"Harrington Road, London",4665.0,7250000,South Kensington Station,0.1 ,
+129391610,10.0,10.0,freehold,0,"Coombe Ridings, KT2",,10500000,Norbiton Station,1.1 ,KT2
+131926859,7.0,5.0,freehold,0,"Stamford Brook Road, London, W6",,6950000,Stamford Brook Station,0.3 ,W6
+135151091,6.0,4.0,freehold,2,"Regents Park Road, Regents Park",,7500000,Camden Town Station,0.3 ,
+131353298,3.0,3.0,leasehold,0,"Knightsbridge, South Kensington",,8000000,Knightsbridge Station,0.1 ,
+128720429,8.0,5.0,freehold,1,"Stamford Brook Road, London, W6",,6950000,Stamford Brook Station,0.3 ,W6
+133282322,6.0,4.0,freehold,2,"Great James Street, London, WC1N",0.0,6500000,Chancery Lane Station,0.3 ,WC1N
+135107264,6.0,7.0,freehold,1,"Castelnau, Barnes, London, SW13",0.0,9500000,Barnes Bridge Station,0.7 ,SW13
+133168658,3.0,3.0,leasehold,0,"The Westin, Upper Thames St, London, EC4V",,6250000,Mansion House Station,0.1 ,EC4V
+134930465,3.0,3.0,leasehold,1,"Apartment 2, 55 Knightsbridge, Knightsbridge Gate, London, SW1X",0.0,10950000,Knightsbridge Station,0.2 ,SW1X
+113541878,5.0,5.0,freehold,2,"Ovington Square, Knightsbridge, London, SW3",,10950000,Knightsbridge Station,0.4 ,SW3
+136366850,4.0,5.0,freehold,1,"Hamilton Drive, St John`s Wood, NW8",5292.0,10950000,St. John's Wood Station,0.3 ,NW8
+136060328,6.0,4.0,freehold,1,"Holland Villas Road, Holland Park, London",,25000000,Kensington Olympia Station,0.2 ,
+124523702,3.0,3.0,ask agent,0,"Sloane Street, Knightsbridge",,8950000,Knightsbridge Station,0.2 ,
+132536531,6.0,6.0,freehold,1,"The Bishops Avenue, East Finchley N2",6565.0,8000000,East Finchley Station,0.1 ,yN2
+79486872,4.0,5.0,freehold,0,"Adams Row, W1K",,11950000,Bond Street Station,0.3 ,W1K
+110375312,3.0,3.0,leasehold,0,"Cork Street, Mayfair",,7850000,Piccadilly Circus Station,0.3 ,
+136803992,5.0,6.0,freehold,1,"Stanley Road, 
+East Sheen, SW14",,6250000,North Sheen Station,0.4 ,SW14
+86196495,3.0,3.0,leasehold,1,"45 Lowndes Square, Knightsbridge SW1X",2140.0,6400000,Knightsbridge Station,0.1 ,SW1X
+134347760,7.0,6.0,freehold,0,"Battersea House, Battersea Park, 11 Surrey Lane, London, SW11",6452.0,9950000,Imperial Wharf Station,0.7 ,SW11
+136564604,3.0,3.0,leasehold,1,"Bayswater Road, London, W2",1852.0,7000000,Queensway Station,0.1 ,W2
+85715400,14.0,7.0,freehold,2,High Elms Manor,,8500000,Garston (Herts) Station,0.9 ,
+133577885,10.0,10.0,freehold,0,"The Ridgeway, Cuffley, Hertfordshire, EN6",,6950000,Cuffley Station,1.1 ,EN6
+126542735,8.0,7.0,freehold,2,"Hyde Park Street, Hyde Park, London, W2.",,10500000,Lancaster Gate Station,0.4 ,W2.
+132948674,6.0,5.0,share of freehold,0,"Chesham Place, London, SW1X",4425.0,17500000,Sloane Square Station,0.4 ,SW1X
+132450365,9.0,9.0,freehold,1,"Newlands Avenue, Radlett, WD7",14952.0,15000000,Radlett Station,0.4 ,WD7
+134260760,7.0,7.0,freehold,1,"Loudoun Road, St. John's Wood, London, NW8",0.0,9750000,St. John's Wood Station,0.1 ,NW8
+136143233,6.0,6.0,freehold,1,"Upper Addison Gardens, London, W14",,9500000,Shepherd's Bush (Central) Station,0.2 ,W14
+126307751,3.0,3.0,share of freehold,0,"Rutland Court, Rutland Gardens, London, SW7",2255.0,6750000,Knightsbridge Station,0.3 ,SW7
+131683604,5.0,4.0,share of freehold,0,"Albert Hall Mansions, London, SW7",3417.0,8250000,South Kensington Station,0.5 ,SW7
+131663891,7.0,6.0,leasehold,1,"Bathurst Street, Connaught Village, London, W2",0.0,6750000,Lancaster Gate Station,0.1 ,W2
+132563975,4.0,3.0,leasehold,2,"Curzon Street, London, W1J",0.0,8250000,Green Park Station,0.2 ,W1J
+133853561,12.0,14.0,freehold,1,"Denham Place, Denham, Buckinghamshire, UB9",0.0,75000000,Denham Station,0.4 ,UB9
+128567009,5.0,5.0,share of freehold,2,"Lennox Gardens, London",5156.0,17950000,Sloane Square Station,0.4 ,
+115215953,6.0,6.0,leasehold,1,"Trevor Square, Knightsbridge, SW7",6404.0,18000000,Knightsbridge Station,0.2 ,SW7
+127510241,9.0,9.0,,0,"Winnington Road, N2",27790.0,11950000,Golders Green Station,1.3 ,N2
+123030935,4.0,5.0,leasehold,0,"Upper Feilde, 71 Park Street, Mayfair, London, W1K",0.0,9000000,Marble Arch Station,0.2 ,W1K
+135904562,4.0,4.0,freehold,0,"Norfolk Road, St John's Wood, London, NW8",,15500000,St. John's Wood Station,0.3 ,NW8
+125629946,4.0,3.0,leasehold,2,"Lillie Square, Seagrave Road, Earl's Court, London, SW6.",,8900000,West Brompton Station,0.1 ,SW6.
+128360108,7.0,7.0,leasehold,1,Hanover Terrace,,22500000,Marylebone Station,0.4 ,
+132452828,9.0,9.0,freehold,0,"Newlands Avenue, Radlett, Hertfordshire, WD7",,15000000,Radlett Station,0.4 ,WD7
+128211914,3.0,4.0,ask agent,0,"Upper Grosvenor Street, Mayfair",2311.0,10000000,Marble Arch Station,0.3 ,
+135854213,3.0,3.0,ask agent,0,"Lowndes Square, Knightsbridge, SW1X",2092.0,6400000,Knightsbridge Station,0.1 ,SW1X
+124755203,3.0,3.0,share of freehold,1,"The Knightsbridge Apartments, SW7",,8600000,Knightsbridge Station,0.1 ,SW7
+134641958,4.0,2.0,ask agent,0,"L-000654, Battersea Power Station, Circus Road West",,8000000,Battersea Power Underground Station,0.2 ,
+120154115,4.0,4.0,freehold,1,"Adams Row, Mayfair",,11950000,Bond Street Station,0.3 ,
+133831193,6.0,6.0,freehold,0,"Rutland Gardens, Knightsbridge, London, SW7",,21950000,Knightsbridge Station,0.3 ,SW7
+132914669,3.0,2.0,leasehold,0,"Carnation Way, Vauxhall, SW8",2401.0,6611000,Nine Elms Station,0.2 ,SW8
+86215404,9.0,9.0,freehold,1,"Fife Road, London, SW14",,12500000,Mortlake Station,0.8 ,SW14
+136651712,4.0,4.0,leasehold,0,"Westbourne Grove Mews, London, W11",,9250000,Notting Hill Gate Station,0.4 ,W11
+135767597,4.0,4.0,leasehold,1,"Damac Tower, 71 Bondway, London, SW8",,12310000,Vauxhall Station,0.1 ,SW8
+129987866,13.0,,freehold,0,Bina Gardens South Kensington SW5,,9950000,Gloucester Road Station,0.2 ,SW5
+134007467,7.0,5.0,freehold,1,"Ilchester Place, Kensington, London W14",6360.0,22500000,Kensington Olympia Station,0.3 ,W14
+129683894,3.0,3.0,leasehold,0,"Grosvenor Square, Mayfair, London, W1K",,10000000,Bond Street Station,0.1 ,W1K
+127213391,4.0,5.0,freehold,2,"Half Moon Street, Mayfair, London, W1J",,14500000,Green Park Station,0.2 ,W1J
+135551339,5.0,5.0,freehold,2,"Hillside, Wimbledon, London, SW19",0.0,7500000,Dundonald Road Tram Stop0.5 milesStation,0.5 ,SW19
+121720037,7.0,5.0,freehold,1,"Leggatts Park, Great North Road, Hertfordshire, EN6",,6950000,Potters Bar Station,1.4 ,EN6
+132969869,5.0,6.0,freehold,1,"Connaught Square, Connaught Village, London, W2",0.0,9250000,Marble Arch Station,0.2 ,W2
+123537944,3.0,4.0,leasehold,0,"The Lancasters, Bayswater, London, W2",0.0,8490000,Queensway Station,0.2 ,W2
+135510878,5.0,6.0,leasehold,1,"Greybrook House, Mayfair, W1K",4380.0,21500000,Bond Street Station,0.2 ,W1K
+132524297,8.0,5.0,freehold,1,"Langford Place, London, NW8",,11300000,St. John's Wood Station,0.2 ,NW8
+136163396,4.0,4.0,ask agent,2,"Thames City, Nine Elms Lane, Nine Elms, London, SW8",,6636000,Nine Elms Station,0.2 ,SW8
+125400737,3.0,3.0,leasehold,2,"Battersea Power Station, Boiler House, Circus Road South, London, SW11",2841.0,8250000,Battersea Power Underground Station,0.3 ,SW11
+135722054,6.0,,freehold,1,"Winnington Road, N2",10180.0,11000000,East Finchley Station,0.5 ,N2
+131813186,8.0,5.0,freehold,2,"Parkside Avenue, Wimbledon, London, SW19",0.0,6500000,Wimbledon Station,0.8 ,SW19
+135598028,3.0,3.0,leasehold,1,"Marylebone Square, Moxon Street, Marylebone W1U",1959.0,14950000,Baker Street Station,0.3 ,W1U
+128546459,3.0,,leasehold,0,"Marylebone Lane, London, W1U",,8130000,Bond Street Station,0.3 ,W1U
+130593035,3.0,3.0,leasehold,0,"Ref: PP - Worship Street, City of London, EC2A 2FB",,9500000,Shoreditch High Street Station,0.2 ,2FB
+101108651,6.0,5.0,leasehold,0,"Kensington Court, London, W8",3207.0,6750000,High Street Kensington Station,0.2 ,W8
+122027414,3.0,3.0,leasehold,0,"Holland Park Villas, Campden Hill, W8",,10000000,High Street Kensington Station,0.4 ,W8
+132804401,4.0,4.0,leasehold,1,"Lillie Square, West Brompton, London, SW6",2617.0,7250000,West Brompton Station,0.1 ,SW6
+134355431,3.0,3.0,share of freehold,0,"Chesham Street, SW1X",,7150000,Sloane Square Station,0.2 ,SW1X
+86227176,2.0,1.0,leasehold,0,"Mackeson Road, Hampstead NW3",590.0,595000,Hampstead Heath Station,0.2 ,NW3
+133159382,5.0,4.0,share of freehold,0,"Palace Court, London",,6450000,Bayswater Station,0.2 ,
+136524548,4.0,3.0,freehold,3,"Egerton Crescent, Knightsbridge, London, SW3",,11500000,South Kensington Station,0.2 ,SW3
+131937575,,,freehold,0,"Oak End Way, Gerrards Cross, Buckinghamshire",,6500000,Gerrards Cross Station,0.2 ,
+128573210,6.0,8.0,freehold,1,"Lindfield Gardens, Hampstead NW3",,12250000,Finchley Road & Frognal Station,0.2 ,NW3
+136507817,3.0,4.0,share of freehold,0,"Cheval House, Montpelier Walk, Knightsbridge, SW7",2661.0,6950000,Knightsbridge Station,0.3 ,SW7
+134786132,6.0,5.0,freehold,2,"Longwood Drive, London, SW15",,6700000,Barnes Station,1.1 ,SW15
+133719695,7.0,6.0,freehold,0,"Sutherland Avenue, Little Venice, London, W9",,9750000,Warwick Avenue Station,0.2 ,W9
+131379353,5.0,5.0,freehold,1,"Barlby Road, Notting Hill, W10",,12950000,Latimer Road Station,0.6 ,W10
+86227887,4.0,3.0,freehold,1,"Burnsall Street, London, SW3",,11750000,South Kensington Station,0.5 ,SW3
+124158467,6.0,5.0,freehold,2,"Melina Place, St John's Wood, London, NW8",0.0,10500000,Maida Vale Station,0.4 ,NW8
+136810247,7.0,7.0,freehold,1,"Castelnau, Barnes, London, SW13",,9500000,Barnes Bridge Station,0.7 ,SW13
+86062272,7.0,8.0,freehold,1,"The Bishops Avenue, N2",7539.0,7000000,East Finchley Station,0.2 ,N2
+121539179,4.0,3.0,leasehold,1,"Belgrave Square, London, SW1X",0.0,6950000,Hyde Park Corner Station,0.3 ,SW1X
+111137990,5.0,5.0,leasehold,1,"Penthouse, Damac Tower, Nine Elms",3553.0,11250000,Vauxhall Station,0.1 ,
+101860103,3.0,3.0,leasehold,0,"Lancelot Place, London, SW7.",,9000000,Knightsbridge Station,0.1 ,SW7.
+121969115,,,freehold,1,"Strathmore Gardens, Kensington, London, W8",,8250000,Notting Hill Gate Station,0.2 ,W8
+119428949,6.0,7.0,leasehold,0,"Cornwall Terrace, Regent's Park",9213.0,25000000,Baker Street Station,0.1 ,
+135342410,4.0,4.0,leasehold,2,"Eaton Square, Belgravia, SW1W",2543.0,6750000,Victoria Station,0.3 ,SW1W
+74205490,2.0,2.0,leasehold,1,"Mount Row, London, W1K",,6490000,Bond Street Station,0.2 ,W1K
+130090187,3.0,3.0,ask agent,0,"One Kensington Gardens, Victoria Road, Kensington",,10000000,High Street Kensington Station,0.3 ,
+134810924,4.0,4.0,leasehold,1,"Switch House West, Circus Road West, Battersea Power Statio, London, SW11",0.0,8000000,Battersea Power Underground Station,0.2 ,SW11
+131033849,3.0,3.0,leasehold,1,"Kensington Palace Gardens, Kensington, W8",5090.0,24950000,Queensway Station,0.2 ,W8
+126353819,3.0,3.0,leasehold,1,"Sloane Street, London, SW1X",,8950000,Knightsbridge Station,0.2 ,SW1X
+134165204,6.0,7.0,freehold,0,"Winnington Road, London, N2",16000.0,6995000,Golders Green Station,0.9 ,N2
+134225057,5.0,3.0,freehold,1,"Chelsea Park Gardens, London, SW3",0.0,6750000,South Kensington Station,0.7 ,SW3
+85704516,6.0,4.0,freehold,2,"Greville Road, Maida Vale, NW6",4740.0,7250000,Kilburn High Road Station,0.2 ,NW6
+133195610,5.0,5.0,leasehold,2,"Lowndes Close, Belgravia, London, SW1X",,9450000,Sloane Square Station,0.4 ,SW1X
+134395424,5.0,5.0,leasehold,2,"Apartment 5, 1 William Street, Knightsbridge Gate, London, SW1X",0.0,22500000,Knightsbridge Station,0.2 ,SW1X
+136363655,4.0,2.0,freehold,2,"Barlow Drive, London, SE18",,800000,Kidbrooke Station,1.0 ,SE18
+136790015,6.0,7.0,freehold,1,"Cavendish Avenue, St John's Wood, London, NW8",,15000000,St. John's Wood Station,0.2 ,NW8
+136508195,3.0,3.0,leasehold,0,"St. James's Palace, London, SW1A",1700.0,6999999,Green Park Station,0.2 ,SW1A
+132908849,8.0,8.0,share of freehold,1,"Hyde Park Gate, London, SW7",,16000000,Gloucester Road Station,0.4 ,SW7
+122685068,5.0,5.0,share of freehold,1,"North End Way, Hampstead, NW3",,13950000,Hampstead Station,0.4 ,NW3
+104103539,6.0,6.0,freehold,1,"Stanley Gardens, Notting Hill W11",4750.0,16950000,Holland Park Station,0.4 ,W11
+128530634,3.0,2.0,leasehold,1,"Eaton Square, Belgravia, London, SW1W",,7450000,Sloane Square Station,0.2 ,SW1W
+133166933,9.0,,freehold,1,"1a Dartmouth Place, London",,6600000,Chiswick Station,0.7 ,
+128360114,6.0,6.0,leasehold,2,Hanover Terrace,,16950000,Marylebone Station,0.4 ,
+136503458,6.0,5.0,freehold,0,"Hans Place, Knightsbridge, London, SW1X",,9950000,Knightsbridge Station,0.3 ,SW1X
+120679052,3.0,2.0,ask agent,1,"Moxon Street, London, W1U",2042.0,7618000,Baker Street Station,0.3 ,W1U
+132164255,4.0,4.0,freehold,2,"Eaton Mews South, Belgravia, London, SW1W",,7450000,Victoria Station,0.3 ,SW1W
+128401865,1.0,,leasehold,1,"Carlton Vale
+London
+NW6 5HH",560.0,520000,Kilburn Park Station,0.3 ,5HH
+125959448,5.0,5.0,leasehold,0,"71 Bondway,London",3175.0,11749000,Vauxhall Station,0.2 ,
+134243612,10.0,10.0,freehold,0,"Ennismore Gardens, London, SW7",,23950000,Knightsbridge Station,0.4 ,SW7
+133357904,3.0,3.0,leasehold,1,"Walpole Mayfair, Arlington Street, London, SW1A",,15500000,Green Park Station,0.2 ,SW1A
+134754284,8.0,11.0,freehold,0,"Hadley Common, Hertfordshire",,12000000,High Barnet Station,0.7 ,
+129302918,7.0,9.0,freehold,0,"Lygon Place, Belgravia, SW1W",13425.0,45000000,Victoria Station,0.2 ,SW1W
+136112252,6.0,6.0,freehold,0,"Astell Street, Chelsea, SW3",5381.0,16500000,South Kensington Station,0.4 ,SW3
+110096858,6.0,6.0,leasehold,1,"Chester Square, Belgravia SW1W",7005.0,22000000,Victoria Station,0.2 ,SW1W
+130891463,7.0,7.0,freehold,1,"Elgin Avenue, Maida Vale, London, W9",6138.0,10000000,Maida Vale Station,0.2 ,W9
+124298108,6.0,6.0,freehold,2,"Melina Place, St John's Wood, London, NW8",,16750000,Maida Vale Station,0.4 ,NW8
+130410158,3.0,3.0,leasehold,0,"Chesham Street, Belgravia, SW1X",1657.0,7150000,Sloane Square Station,0.2 ,SW1X
+132021563,8.0,9.0,freehold,1,"West Road, St. George's Hill, Weybridge, Surrey, KT13",,17750000,Weybridge Station,0.5 ,KT13
+133206317,4.0,3.0,leasehold,1,"Glendore House, Clarges Street, London W1J",,7950000,Green Park Station,0.2 ,W1J
+133510934,7.0,6.0,freehold,1,"Cheyne Place, Chelsea, London, SW3",0.0,14950000,Sloane Square Station,0.6 ,SW3
+132058628,2.0,2.0,leasehold,0,"Cumberland Terrace, Regent's Park, London, NW1",,6250000,Mornington Crescent Station,0.3 ,NW1
+127761875,3.0,3.0,leasehold,0,"Holland Park Villas, 6 Campden Hill, London, W8",0.0,10000000,High Street Kensington Station,0.4 ,W8
+129762833,3.0,3.0,leasehold,1,"Principal Tower, City of London",,9500000,Shoreditch High Street Station,0.2 ,

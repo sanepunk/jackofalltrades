@@ -7,6 +7,8 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from Models import LogisticRegression , LinearRegression
 import numpy as np
 import pandas as pd
+from sklearn.linear_model import LogisticRegression as SLogisticRegression
+from sklearn.linear_model import LinearRegression as SLinearRegression
 import unittest
 class LogisticTest(unittest.TestCase):
       def test(self):
@@ -28,8 +30,8 @@ class LogisticTest(unittest.TestCase):
                   'Output': [1, 0, 1, 0, 1, 0, 1, 0, 1, 0]
             })
 
-            lgtr = LogisticRegression(df[['Feature1', 'Feature2', 'Feature3', 'Feature4']], df['Output'])
-            lgtr.fit()
+            lgtr = SLogisticRegression()
+            lgtr.fit(df[['Feature1', 'Feature2', 'Feature3', 'Feature4']], df['Output'])
             predictions = (lgtr.predict(testing_data[['Feature1', 'Feature2', 'Feature3', 'Feature4']]))
             print("Testing Logistic Regression")
             print(list(predictions))
@@ -58,10 +60,10 @@ class LinearTest(unittest.TestCase):
                   'Output': [105, 110, 115, 120, 125, 130, 135, 140, 145, 150]
             })
 
-            lnr = LinearRegression(df[['Feature1', 'Feature2']], df['Output'])
-            lnr.fit()
+            lnr = SLinearRegression()
+            lnr.fit(df[['Feature1', 'Feature2', 'Feature3', 'Feature4']], df['Output'])
 
-            predictions = (lnr.predict(testing_data[['Feature1', 'Feature2']]))
+            predictions = (lnr.predict(testing_data[['Feature1', 'Feature2', 'Feature3', 'Feature4']]))
             vfunc = np.vectorize(lambda x: int(x) + 1 if x % 1 > 0.5 else int(x))
             #rfunct = np.vectorize(lambda x: round(float(x), 3))
             print("Testing Linear Regression")

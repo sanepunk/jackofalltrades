@@ -127,7 +127,7 @@ class Error:
                   np.float32: The calculated Accuracy value.
             """
             try:
-                  cm = confusion_matrix(self.y_true, self.y_pred)
+                  cm = confusion_matrix(self.y_true, self.y_predicted)
                   TN, FP, FN, TP = cm.ravel()
                   return (TP + TN) / (TP + TN + FP + FN)
             except Exception as e:
@@ -141,7 +141,7 @@ class Error:
                   np.float32: The calculated Precision value.
             """
             try:
-                  cm = confusion_matrix(self.y_true, self.y_pred)
+                  cm = confusion_matrix(self.y_true, self.y_predicted)
                   TN, FP, FN, TP = cm.ravel()
                   return TP / (TP + FP)
             except Exception as e:
@@ -155,7 +155,7 @@ class Error:
                   np.float32: The calculated Recall value.
             """
             try:
-                  cm = confusion_matrix(self.y_true, self.y_pred)
+                  cm = confusion_matrix(self.y_true, self.y_predicted)
                   TN, FP, FN, TP = cm.ravel()
                   return TP / (TP + FN) 
             except Exception as e:
@@ -169,7 +169,7 @@ class Error:
                   np.float32: The calculated F1 Score value.
             """
             try:
-                  cm = confusion_matrix(self.y_true, self.y_pred)
+                  cm = confusion_matrix(self.y_true, self.y_predicted)
                   TN, FP, FN, TP = cm.ravel()
                   return 2 * TP / (2 * TP + FP + FN)
             except Exception as e:
@@ -184,12 +184,11 @@ class Error:
             """
             try:
                   return (1 - self.y_true) * np.log(1 - self.y_predicted) + self.y_true * np.log(self.y_predicted)
-            except RuntimeWarning as w:
-                  raise Exception(f"Error: {e}")
-                  return np.nan
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-      
+            except Exception as e:  # Use the actual exception object 'e'
+                  # Consider a more informative error message or handling strategy
+                  print(f"Error during Cross Entropy calculation: {e}")
+                  return np.nan  # Or a more appropriate default value
+
             
       
 

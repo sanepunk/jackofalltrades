@@ -45,16 +45,3 @@ class get_dataset:
                   else:
                         df[i].fillna(np.mean(df[i]))
             return df.drop(columns=['close']), df['close']
-
-      
-
-def main():
-      gd = get_dataset()
-      X= gd.get_fuels_data()
-      print(X.columns)
-      cols = X.columns
-      for i in cols:
-            print(X[i].dtype)
-      
-if __name__ == "__main__":
-      main()

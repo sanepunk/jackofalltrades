@@ -9,7 +9,7 @@ import sklearn.metrics as metrics
 
 # Class for implementing Linear Regression
 class LinearRegression:
-      def __init__(self, learning_rate : float = 0.03, epochs : int = 10000, regularization_strength: float = 0.1) -> None:
+      def __init__(self, learning_rate : float = 0.03, epochs : int = 10000, regularization_strength: float = 0.1, data_regularization = True) -> None:
             """
             Initialize the LinearRegression object.
 
@@ -19,6 +19,7 @@ class LinearRegression:
             - regularization_strength (default = 0.1)
             """
             try:
+                  self.data_regularization = data_regularization
                   self.regularization_strength = regularization_strength
                   self.learning_rate = learning_rate
                   self.epochs = epochs
@@ -30,6 +31,7 @@ class LinearRegression:
             g = SS.fit(X)
             g = SS.transform(X)
             return g
+      
       def fit(self, X: pd.DataFrame , y: pd.Series) -> None:
             """
             Train the linear regression model using gradient descent.
@@ -39,7 +41,8 @@ class LinearRegression:
             """
             try:
                   self.X, self.y = np.array(X, dtype= np.float32), np.array(y, dtype = np.float32)
-                  self.X = self.Standard(self.X)
+                  if self.data_regularization == True:
+                        self.X = self.Standard(self.X)
                   self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, test_size=0.01, random_state=42)
                   self.m, self.n = self.X_train.shape
                   self.w = np.random.normal(size=self.n)
@@ -72,8 +75,8 @@ class LinearRegression:
             Returns:
             - Predicted target variable as a numpy array.
             """
-
-            X_test = self.Standard(X_test)
+            if self.data_regularization == True:
+                  X_test = self.Standard(X_test)
             return np.dot(np.array(X_test, dtype = np.float32), self.w) + self.b
 
       def plot_cost(self) -> None:
@@ -95,7 +98,7 @@ class LinearRegression:
 
 class LogisticRegression:
 
-      def __init__(self, learning_rate : float = 0.03, epochs : int = 10000, regularization_strength: float = 0.1) -> None:
+      def __init__(self, learning_rate : float = 0.03, epochs : int = 10000, regularization_strength: float = 0.1, data_regularization = True) -> None:
             """
             Initialize the LogisticRegression object.
 
@@ -105,12 +108,19 @@ class LogisticRegression:
             - regularization_strength (default = 0.1)
             """
             try:
+                  self.data_regularization = data_regularization
                   self.regularization_strength = regularization_strength
                   self.learning_rate = learning_rate
                   self.epochs = epochs
             except Exception as e:
                   print("An error occurred during initialization:", str(e))   
 
+      def Standard(self, X):
+            SS = StandardScaler()
+            g = SS.fit(X)
+            g = SS.transform(X)
+            return g
+      
       def sigmoid(self, z: np.ndarray) -> np.ndarray:
             """
             Calculate the sigmoid function.
@@ -132,7 +142,8 @@ class LogisticRegression:
             """
             try:
                   self.X, self.y = np.array(X, dtype= np.float32), np.array(y, dtype = np.float32)
-                  self.X = self.Standard(self.X)
+                  if self.data_regularization == True:
+                        self.X = self.Standard(self.X)
                   self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X / np.max(self.X), self.y, test_size=0.01, random_state=42)
                   self.m, self.n = self.X_train.shape
                   self.w = np.zeros(self.n)
@@ -165,7 +176,8 @@ class LogisticRegression:
             Returns:
             - Predicted target variable as a numpy array.
             """
-            X_test = self.Standard(X_test)
+            if self.data_regularization == True:
+                  X_test = self.Standard(X_test)
             return (self.sigmoid(np.dot(np.array(X_test , dtype = np.float32) / np.max(self.X), self.w) + self.b) > 0.5).astype(int)
 
       def plot_cost(self) -> None:

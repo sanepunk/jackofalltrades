@@ -72,3 +72,5 @@ class LinearTest(unittest.TestCase):
             #print(lnr.evaluate(testing_data['Output'], predictions))
             self.assertEqual(list(vfunc(predictions)), list(testing_data['Output']))
 
+if __name__ == '__main__':
+      unittest.main()

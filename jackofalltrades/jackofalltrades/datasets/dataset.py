@@ -1,12 +1,13 @@
 import pandas as pd
 import sklearn.datasets as datasets 
 import numpy as np
-
+import pkg_resources
 
 class get_dataset:
 
       def get_real_estate(self):
-            df = pd.read_csv(r'jackofalltrades\\datasets\\Real estate.csv')
+            file_path = pkg_resources.resource_filename('jackofalltrades', 'datasets/Real estate.csv')
+            df = pd.read_csv(file_path)
             return df.drop(['Y house price of unit area'], axis=1), df['Y house price of unit area']
             
       def get_california_housing(self):
@@ -16,9 +17,9 @@ class get_dataset:
             return self.X, self.y
       
       def get_bitcoin(self):
-            df = pd.read_csv(r'jackofalltrades\\datasets\\BTC-USD.csv')
+            file_path = pkg_resources.resource_filename('jackofalltrades', 'datasets/BTC-USD.csv')
+            df = pd.read_csv(file_path)
             cols = df.columns
-            print(df.shape)
             for i in cols:
                   if df[i].dtype == object:
                         df.drop(columns=[i], inplace=True)
@@ -27,7 +28,8 @@ class get_dataset:
             return df.drop(columns=['Adj Close']), df['Adj Close']
       
       def get_london_housing(self):
-            df = pd.read_csv(r'jackofalltrades\\datasets\\london_house_prices.csv')
+            file_path = pkg_resources.resource_filename('jackofalltrades', 'datasets/london_house_prices.csv')
+            df = pd.read_csv(file_path)
             cols = df.columns
             for i in cols:
                   if df[i].dtype == object:
@@ -37,7 +39,8 @@ class get_dataset:
             return df.drop(columns=['price_pounds']), df['price_pounds']
       
       def get_fuels_data(self):
-            df = pd.read_csv('jackofalltrades\\datasets\\all_fuels_data.csv')
+            file_path = pkg_resources.resource_filename('jackofalltrades', 'datasets/all_fuels_data.csv')
+            df = pd.read_csv(file_path)
             cols = df.columns
             for i in cols:
                   if df[i].dtype == object:

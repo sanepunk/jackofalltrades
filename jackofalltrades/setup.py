@@ -63,5 +63,4 @@ setup(
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
-        'Topic :: Scientific/Engineering :: Artificial Intelligence',
-        'Topic :: Software Development :: Machine Learning'],)
+        'Topic :: Scientific/Engineering :: Artificial Intelligence'])

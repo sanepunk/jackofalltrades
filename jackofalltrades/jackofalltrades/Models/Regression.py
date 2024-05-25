@@ -111,6 +111,12 @@ class LogisticRegression:
             except Exception as e:
                   print("An error occurred during initialization:", str(e))   
 
+      def Standard(self, X):
+            SS = StandardScaler()
+            g = SS.fit(X)
+            g = SS.transform(X)
+            return g
+      
       def sigmoid(self, z: np.ndarray) -> np.ndarray:
             """
             Calculate the sigmoid function.

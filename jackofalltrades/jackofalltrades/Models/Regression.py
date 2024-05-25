@@ -23,7 +23,7 @@ class LinearRegression:
                   self.regularization_strength = regularization_strength
                   self.X, self.y = np.array(X, dtype= np.float32), np.array(y, dtype = np.float32)
                   self.X = self.Standard(self.X)
-                  self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, test_size=0.2, random_state=42)
+                  self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, test_size=0.01, random_state=42)
                   self.learning_rate = learning_rate
                   self.epochs = epochs
             except Exception as e:
@@ -106,7 +106,7 @@ class LogisticRegression:
             try:
                   self.regularization_strength = regularization_strength
                   self.X, self.y = np.array(X, dtype= np.float32), np.array(y, dtype = np.float32)
-                  self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X / np.max(self.X), self.y, test_size=0.2, random_state=42)
+                  self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X / np.max(self.X), self.y, test_size=0.01, random_state=42)
                   self.learning_rate = learning_rate
                   self.epochs = epochs
             except Exception as e:

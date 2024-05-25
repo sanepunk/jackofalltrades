@@ -9,21 +9,17 @@ import sklearn.metrics as metrics
 
 # Class for implementing Linear Regression
 class LinearRegression:
-      def __init__(self, X: pd.DataFrame , y: pd.Series, learning_rate : float = 0.03, epochs : int = 10000, regularization_strength: float = 0.1) -> None:
+      def __init__(self, learning_rate : float = 0.03, epochs : int = 10000, regularization_strength: float = 0.1) -> None:
             """
             Initialize the LinearRegression object.
 
             Parameters:
-            - X: Input features as a pandas DataFrame.
-            - y: Target variable as a pandas Series.
             - learning_rate: Learning rate for gradient descent (default = 0.03).
             - epochs: Number of training iterations (default = 10000).
+            - regularization_strength (default = 0.1)
             """
             try:
                   self.regularization_strength = regularization_strength
-                  self.X, self.y = np.array(X, dtype= np.float32), np.array(y, dtype = np.float32)
-                  self.X = self.Standard(self.X)
-                  self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, test_size=0.01, random_state=42)
                   self.learning_rate = learning_rate
                   self.epochs = epochs
             except Exception as e:
@@ -34,11 +30,17 @@ class LinearRegression:
             g = SS.fit(X)
             g = SS.transform(X)
             return g
-      def fit(self) -> None:
+      def fit(self, X: pd.DataFrame , y: pd.Series) -> None:
             """
             Train the linear regression model using gradient descent.
+            Parameters:
+            - X: Input features as a pandas DataFrame.
+            - y: Target variable as a pandas Series.
             """
             try:
+                  self.X, self.y = np.array(X, dtype= np.float32), np.array(y, dtype = np.float32)
+                  self.X = self.Standard(self.X)
+                  self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X, self.y, test_size=0.01, random_state=42)
                   self.m, self.n = self.X_train.shape
                   self.w = np.random.normal(size=self.n)
                   self.b = 0
@@ -93,20 +95,17 @@ class LinearRegression:
 
 class LogisticRegression:
 
-      def __init__(self, X: pd.DataFrame , y: pd.Series, learning_rate : float = 0.03, epochs : int = 10000, regularization_strength: float = 0.1) -> None:
+      def __init__(self, learning_rate : float = 0.03, epochs : int = 10000, regularization_strength: float = 0.1) -> None:
             """
             Initialize the LogisticRegression object.
 
             Parameters:
-            - X: Input features as a pandas DataFrame.
-            - y: Target variable as a pandas Series.
             - learning_rate: Learning rate for gradient descent (default = 0.03).
             - epochs: Number of training iterations (default = 10000).
+            - regularization_strength (default = 0.1)
             """
             try:
                   self.regularization_strength = regularization_strength
-                  self.X, self.y = np.array(X, dtype= np.float32), np.array(y, dtype = np.float32)
-                  self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X / np.max(self.X), self.y, test_size=0.01, random_state=42)
                   self.learning_rate = learning_rate
                   self.epochs = epochs
             except Exception as e:
@@ -124,11 +123,17 @@ class LogisticRegression:
             """
             return 1 / (1 + np.exp(-z))
       
-      def fit(self) -> None:
+      def fit(self,  X: pd.DataFrame , y: pd.Series) -> None:
             """   
             Train the logistic regression model using gradient descent.
+            Parameters:
+            - X: Input features as a pandas DataFrame.
+            - y: Target variable as a pandas Series.
             """
             try:
+                  self.X, self.y = np.array(X, dtype= np.float32), np.array(y, dtype = np.float32)
+                  self.X = self.Standard(self.X)
+                  self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(self.X / np.max(self.X), self.y, test_size=0.01, random_state=42)
                   self.m, self.n = self.X_train.shape
                   self.w = np.zeros(self.n)
                   self.b = 0
@@ -160,6 +165,7 @@ class LogisticRegression:
             Returns:
             - Predicted target variable as a numpy array.
             """
+            X_test = self.Standard(X_test)
             return (self.sigmoid(np.dot(np.array(X_test , dtype = np.float32) / np.max(self.X), self.w) + self.b) > 0.5).astype(int)
 
       def plot_cost(self) -> None:

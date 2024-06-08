@@ -50,7 +50,7 @@ setup(
         """,
     author = "Sane Punk",
     author_email = "punk00pp@gmail.com",
-    url = "lazy-punk.github.io",  # Replace with your project URL
+    url = "https://lazy-punk.github.io/",  # Replace with your project URL
     version = "0.0.2-alpha.1",
     package_data={'jackofalltrades': ['datasets/*.csv','*.txt']},
     include_package_data=True,

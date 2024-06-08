@@ -38,5 +38,5 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project.urls]
-homepage = "lazy-punk.github.io"
+homepage = "https://lazy-punk.github.io/"
 Documentation = "https://github.com/lazy-punk/jackofalltrades"  # Replace with your documentation URL (coming soon)

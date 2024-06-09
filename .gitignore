@@ -1,0 +1,8 @@
+.idea/
+.venv/
+testing.py
+__pycache__/
+ipynb_checkpoints/
+requirements.txt
+new.py
+new.ipynb

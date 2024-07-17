@@ -1,3 +1,5 @@
+from functools import partial
+
 import jax.numpy as jnp
 import numpy as np
 import pandas as pd
@@ -47,17 +49,20 @@ class LinearRegression:
         g = SS.fit_transform(np.array(X, dtype=np.float32))
         return jnp.array(g)
 
+    @partial(jax.jit, static_argnums=0)
     def forward(self, X, params):
         return jnp.dot(X, params['w']) + params['b']
 
+    @partial(jax.jit, static_argnums=0)
     def loss(self, params, X, y):
         y_pred = self.forward(X, params)
         return jnp.mean(jnp.square(y_pred - y))
 
-    def update(self, params, grads):
-        for key, value in grads.items():
-            params[key] -= self.learning_rate * value
-        return params
+    @partial(jax.jit, static_argnums=0)
+    def update(self, params, grads, opt_state):
+        updates, opt_state = optax.adamw(self.learning_rate).update(grads, opt_state, params)
+        new_params = optax.apply_updates(params, updates)
+        return new_params, opt_state
 
     def fit(self, X: Union[pd.DataFrame, np.ndarray], y: Union[pd.Series, np.ndarray], validation_split=0.2,
             early_stop_patience=5) -> None:
@@ -92,8 +97,7 @@ class LinearRegression:
                 for _ in range(10):
                     loss, grads = jax.value_and_grad(self.loss, argnums=0, allow_int=True)(self.params, X, y)
                     acc = round(metrics.r2_score(y, self.forward(X, self.params)), 5)
-                    updates, opt_state = solver.update(grads, opt_state, self.params)
-                    self.params = optax.apply_updates(self.params, updates)
+                    self.params, opt_state = self.update(self.params, grads, opt_state)
                     # self.params = self.update(self.params, grads)
                     self.cost.append(loss)
                     self.epoch.append(i)

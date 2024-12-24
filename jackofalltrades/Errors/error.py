@@ -1,6 +1,53 @@
 import jax.numpy as np
 from sklearn.metrics import confusion_matrix
 
+
+def r2score(y_true ,y_pred):
+      return 1 - (np.sum(np.square(y_true - y_pred)) / np.sum(np.square(y_true - np.mean(y_true))))
+
+def accuracy(y_true, y_pred):
+      return np.mean(y_pred == y_true)
+
+def mse(y_true, y_pred):
+      return np.mean(np.square((y_true - y_pred)))
+
+def rmse(y_true, y_pred):
+      return np.sqrt(np.mean(np.square((y_true - y_pred))))
+
+def mae(y_true, y_pred):
+      return np.mean(np.abs((y_true - y_pred)))
+
+def soae(y_true, y_pred):
+        return np.abs(np.sum(y_true - y_pred))
+
+def soe(y_true, y_pred):
+        return np.sum(y_true - y_pred)
+
+def mape(y_true, y_pred):
+        return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+
+def adjusted_r2score(y_true, y_pred, n, p):
+        return 1 - ((1 - r2score(y_true, y_pred)) * (n - 1) / (n - p - 1))
+
+def precision(y_true, y_pred):
+        cm = confusion_matrix(y_true, y_pred)
+        TN, FP, FN, TP = cm.ravel()
+        return TP / (TP + FP)
+
+def recall(y_true, y_pred):
+        cm = confusion_matrix(y_true, y_pred)
+        TN, FP, FN, TP = cm.ravel()
+        return TP / (TP + FN)
+
+def f1score(y_true, y_pred):
+        cm = confusion_matrix(y_true, y_pred)
+        TN, FP, FN, TP = cm.ravel()
+        return 2 * TP / (2 * TP + FP + FN)
+
+def cross_entropy(y_true, y_pred):
+        return (1 - y_true) * np.log(1 - y_pred) + y_true * np.log(y_pred)
+
+
 class Error:
       """
       Class to calculate various error metrics for regression and classification tasks.

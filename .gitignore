@@ -2,7 +2,13 @@
 .venv/
 testing.py
 __pycache__/
-ipynb_checkpoints/
+.ipynb_checkpoints/
 requirements.txt
 new.py
 new.ipynb
+*.npy
+new.js
+new.go
+gian.py
+safe.py
+testing.py

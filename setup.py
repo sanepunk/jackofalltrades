@@ -7,8 +7,6 @@ long_description = (this_directory / "README.txt").read_text()
 setup(
     name = "jackofalltrades",
     packages=find_packages(exclude=["*.tests", "*.txt", "test"]),
-    long_description=long_description,
-    long_description_content_type="text/plain",
     description = """
         Jack of All Trades: A Simple and User-Friendly Machine Learning Toolkit
 
@@ -51,7 +49,7 @@ setup(
     author = "Sane Punk",
     author_email = "punk00pp@gmail.com",
     url = "https://lazy-punk.github.io/",  # Replace with your project URL
-    version = "0.0.2-alpha.1",
+    version = "0.0.2-beta.1",
     package_data={'jackofalltrades': ['datasets/*.csv','*.txt']},
     include_package_data=True,
     test_suite='test',

@@ -6,13 +6,11 @@ from sklearn.model_selection import train_test_split
 from matplotlib import pyplot as plt
 from tqdm.auto import tqdm
 from sklearn.preprocessing import StandardScaler
-# from sklearn.metrics import mean_squared_error, r2_score
 import tensorflow as tf
 from typing import Union
 import sklearn.metrics as metrics
 import jax
 import optax
-import jackofalltrades.Errors.error
 from jackofalltrades.Errors import r2score, accuracy
 
 

@@ -14,7 +14,6 @@ import optax
 from jackofalltrades.Errors import r2score, accuracy
 
 
-# Class for implementing Linear Regression
 class AdaptiveRegression:
     def __init__(self, learning_rate: float = 0.03, epochs: int = 10000, regularization_strength: float = 0.1,
                  data_regularization=True) -> None:

@@ -1,6 +1,6 @@
 [project]
 name = "jackofalltrades"
-version = "0.0.2-beta.1"
+version = "0.0.2-alpha.1"
 readme = "README.txt"
 description = """
 Tired of complex machine learning libraries? Introducing jackofalltrades, a streamlined Python package designed to make machine learning accessible for everyone.
@@ -22,7 +22,7 @@ Embrace simplicity and unlock the power of machine learning with jackofalltrades
 """
 authors = [{ name = "Sane Punk", email = "punk00pp@gmail.com" }]
 license = { text = "MIT" }
-dependencies = ["pandas>=2.2.2", "numpy>=1.26.4", "scikit-learn>=1.5.0", "matplotlib>=3.9.0", "jax[cpu]>=0.4.28", "tqdm>=4.66.4", "tensorflow>=2.14.1", "optax>=0.2.2", "flax>=0.5.1", "torch>=1.10.0"]
+dependencies = ["pandas>=2.2.2", "numpy>=1.26.4", "scikit-learn>=1.5.0", "matplotlib>=3.9.0", "jax[cpu]>=0.4.28", "tqdm>=4.66.4", "tensorflow>=2.14.1"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -39,4 +39,4 @@ build-backend = "setuptools.build_meta"
 
 [project.urls]
 homepage = "https://lazy-punk.github.io/"
-Documentation = "https://lazy-punk.github.io/"  # Replace with your documentation URL (coming soon)
+Documentation = "https://github.com/lazy-punk/jackofalltrades"  # Replace with your documentation URL (coming soon)

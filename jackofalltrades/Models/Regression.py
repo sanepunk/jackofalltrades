@@ -203,9 +203,12 @@ class LogisticRegression:
                 dw, db = grads
                 self.w -= self.learning_rate * dw
                 self.b -= self.learning_rate * db
+                if loss_value >= self.cost[-1]:
+                    print("Early Stopping")
+                    break
                 self.cost.append(loss_value)
                 self.epoch.append(i)
-                description.set_description(f"Cost: {self.cost[-1]}")
+                description.set_description(f"Cost: {self.cost[-1]}, Acc: {accuracy(y_train, jax.nn.sigmoid(jnp.dot(X_train, self.w) + self.b) > 0.5)}")
 
         except Exception as e:
             print("An error occurred during fitting:", str(e))

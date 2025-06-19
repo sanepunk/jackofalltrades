@@ -2,6 +2,9 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPool2D, BatchNormalization, InputLayer
 import tensorflow as tf
 import numpy as np
+import jax
+from jax import numpy as jnp
+from collections import Counter
 
 class ImageClassification:
     def __init__(self, input_shape: tuple = (28, 28, 1), num_classes: int = 8, label_type: str = 'categorical',
@@ -296,6 +299,181 @@ class ImageClassification:
             self.cache_model = tf.keras.models.load_model(path)
         except Exception as e:
             raise Exception(f"Error loading the model: {e}")
+
+
+class DecisionTree:
+    def __init__(self, max_depth=None):
+        self.max_depth = max_depth
+        self.tree = None
+
+    def fit(self, X, y):
+        self.y = y
+        self.tree = self._build_tree(X, y)
+
+    def _build_tree(self, X, y, depth=0):
+        X = jnp.array(X)
+        y = jnp.array(y)
+        num_samples, num_features = X.shape
+        if num_samples == 0 or (self.max_depth is not None and depth >= self.max_depth):
+            return None
+
+        # If all targets are the same, return a leaf node with that class
+        if len(jnp.unique(y)) == 1:
+            return {'type': 'leaf', 'class': y[0]}
+
+        # Find the best split
+        best_feature, best_threshold = self._find_best_split(X, y)
+        if best_feature is None:
+            return {'type': 'leaf', 'class': Counter(y.tolist()).most_common(1)[0][0]}
+
+        # Split the data
+        left_indices = X[:, best_feature] < best_threshold
+        right_indices = ~left_indices
+        left_subtree = self._build_tree(X[left_indices], y[left_indices], depth + 1)
+        right_subtree = self._build_tree(X[right_indices], y[right_indices], depth + 1)
+
+        return {
+            'type': 'node',
+            'feature': best_feature,
+            'threshold': best_threshold,
+            'left': left_subtree,
+            'right': right_subtree
+        }
+
+    def _find_best_split(self, X, y):
+        num_samples, num_features = X.shape
+        best_feature, best_threshold = None, None
+        best_gini = float('inf')
+
+        for feature in range(num_features):
+            thresholds = jnp.unique(X[:, feature])
+            for threshold in thresholds:
+                gini = self._gini_impurity(X[:, feature], y, threshold)
+                if gini < best_gini:
+                    best_gini = gini
+                    best_feature = feature
+                    best_threshold = threshold
+
+        return best_feature, best_threshold
+
+    def _gini_impurity(self, feature_values, y, threshold):
+        left_indices = feature_values < threshold
+        right_indices = ~left_indices
+        left_impurity = self._calculate_gini(y[left_indices])
+        right_impurity = self._calculate_gini(y[right_indices])
+        left_weight = jnp.sum(left_indices) / len(y)
+        right_weight = jnp.sum(right_indices) / len(y)
+        return left_weight * left_impurity + right_weight * right_impurity
+
+    @staticmethod
+    def _calculate_gini(y):
+        if len(y) == 0:
+            return 0
+        class_counts = jnp.array(list(Counter(y.tolist()).values()))
+        probabilities = class_counts / len(y)
+        return 1 - jnp.sum(probabilities ** 2)
+
+    def predict(self, X):
+        return jnp.array([self._predict_sample(sample) for sample in X])
+
+    def _predict_sample(self, sample):
+        node = self.tree
+        while node is not None and node['type'] == 'node':  # Check if node is not None
+            if sample[node['feature']] < node['threshold']:
+                node = node['left']
+            else:
+                node = node['right']
+
+        # Handle the case where node is None (could happen if tree is empty or sample falls outside defined splits)
+        return node['class'] if node is not None else self._most_common_class(self.y) # Predicting the most common class in the training data as a fallback
+
+
+class DecisionTree1:
+    def __init__(self, max_depth=None):
+        self.max_depth = max_depth
+        self.tree = None
+
+    def fit(self, X, y):
+        self.tree = self._build_tree(X, y)
+
+    def _build_tree(self, X, y, depth=0):
+        num_samples, num_features = X.shape
+        if num_samples == 0 or (self.max_depth is not None and depth >= self.max_depth):
+            return None
+
+        # If all targets are the same, return a leaf node with that class
+        unique_classes = jnp.unique(y)
+        if len(unique_classes) == 1:
+            return {'type': 'leaf', 'class': y[0]}
+
+        # Find the best split
+        best_feature, best_threshold = self._find_best_split(X, y)
+        if best_feature is None:
+            return {'type': 'leaf', 'class': self._most_common_class(y)}
+
+        # Split the data
+        left_indices = X[:, best_feature] < best_threshold
+        right_indices = ~left_indices
+        left_subtree = self._build_tree(X[left_indices], y[left_indices], depth + 1)
+        right_subtree = self._build_tree(X[right_indices], y[right_indices], depth + 1)
+
+        return {
+            'type': 'node',
+            'feature': best_feature,
+            'threshold': best_threshold,
+            'left': left_subtree,
+            'right': right_subtree
+        }
+
+    def _find_best_split(self, X, y):
+        num_samples, num_features = X.shape
+        best_feature, best_threshold = None, None
+        best_gini = float('inf')
+
+        for feature in range(num_features):
+            thresholds = jnp.unique(X[:, feature])
+            for threshold in thresholds:
+                gini = self._gini_impurity(X[:, feature], y, threshold)
+                if gini < best_gini:
+                    best_gini = gini
+                    best_feature = feature
+                    best_threshold = threshold
+
+        return best_feature, best_threshold
+
+    def _gini_impurity(self, feature_values, y, threshold):
+        left_indices = feature_values < threshold
+        right_indices = ~left_indices
+        left_impurity = self._calculate_gini(y[left_indices])
+        right_impurity = self._calculate_gini(y[right_indices])
+        left_weight = jnp.sum(left_indices) / len(y)
+        right_weight = jnp.sum(right_indices) / len(y)
+        return left_weight * left_impurity + right_weight * right_impurity
+
+    def _calculate_gini(self, y):
+        if len(y) == 0:
+            return 0
+        unique, counts = jnp.unique(y, return_counts=True)
+        probabilities = counts / len(y)
+        return 1 - jnp.sum(probabilities ** 2)
+
+    def _most_common_class(self, y):
+        unique, counts = jnp.unique(y, return_counts=True)
+        return unique[jnp.argmax(counts)]
+
+    def predict(self, X):
+        return jnp.array([self._predict_sample(sample) for sample in X])
+
+    def _predict_sample(self, sample):
+        node = self.tree
+        while node['type'] == 'node':
+            if sample[node['feature']] < node['threshold']:
+                node = node['left']
+            else:
+                node = node['right']
+        return node['class']
+
+
 
 # Usage Example
 # from jackofalltrades.Models.Classification import ImageClassification

@@ -1,7 +1,7 @@
 from .Regression import (LinearRegression, LogisticRegression, MLPRegressor, RidgeRegression,
 						 AdaptiveRegression)
-from .Classification import ImageClassification
+from .Classification import ImageClassification, DecisionTree, KNNClassifier
 
-from .GAN import Generator, Discriminator, GAN
+from .GAN import GAN
 
-from .VAE import EncoderDecoder, Encoder, Decoder, load_params, save_params, optimizer, update
+# from .VAE import EncoderDecoder, Encoder, Decoder, load_params, save_params, optimizer, update

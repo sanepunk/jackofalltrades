@@ -1,5 +1,18 @@
 import jax.numpy as np
-from sklearn.metrics import confusion_matrix
+import pandas as pd
+from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score
+
+
+def _to_np(arr):
+      """
+      Convert pandas Series/DataFrame or other array-likes to numpy (float32)
+      so JAX receives compatible inputs.
+      """
+      if isinstance(arr, pd.Series):
+            return arr.to_numpy(dtype=np.float32)
+      if isinstance(arr, pd.DataFrame):
+            return arr.to_numpy(dtype=np.float32)
+      return np.asarray(arr, dtype=np.float32)
 
 
 def r2score(y_true ,y_pred):
@@ -22,6 +35,7 @@ def r2score(y_true ,y_pred):
       Returns:
       - R-squared value.
       """
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
       return 1 - (np.sum(np.square(y_true - y_pred)) / np.sum(np.square(y_true - np.mean(y_true))))
 
 def accuracy(y_true, y_pred):
@@ -40,6 +54,7 @@ def accuracy(y_true, y_pred):
       Returns:
       - Accuracy value.
       """
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
       return np.mean(y_pred == y_true)
 
 def mse(y_true, y_pred):
@@ -60,6 +75,7 @@ def mse(y_true, y_pred):
       Returns:
       - Mean Squared Error value.
       """
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
       return np.mean(np.square((y_true - y_pred)))
 
 def rmse(y_true, y_pred):
@@ -79,6 +95,7 @@ def rmse(y_true, y_pred):
       Returns:
       - Root Mean Squared Error value.
       """
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
       return np.sqrt(np.mean(np.square((y_true - y_pred))))
 
 def mae(y_true, y_pred):
@@ -97,6 +114,7 @@ def mae(y_true, y_pred):
       Returns:
       - Mean Absolute Error value.
       """
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
       return np.mean(np.abs((y_true - y_pred)))
 
 def soae(y_true, y_pred):
@@ -115,6 +133,7 @@ def soae(y_true, y_pred):
       Returns:
       - Sum of Absolute Errors value.
       """
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
       return np.abs(np.sum(y_true - y_pred))
 
 def soe(y_true, y_pred):
@@ -133,6 +152,7 @@ def soe(y_true, y_pred):
       Returns:
       - Sum of Errors value.
       """
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
       return np.sum(y_true - y_pred)
 
 def mape(y_true, y_pred):
@@ -151,6 +171,7 @@ def mape(y_true, y_pred):
       Returns:
       - Mean Absolute Percentage Error value.
       """
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
       return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
 
 def adjusted_r2score(y_true, y_pred, n, p):
@@ -177,82 +198,94 @@ def adjusted_r2score(y_true, y_pred, n, p):
       Returns:
       - Adjusted R-squared value.
       """
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
       return 1 - ((1 - r2score(y_true, y_pred)) * (n - 1) / (n - p - 1))
 
-def precision(y_true, y_pred):
+def precision(y_true, y_pred, average='macro'):
       """
-      Calculate the precision between true and predicted binary classifications.
+      Calculate the precision between true and predicted classifications.
+      Supports both binary and multi-class classification.
 
-      Precision is the ratio of correctly predicted positive observations to the total
-      predicted positives. It is calculated as:
-
+      For binary classification:
             Precision = TP / (TP + FP)
-
-      where:
-      - TP is the number of true positives.
-      - FP is the number of false positives.
+      
+      For multi-class classification, computes macro-averaged precision:
+            Precision = (1/n_classes) * Σ(TP_i / (TP_i + FP_i))
 
       Parameters:
-      - y_true: Actual binary values.
-      - y_pred: Predicted binary values.
+      - y_true: Actual labels (binary or multi-class).
+      - y_pred: Predicted labels (binary or multi-class).
+      - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
+                Default is 'macro' for universal compatibility.
 
       Returns:
-      - Precision value.
+      - Precision value (scalar for binary/macro, array for per-class if average=None).
       """
-      cm = confusion_matrix(y_true, y_pred)
-      TN, FP, FN, TP = cm.ravel()
-      return TP / (TP + FP)
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+      # Convert to numpy arrays for sklearn compatibility
+      y_true_np = np.asarray(y_true)
+      y_pred_np = np.asarray(y_pred)
+      return precision_score(y_true_np, y_pred_np, average=average, zero_division=0)
 
-def recall(y_true, y_pred):
+def recall(y_true, y_pred, average='macro'):
       """
-      Calculate the recall (sensitivity) between true and predicted binary classifications.
+      Calculate the recall (sensitivity) between true and predicted classifications.
+      Supports both binary and multi-class classification.
 
-      Recall is the ratio of correctly predicted positive observations to all observations
-      in the actual class. It is calculated as:
-
+      For binary classification:
             Recall = TP / (TP + FN)
-
-      where:
-      - TP is the number of true positives.
-      - FN is the number of false negatives.
+      
+      For multi-class classification, computes macro-averaged recall:
+            Recall = (1/n_classes) * Σ(TP_i / (TP_i + FN_i))
 
       Parameters:
-      - y_true: Actual binary values.
-      - y_pred: Predicted binary values.
+      - y_true: Actual labels (binary or multi-class).
+      - y_pred: Predicted labels (binary or multi-class).
+      - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
+                Default is 'macro' for universal compatibility.
 
       Returns:
-      - Recall value.
+      - Recall value (scalar for binary/macro, array for per-class if average=None).
       """
-      cm = confusion_matrix(y_true, y_pred)
-      TN, FP, FN, TP = cm.ravel()
-      return TP / (TP + FN)
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+      # Convert to numpy arrays for sklearn compatibility
+      y_true_np = np.asarray(y_true)
+      y_pred_np = np.asarray(y_pred)
+      return recall_score(y_true_np, y_pred_np, average=average, zero_division=0)
 
-def f1score(y_true, y_pred):
+def f1score(y_true, y_pred, average='macro'):
       """
       Calculate the F1 Score between true and predicted values.
+      Supports both binary and multi-class classification.
 
       The F1 Score is the harmonic mean of precision and recall, providing a balance
-      between the two, especially useful for imbalanced datasets. It is calculated as:
+      between the two, especially useful for imbalanced datasets.
 
+      For binary classification:
             F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
-
-      where:
-      - Precision = TP / (TP + FP)
-      - Recall = TP / (TP + FN)
-      - TP: True Positives
-      - FP: False Positives
-      - FN: False Negatives
+      
+      For multi-class classification, computes macro-averaged F1:
+            F1 = (1/n_classes) * Σ(F1_i)
+            where F1_i = 2 * (Precision_i * Recall_i) / (Precision_i + Recall_i)
 
       Parameters:
-      - y_true: Actual binary labels.
-      - y_pred: Predicted binary labels.
+      - y_true: Actual labels (binary or multi-class).
+      - y_pred: Predicted labels (binary or multi-class).
+      - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
+                Default is 'macro' for universal compatibility.
+                - 'macro': Calculate metrics for each class and average (unweighted)
+                - 'micro': Calculate metrics globally by counting total TP, FN, FP
+                - 'weighted': Calculate metrics for each class and average (weighted by support)
+                - None: Return per-class F1 scores
 
       Returns:
-      - F1 Score value.
+      - F1 Score value (scalar for binary/macro/micro/weighted, array for per-class if average=None).
       """
-      cm = confusion_matrix(y_true, y_pred)
-      TN, FP, FN, TP = cm.ravel()
-      return 2 * TP / (2 * TP + FP + FN)
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+      # Convert to numpy arrays for sklearn compatibility
+      y_true_np = np.asarray(y_true)
+      y_pred_np = np.asarray(y_pred)
+      return f1_score(y_true_np, y_pred_np, average=average, zero_division=0)
 
 def cross_entropy(y_true, y_pred):
       """
@@ -276,6 +309,7 @@ def cross_entropy(y_true, y_pred):
       Returns:
       - Cross-Entropy Loss value.
       """
+      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
       return (1 - y_true) * np.log(1 - y_pred) + y_true * np.log(y_pred)
 
 
@@ -400,56 +434,73 @@ class Error:
       def Accuracy(self) -> np.array:
             """
             Calculate the Accuracy.
+            Supports both binary and multi-class classification.
 
             Returns:
                   np.array: The calculated Accuracy value.
             """
             try:
-                  cm = confusion_matrix(self.y_true, self.y_predicted)
-                  TN, FP, FN, TP = cm.ravel()
-                  return (TP + TN) / (TP + TN + FP + FN)
+                  # For multi-class, accuracy is simply the ratio of correct predictions
+                  y_true_np = np.asarray(self.y_true)
+                  y_pred_np = np.asarray(self.y_predicted)
+                  return np.mean(y_true_np == y_pred_np)
             except Exception as e:
                   raise Exception(f"Error: {e}")
   
-      def Precision(self) -> np.array:
+      def Precision(self, average='macro') -> np.array:
             """
             Calculate the Precision.
+            Supports both binary and multi-class classification.
+
+            Parameters:
+            - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
+                      Default is 'macro' for universal compatibility.
 
             Returns:
                   np.array: The calculated Precision value.
             """
             try:
-                  cm = confusion_matrix(self.y_true, self.y_predicted)
-                  TN, FP, FN, TP = cm.ravel()
-                  return TP / (TP + FP)
+                  y_true_np = np.asarray(self.y_true)
+                  y_pred_np = np.asarray(self.y_predicted)
+                  return precision_score(y_true_np, y_pred_np, average=average, zero_division=0)
             except Exception as e:
                   raise Exception(f"Error: {e}")
   
-      def Recall(self) -> np.array:
+      def Recall(self, average='macro') -> np.array:
             """
             Calculate the Recall.
+            Supports both binary and multi-class classification.
+
+            Parameters:
+            - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
+                      Default is 'macro' for universal compatibility.
 
             Returns:
                   np.array: The calculated Recall value.
             """
             try:
-                  cm = confusion_matrix(self.y_true, self.y_predicted)
-                  TN, FP, FN, TP = cm.ravel()
-                  return TP / (TP + FN) 
+                  y_true_np = np.asarray(self.y_true)
+                  y_pred_np = np.asarray(self.y_predicted)
+                  return recall_score(y_true_np, y_pred_np, average=average, zero_division=0)
             except Exception as e:
                   raise Exception(f"Error: {e}")  
   
-      def F1Score(self) -> np.array:
+      def F1Score(self, average='macro') -> np.array:
             """
             Calculate the F1 Score.
+            Supports both binary and multi-class classification.
+
+            Parameters:
+            - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
+                      Default is 'macro' for universal compatibility.
 
             Returns:
                   np.array: The calculated F1 Score value.
             """
             try:
-                  cm = confusion_matrix(self.y_true, self.y_predicted)
-                  TN, FP, FN, TP = cm.ravel()
-                  return 2 * TP / (2 * TP + FP + FN)
+                  y_true_np = np.asarray(self.y_true)
+                  y_pred_np = np.asarray(self.y_predicted)
+                  return f1_score(y_true_np, y_pred_np, average=average, zero_division=0)
             except Exception as e:
                   raise Exception(f"Error: {e}")
   

@@ -7,6 +7,20 @@ long_description = (this_directory / "README.txt").read_text()
 setup(
     name = "jackofalltrades",
     packages=find_packages(exclude=["*.tests", "*.txt", "test"]),
+    install_requires=[
+        "pandas>=2.2.2",
+        "numpy>=1.26.4",
+        "scikit-learn>=1.5.0",
+        "matplotlib>=3.9.0",
+        "jax[cpu]>=0.4.28",
+        "jaxlib>=0.4.28",
+        "tqdm>=4.66.0",
+        "tensorflow>=2.14.1",
+        "optax>=0.2.2",
+        "flax>=0.8.1",
+        "torch>=1.10.0",
+    ],
+    python_requires=">=3.10",
     description = """
         Jack of All Trades: A Simple and User-Friendly Machine Learning Toolkit
 
@@ -49,7 +63,7 @@ setup(
     author = "Sane Punk",
     author_email = "punk00pp@gmail.com",
     url = "https://lazy-punk.github.io/",  # Replace with your project URL
-    version = "0.0.2-beta.1",
+    version = "0.0.2",
     package_data={'jackofalltrades': ['datasets/*.csv','*.txt']},
     include_package_data=True,
     test_suite='test',

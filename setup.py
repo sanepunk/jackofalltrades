@@ -2,11 +2,19 @@ from setuptools import setup, find_packages
 from pathlib import Path
 
 this_directory = Path(__file__).parent
-long_description = (this_directory / "README.txt").read_text()
+# Try README.md first (markdown), fallback to README.txt (plain text)
+try:
+    long_description = (this_directory / "README.md").read_text(encoding='utf-8')
+    long_description_content_type = "text/markdown"
+except FileNotFoundError:
+    long_description = (this_directory / "README.txt").read_text(encoding='utf-8')
+    long_description_content_type = "text/plain"
 
 setup(
     name = "jackofalltrades",
     packages=find_packages(exclude=["*.tests", "*.txt", "test"]),
+    long_description=long_description,
+    long_description_content_type=long_description_content_type,
     install_requires=[
         "pandas>=2.2.2",
         "numpy>=1.26.4",
@@ -63,7 +71,7 @@ setup(
     author = "Sane Punk",
     author_email = "punk00pp@gmail.com",
     url = "https://lazy-punk.github.io/",  # Replace with your project URL
-    version = "0.0.2",
+    version = "0.0.2a2",
     package_data={'jackofalltrades': ['datasets/*.csv','*.txt']},
     include_package_data=True,
     test_suite='test',

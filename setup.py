@@ -20,7 +20,7 @@ setup(
         "numpy>=1.26.4",
         "scikit-learn>=1.5.0",
         "matplotlib>=3.9.0",
-        "jax[cpu]>=0.4.28",
+        "jax>=0.4.28",
         "jaxlib>=0.4.28",
         "tqdm>=4.66.0",
         "tensorflow>=2.14.1",
@@ -71,7 +71,7 @@ setup(
     author="Sane Punk",
     author_email="punk00pp@gmail.com",
     url="https://lazy-punk.github.io/",  # Replace with your project URL
-    version="0.0.2a2",
+    version="0.0.3",
     package_data={"jackofalltrades": ["datasets/*.csv", "*.txt"]},
     include_package_data=True,
     test_suite="test",

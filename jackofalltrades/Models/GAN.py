@@ -164,7 +164,7 @@ import jax
 import jax.numpy as jnp
 from flax import nnx
 import optax
-from typing import Literal, Tuple, List, Union
+from typing import Literal
 from tqdm.auto import tqdm
 
 # Conditional imports for interoperability
@@ -178,25 +178,54 @@ try:
 except ImportError:
     tf = None
 
+
 class _Generator(nnx.Module):
     def __init__(self, noise_dim, output_channels, feature_maps, rngs: nnx.Rngs):
         super().__init__()
         self.feature_maps = feature_maps
-        
+
         self.fc = nnx.Linear(noise_dim, feature_maps * 8 * 4 * 4, rngs=rngs)
         self.bn0 = nnx.BatchNorm(feature_maps * 8, rngs=rngs)
 
         # padding='SAME' ensures correct 2x scaling with stride=2
-        self.conv1 = nnx.ConvTranspose(feature_maps * 8, feature_maps * 4, kernel_size=(4, 4), strides=(2, 2), padding='SAME', rngs=rngs)
+        self.conv1 = nnx.ConvTranspose(
+            feature_maps * 8,
+            feature_maps * 4,
+            kernel_size=(4, 4),
+            strides=(2, 2),
+            padding="SAME",
+            rngs=rngs,
+        )
         self.bn1 = nnx.BatchNorm(feature_maps * 4, rngs=rngs)
 
-        self.conv2 = nnx.ConvTranspose(feature_maps * 4, feature_maps * 2, kernel_size=(4, 4), strides=(2, 2), padding='SAME', rngs=rngs)
+        self.conv2 = nnx.ConvTranspose(
+            feature_maps * 4,
+            feature_maps * 2,
+            kernel_size=(4, 4),
+            strides=(2, 2),
+            padding="SAME",
+            rngs=rngs,
+        )
         self.bn2 = nnx.BatchNorm(feature_maps * 2, rngs=rngs)
 
-        self.conv3 = nnx.ConvTranspose(feature_maps * 2, feature_maps, kernel_size=(4, 4), strides=(2, 2), padding='SAME', rngs=rngs)
+        self.conv3 = nnx.ConvTranspose(
+            feature_maps * 2,
+            feature_maps,
+            kernel_size=(4, 4),
+            strides=(2, 2),
+            padding="SAME",
+            rngs=rngs,
+        )
         self.bn3 = nnx.BatchNorm(feature_maps, rngs=rngs)
 
-        self.conv4 = nnx.ConvTranspose(feature_maps, output_channels, kernel_size=(4, 4), strides=(2, 2), padding='SAME', rngs=rngs)
+        self.conv4 = nnx.ConvTranspose(
+            feature_maps,
+            output_channels,
+            kernel_size=(4, 4),
+            strides=(2, 2),
+            padding="SAME",
+            rngs=rngs,
+        )
 
     def __call__(self, x):
         x = self.fc(x)
@@ -216,21 +245,50 @@ class _Generator(nnx.Module):
         x = nnx.tanh(x)
         return x
 
+
 class _Discriminator(nnx.Module):
     def __init__(self, input_channels, feature_dim, rngs: nnx.Rngs):
         super().__init__()
-        
-        self.conv1 = nnx.Conv(input_channels, feature_dim, kernel_size=(4, 4), strides=(2, 2), padding='SAME', rngs=rngs)
-        
-        self.conv2 = nnx.Conv(feature_dim, feature_dim * 2, kernel_size=(4, 4), strides=(2, 2), padding='SAME', rngs=rngs)
+
+        self.conv1 = nnx.Conv(
+            input_channels,
+            feature_dim,
+            kernel_size=(4, 4),
+            strides=(2, 2),
+            padding="SAME",
+            rngs=rngs,
+        )
+
+        self.conv2 = nnx.Conv(
+            feature_dim,
+            feature_dim * 2,
+            kernel_size=(4, 4),
+            strides=(2, 2),
+            padding="SAME",
+            rngs=rngs,
+        )
         self.bn2 = nnx.BatchNorm(feature_dim * 2, rngs=rngs)
-        
-        self.conv3 = nnx.Conv(feature_dim * 2, feature_dim * 4, kernel_size=(4, 4), strides=(2, 2), padding='SAME', rngs=rngs)
+
+        self.conv3 = nnx.Conv(
+            feature_dim * 2,
+            feature_dim * 4,
+            kernel_size=(4, 4),
+            strides=(2, 2),
+            padding="SAME",
+            rngs=rngs,
+        )
         self.bn3 = nnx.BatchNorm(feature_dim * 4, rngs=rngs)
-        
-        self.conv4 = nnx.Conv(feature_dim * 4, feature_dim * 8, kernel_size=(4, 4), strides=(2, 2), padding='SAME', rngs=rngs)
+
+        self.conv4 = nnx.Conv(
+            feature_dim * 4,
+            feature_dim * 8,
+            kernel_size=(4, 4),
+            strides=(2, 2),
+            padding="SAME",
+            rngs=rngs,
+        )
         self.bn4 = nnx.BatchNorm(feature_dim * 8, rngs=rngs)
-        
+
         self.linear = nnx.Linear(feature_dim * 8 * 4 * 4, 1, rngs=rngs)
 
     def __call__(self, x):
@@ -245,13 +303,20 @@ class _Discriminator(nnx.Module):
         x = self.conv4(x)
         x = self.bn4(x)
         x = nnx.leaky_relu(x, negative_slope=0.2)
-        x = x.reshape((x.shape[0], -1)) 
+        x = x.reshape((x.shape[0], -1))
         x = self.linear(x)
-        x = nnx.sigmoid(x) 
+        x = nnx.sigmoid(x)
         return x
 
+
 class GAN:
-    def __init__(self, noise_dim: int, image_channels: int, feature_maps_g: int = 64, feature_maps_d: int = 64):
+    def __init__(
+        self,
+        noise_dim: int,
+        image_channels: int,
+        feature_maps_g: int = 64,
+        feature_maps_d: int = 64,
+    ):
         self.noise_dim = noise_dim
         self.image_channels = image_channels
         self.feature_maps_g = feature_maps_g
@@ -261,8 +326,12 @@ class GAN:
         self.generator = _Generator(noise_dim, image_channels, feature_maps_g, rngs)
         self.discriminator = _Discriminator(image_channels, feature_maps_d, rngs)
 
-        self.optimizer_g = nnx.Optimizer(self.generator, optax.adam(learning_rate=0.0002, b1=0.5, b2=0.999))
-        self.optimizer_d = nnx.Optimizer(self.discriminator, optax.adam(learning_rate=0.0002, b1=0.5, b2=0.999))
+        self.optimizer_g = nnx.Optimizer(
+            self.generator, optax.adam(learning_rate=0.0002, b1=0.5, b2=0.999)
+        )
+        self.optimizer_d = nnx.Optimizer(
+            self.discriminator, optax.adam(learning_rate=0.0002, b1=0.5, b2=0.999)
+        )
 
     def _convert_input(self, data):
         if torch is not None and isinstance(data, torch.Tensor):
@@ -277,45 +346,55 @@ class GAN:
 
     def _convert_output(self, data, format_type: str):
         np_data = np.array(data)
-        if format_type == 'torch':
-            if torch is None: raise ImportError("Torch is not installed.")
+        if format_type == "torch":
+            if torch is None:
+                raise ImportError("Torch is not installed.")
             return torch.from_numpy(np_data)
-        elif format_type == 'tensorflow':
-            if tf is None: raise ImportError("TensorFlow is not installed.")
+        elif format_type == "tensorflow":
+            if tf is None:
+                raise ImportError("TensorFlow is not installed.")
             return tf.convert_to_tensor(np_data)
-        elif format_type == 'jax':
+        elif format_type == "jax":
             return data
-        elif format_type == 'numpy':
+        elif format_type == "numpy":
             return np_data
         else:
             raise ValueError(f"Unknown output format: {format_type}")
 
     def train(self, real_data, epochs: int, batch_size: int = 128, verbose: int = 1):
         X_train = self._convert_input(real_data)
-        
+
         # Auto-Resize to 64x64 to match Generator output
         if X_train.shape[1] != 64 or X_train.shape[2] != 64:
             if verbose > 0:
-                print(f"Resizing input from {X_train.shape[1:3]} to (64, 64) to match Generator architecture...")
-            X_train = jax.image.resize(X_train, shape=(X_train.shape[0], 64, 64, X_train.shape[3]), method='bilinear')
+                print(
+                    f"Resizing input from {X_train.shape[1:3]} to (64, 64) to match Generator architecture..."
+                )
+            X_train = jax.image.resize(
+                X_train,
+                shape=(X_train.shape[0], 64, 64, X_train.shape[3]),
+                method="bilinear",
+            )
 
         # Normalize to [-1, 1]
         X_train = (X_train.astype(jnp.float32) - 127.5) / 127.5
-        
+
         num_samples = X_train.shape[0]
         steps_per_epoch = num_samples // batch_size
 
         @nnx.jit
-        def train_step_D(discriminator, generator, optimizer_d, real_batch, noise_batch):
+        def train_step_D(
+            discriminator, generator, optimizer_d, real_batch, noise_batch
+        ):
             # 1. PREVENT MUTATION: Generator must be in EVAL mode while training Discriminator
-            generator.eval() 
+            generator.eval()
             fake_images = generator(noise_batch)
-            
+
             def loss_fn_d(discriminator):
                 # Discriminator stays in TRAIN mode here (default) to update its stats
                 real_logits = discriminator(real_batch)
                 d_loss_real = -jnp.mean(jnp.log(real_logits + 1e-8))
-                
+
                 fake_logits = discriminator(fake_images)
                 d_loss_fake = -jnp.mean(jnp.log(1 - fake_logits + 1e-8))
                 return d_loss_real + d_loss_fake
@@ -330,7 +409,7 @@ class GAN:
             # 2. PREVENT MUTATION: Discriminator must be in EVAL mode while training Generator
             # This ensures BN stats in Discriminator are NOT updated here.
             discriminator.eval()
-            
+
             def loss_fn_g(generator):
                 fake_images = generator(noise_batch)
                 fake_output = discriminator(fake_images)
@@ -348,65 +427,110 @@ class GAN:
             for epoch in range(epochs):
                 d_losses = []
                 g_losses = []
-                
+
                 perm = np.random.permutation(num_samples)
                 X_train = X_train[perm]
-                
+
                 for i in range(steps_per_epoch):
-                    real_batch = X_train[i*batch_size : (i+1)*batch_size]
-                    
+                    real_batch = X_train[i * batch_size : (i + 1) * batch_size]
+
                     # Train Discriminator
-                    noise = jax.random.normal(nnx.Rngs(epoch * steps_per_epoch + i).key(), (batch_size, self.noise_dim))
-                    
+                    noise = jax.random.normal(
+                        nnx.Rngs(epoch * steps_per_epoch + i).key(),
+                        (batch_size, self.noise_dim),
+                    )
+
                     # Reset D to train mode (it might have been set to eval by train_step_G previously)
-                    self.discriminator.train() 
-                    d_loss = train_step_D(self.discriminator, self.generator, self.optimizer_d, real_batch, noise)
+                    self.discriminator.train()
+                    d_loss = train_step_D(
+                        self.discriminator,
+                        self.generator,
+                        self.optimizer_d,
+                        real_batch,
+                        noise,
+                    )
                     d_losses.append(d_loss)
-                    
+
                     # Train Generator
-                    noise_g = jax.random.normal(nnx.Rngs((epoch * steps_per_epoch + i) + 1000).key(), (batch_size, self.noise_dim))
-                    
+                    noise_g = jax.random.normal(
+                        nnx.Rngs((epoch * steps_per_epoch + i) + 1000).key(),
+                        (batch_size, self.noise_dim),
+                    )
+
                     # Reset G to train mode (it was set to eval by train_step_D)
-                    self.generator.train() 
-                    g_loss = train_step_G(self.discriminator, self.generator, self.optimizer_g, noise_g)
+                    self.generator.train()
+                    g_loss = train_step_G(
+                        self.discriminator, self.generator, self.optimizer_g, noise_g
+                    )
                     g_losses.append(g_loss)
-                
-                pbar.set_description(f"Epoch {epoch + 1}/{epochs} | D: {np.mean(d_losses):.4f} | G: {np.mean(g_losses):.4f}")
+
+                pbar.set_description(
+                    f"Epoch {epoch + 1}/{epochs} | D: {np.mean(d_losses):.4f} | G: {np.mean(g_losses):.4f}"
+                )
                 pbar.update(1)
 
-    def generate(self, num_images: int, output_format: Literal['torch', 'jax', 'numpy'] = 'torch'):
+    def generate(
+        self, num_images: int, output_format: Literal["torch", "jax", "numpy"] = "torch"
+    ):
+        """Optimized image generation with support for large batches."""
         rng_key = nnx.Rngs(np.random.randint(0, 10000)).key()
         noise = jax.random.normal(rng_key, (num_images, self.noise_dim))
-        
+
+        # For very large batches, use chunked generation to avoid memory issues
+        if num_images > 1000:
+            return self._generate_chunked(noise, output_format)
+
         @nnx.jit
         def pred_step(model, z):
             model.eval()
             return model(z)
-            
+
         generated_images = pred_step(self.generator, noise)
+        return self._convert_output(generated_images, output_format)
+
+    def _generate_chunked(self, noise, output_format: str, chunk_size=500):
+        """Memory-efficient generation for large batches using chunking."""
+        generated_chunks = []
+
+        @nnx.jit
+        def pred_step(model, z_chunk):
+            model.eval()
+            return model(z_chunk)
+
+        for i in range(0, noise.shape[0], chunk_size):
+            chunk = noise[i : i + chunk_size]
+            generated_chunk = pred_step(self.generator, chunk)
+            generated_chunks.append(generated_chunk)
+
+        # Concatenate all chunks
+        generated_images = jnp.concatenate(generated_chunks, axis=0)
         return self._convert_output(generated_images, output_format)
 
     def save(self, path: str):
         if not os.path.exists(path):
             os.makedirs(path)
         _, state_g = nnx.split(self.generator)
-        with open(os.path.join(path, 'generator.pkl'), 'wb') as f:
+        with open(os.path.join(path, "generator.pkl"), "wb") as f:
             pickle.dump(state_g, f)
         _, state_d = nnx.split(self.discriminator)
-        with open(os.path.join(path, 'discriminator.pkl'), 'wb') as f:
+        with open(os.path.join(path, "discriminator.pkl"), "wb") as f:
             pickle.dump(state_d, f)
         print(f"GAN saved to {path}")
 
     def load(self, path: str):
         try:
-            with open(os.path.join(path, 'generator.pkl'), 'rb') as f:
+            with open(os.path.join(path, "generator.pkl"), "rb") as f:
                 state_g = pickle.load(f)
             nnx.update(self.generator, state_g)
-            with open(os.path.join(path, 'discriminator.pkl'), 'rb') as f:
+            with open(os.path.join(path, "discriminator.pkl"), "rb") as f:
                 state_d = pickle.load(f)
             nnx.update(self.discriminator, state_d)
-            self.optimizer_g = nnx.Optimizer(self.generator, optax.adam(0.0002, b1=0.5, b2=0.999))
-            self.optimizer_d = nnx.Optimizer(self.discriminator, optax.adam(0.0002, b1=0.5, b2=0.999))
+            self.optimizer_g = nnx.Optimizer(
+                self.generator, optax.adam(0.0002, b1=0.5, b2=0.999)
+            )
+            self.optimizer_d = nnx.Optimizer(
+                self.discriminator, optax.adam(0.0002, b1=0.5, b2=0.999)
+            )
             print(f"GAN loaded from {path}")
         except Exception as e:
             raise Exception(f"Error loading GAN: {e}")

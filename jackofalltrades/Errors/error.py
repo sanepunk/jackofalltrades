@@ -1,524 +1,543 @@
 import jax.numpy as np
 import pandas as pd
-from sklearn.metrics import confusion_matrix, precision_score, recall_score, f1_score
+from sklearn.metrics import precision_score, recall_score, f1_score
 
 
 def _to_np(arr):
-      """
-      Convert pandas Series/DataFrame or other array-likes to numpy (float32)
-      so JAX receives compatible inputs.
-      """
-      if isinstance(arr, pd.Series):
-            return arr.to_numpy(dtype=np.float32)
-      if isinstance(arr, pd.DataFrame):
-            return arr.to_numpy(dtype=np.float32)
-      return np.asarray(arr, dtype=np.float32)
+    """
+    Convert pandas Series/DataFrame or other array-likes to numpy (float32)
+    so JAX receives compatible inputs.
+    """
+    if isinstance(arr, pd.Series):
+        return arr.to_numpy(dtype=np.float32)
+    if isinstance(arr, pd.DataFrame):
+        return arr.to_numpy(dtype=np.float32)
+    return np.asarray(arr, dtype=np.float32)
 
 
-def r2score(y_true ,y_pred):
-      """
-      Calculate the R-squared (Coefficient of Determination) between true and predicted values.
+def r2score(y_true, y_pred):
+    """
+    Calculate the R-squared (Coefficient of Determination) between true and predicted values.
 
-      R-squared measures the proportion of the variance in the dependent variable
-      that is predictable from the independent variables. It is calculated as:
+    R-squared measures the proportion of the variance in the dependent variable
+    that is predictable from the independent variables. It is calculated as:
 
-            R² = 1 - (SS_res / SS_tot)
+          R² = 1 - (SS_res / SS_tot)
 
-      where:
-      - SS_res (Residual Sum of Squares) = Σ(y_true - y_pred)²
-      - SS_tot (Total Sum of Squares) = Σ(y_true - mean(y_true))²
+    where:
+    - SS_res (Residual Sum of Squares) = Σ(y_true - y_pred)²
+    - SS_tot (Total Sum of Squares) = Σ(y_true - mean(y_true))²
 
-      Parameters:
-      - y_true: Actual values.
-      - y_pred: Predicted values.
+    Parameters:
+    - y_true: Actual values.
+    - y_pred: Predicted values.
 
-      Returns:
-      - R-squared value.
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      return 1 - (np.sum(np.square(y_true - y_pred)) / np.sum(np.square(y_true - np.mean(y_true))))
+    Returns:
+    - R-squared value.
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    return 1 - (
+        np.sum(np.square(y_true - y_pred)) / np.sum(np.square(y_true - np.mean(y_true)))
+    )
+
 
 def accuracy(y_true, y_pred):
-      """
-      Calculate the accuracy between true and predicted values.
+    """
+    Calculate the accuracy between true and predicted values.
 
-      Accuracy is the ratio of correctly predicted observations to the total observations.
-      It is calculated as:
+    Accuracy is the ratio of correctly predicted observations to the total observations.
+    It is calculated as:
 
-            Accuracy = (Number of Correct Predictions) / (Total Number of Predictions)
+          Accuracy = (Number of Correct Predictions) / (Total Number of Predictions)
 
-      Parameters:
-      - y_true: Actual values.
-      - y_pred: Predicted values.
+    Parameters:
+    - y_true: Actual values.
+    - y_pred: Predicted values.
 
-      Returns:
-      - Accuracy value.
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      return np.mean(y_pred == y_true)
+    Returns:
+    - Accuracy value.
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    return np.mean(y_pred == y_true)
+
 
 def mse(y_true, y_pred):
-      """
-      Calculate the Mean Squared Error (MSE) between true and predicted values.
+    """
+    Calculate the Mean Squared Error (MSE) between true and predicted values.
 
-      MSE measures the average of the squares of the errors—that is, the average squared
-      difference between the estimated values and the actual value. It is calculated as:
+    MSE measures the average of the squares of the errors—that is, the average squared
+    difference between the estimated values and the actual value. It is calculated as:
 
-            MSE = (1/n) * Σ(y_true - y_pred)²
+          MSE = (1/n) * Σ(y_true - y_pred)²
 
-      where n is the number of observations.
+    where n is the number of observations.
 
-      Parameters:
-      - y_true: Actual values.
-      - y_pred: Predicted values.
+    Parameters:
+    - y_true: Actual values.
+    - y_pred: Predicted values.
 
-      Returns:
-      - Mean Squared Error value.
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      return np.mean(np.square((y_true - y_pred)))
+    Returns:
+    - Mean Squared Error value.
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    return np.mean(np.square((y_true - y_pred)))
+
 
 def rmse(y_true, y_pred):
-      """
-      Calculate the Root Mean Squared Error (RMSE) between true and predicted values.
+    """
+    Calculate the Root Mean Squared Error (RMSE) between true and predicted values.
 
-      RMSE is the square root of the average of squared differences between prediction and
-      actual observation. It is calculated as:
+    RMSE is the square root of the average of squared differences between prediction and
+    actual observation. It is calculated as:
 
-            RMSE = sqrt(MSE)
-                  = sqrt((1/n) * Σ(y_true - y_pred)²)
+          RMSE = sqrt(MSE)
+                = sqrt((1/n) * Σ(y_true - y_pred)²)
 
-      Parameters:
-      - y_true: Actual values.
-      - y_pred: Predicted values.
+    Parameters:
+    - y_true: Actual values.
+    - y_pred: Predicted values.
 
-      Returns:
-      - Root Mean Squared Error value.
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      return np.sqrt(np.mean(np.square((y_true - y_pred))))
+    Returns:
+    - Root Mean Squared Error value.
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    return np.sqrt(np.mean(np.square((y_true - y_pred))))
+
 
 def mae(y_true, y_pred):
-      """
-      Calculate the Mean Absolute Error (MAE) between true and predicted values.
+    """
+    Calculate the Mean Absolute Error (MAE) between true and predicted values.
 
-      MAE measures the average magnitude of the errors in a set of predictions, without
-      considering their direction. It is calculated as:
+    MAE measures the average magnitude of the errors in a set of predictions, without
+    considering their direction. It is calculated as:
 
-            MAE = (1/n) * Σ|y_true - y_pred|
+          MAE = (1/n) * Σ|y_true - y_pred|
 
-      Parameters:
-      - y_true: Actual values.
-      - y_pred: Predicted values.
+    Parameters:
+    - y_true: Actual values.
+    - y_pred: Predicted values.
 
-      Returns:
-      - Mean Absolute Error value.
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      return np.mean(np.abs((y_true - y_pred)))
+    Returns:
+    - Mean Absolute Error value.
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    return np.mean(np.abs((y_true - y_pred)))
+
 
 def soae(y_true, y_pred):
-      """
-      Calculate the Sum of Absolute Errors (SOAE) between true and predicted values.
+    """
+    Calculate the Sum of Absolute Errors (SOAE) between true and predicted values.
 
-      SOAE measures the total absolute difference between the predicted and actual values.
-      It is calculated as:
+    SOAE measures the total absolute difference between the predicted and actual values.
+    It is calculated as:
 
-            SOAE = Σ|y_true - y_pred|
+          SOAE = Σ|y_true - y_pred|
 
-      Parameters:
-      - y_true: Actual values.
-      - y_pred: Predicted values.
+    Parameters:
+    - y_true: Actual values.
+    - y_pred: Predicted values.
 
-      Returns:
-      - Sum of Absolute Errors value.
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      return np.abs(np.sum(y_true - y_pred))
+    Returns:
+    - Sum of Absolute Errors value.
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    return np.abs(np.sum(y_true - y_pred))
+
 
 def soe(y_true, y_pred):
-      """
-      Calculate the Sum of Errors (SOE) between true and predicted values.
+    """
+    Calculate the Sum of Errors (SOE) between true and predicted values.
 
-      SOE measures the total difference between the predicted and actual values.
-      It is calculated as:
+    SOE measures the total difference between the predicted and actual values.
+    It is calculated as:
 
-            SOE = Σ(y_true - y_pred)
+          SOE = Σ(y_true - y_pred)
 
-      Parameters:
-      - y_true: Actual values.
-      - y_pred: Predicted values.
+    Parameters:
+    - y_true: Actual values.
+    - y_pred: Predicted values.
 
-      Returns:
-      - Sum of Errors value.
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      return np.sum(y_true - y_pred)
+    Returns:
+    - Sum of Errors value.
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    return np.sum(y_true - y_pred)
+
 
 def mape(y_true, y_pred):
-      """
-      Calculate the Mean Absolute Percentage Error (MAPE) between true and predicted values.
+    """
+    Calculate the Mean Absolute Percentage Error (MAPE) between true and predicted values.
 
-      MAPE measures the average magnitude of errors in a set of predictions, expressed as
-      a percentage of the actual values. It is calculated as:
+    MAPE measures the average magnitude of errors in a set of predictions, expressed as
+    a percentage of the actual values. It is calculated as:
 
-            MAPE = (100/n) * Σ|((y_true - y_pred) / y_true)|
+          MAPE = (100/n) * Σ|((y_true - y_pred) / y_true)|
 
-      Parameters:
-      - y_true: Actual values.
-      - y_pred: Predicted values.
+    Parameters:
+    - y_true: Actual values.
+    - y_pred: Predicted values.
 
-      Returns:
-      - Mean Absolute Percentage Error value.
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+    Returns:
+    - Mean Absolute Percentage Error value.
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    return np.mean(np.abs((y_true - y_pred) / y_true)) * 100
+
 
 def adjusted_r2score(y_true, y_pred, n, p):
-      """
-      Calculate the Adjusted R-squared between true and predicted values.
+    """
+    Calculate the Adjusted R-squared between true and predicted values.
 
-      Adjusted R-squared adjusts the R-squared value based on the number of predictors
-      in the model, providing a more accurate measure for multiple regression. It is
-      calculated as:
+    Adjusted R-squared adjusts the R-squared value based on the number of predictors
+    in the model, providing a more accurate measure for multiple regression. It is
+    calculated as:
 
-            Adjusted R² = 1 - [(1 - R²) * (n - 1) / (n - p - 1)]
+          Adjusted R² = 1 - [(1 - R²) * (n - 1) / (n - p - 1)]
 
-      where:
-      - R² is the R-squared value.
-      - n is the number of observations.
-      - p is the number of predictors.
+    where:
+    - R² is the R-squared value.
+    - n is the number of observations.
+    - p is the number of predictors.
 
-      Parameters:
-      - y_true: Actual values.
-      - y_pred: Predicted values.
-      - n: Number of observations.
-      - p: Number of predictors.
+    Parameters:
+    - y_true: Actual values.
+    - y_pred: Predicted values.
+    - n: Number of observations.
+    - p: Number of predictors.
 
-      Returns:
-      - Adjusted R-squared value.
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      return 1 - ((1 - r2score(y_true, y_pred)) * (n - 1) / (n - p - 1))
+    Returns:
+    - Adjusted R-squared value.
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    return 1 - ((1 - r2score(y_true, y_pred)) * (n - 1) / (n - p - 1))
 
-def precision(y_true, y_pred, average='macro'):
-      """
-      Calculate the precision between true and predicted classifications.
-      Supports both binary and multi-class classification.
 
-      For binary classification:
-            Precision = TP / (TP + FP)
-      
-      For multi-class classification, computes macro-averaged precision:
-            Precision = (1/n_classes) * Σ(TP_i / (TP_i + FP_i))
+def precision(y_true, y_pred, average="macro"):
+    """
+    Calculate the precision between true and predicted classifications.
+    Supports both binary and multi-class classification.
 
-      Parameters:
-      - y_true: Actual labels (binary or multi-class).
-      - y_pred: Predicted labels (binary or multi-class).
-      - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
-                Default is 'macro' for universal compatibility.
+    For binary classification:
+          Precision = TP / (TP + FP)
 
-      Returns:
-      - Precision value (scalar for binary/macro, array for per-class if average=None).
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      # Convert to numpy arrays for sklearn compatibility
-      y_true_np = np.asarray(y_true)
-      y_pred_np = np.asarray(y_pred)
-      return precision_score(y_true_np, y_pred_np, average=average, zero_division=0)
+    For multi-class classification, computes macro-averaged precision:
+          Precision = (1/n_classes) * Σ(TP_i / (TP_i + FP_i))
 
-def recall(y_true, y_pred, average='macro'):
-      """
-      Calculate the recall (sensitivity) between true and predicted classifications.
-      Supports both binary and multi-class classification.
+    Parameters:
+    - y_true: Actual labels (binary or multi-class).
+    - y_pred: Predicted labels (binary or multi-class).
+    - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
+              Default is 'macro' for universal compatibility.
 
-      For binary classification:
-            Recall = TP / (TP + FN)
-      
-      For multi-class classification, computes macro-averaged recall:
-            Recall = (1/n_classes) * Σ(TP_i / (TP_i + FN_i))
+    Returns:
+    - Precision value (scalar for binary/macro, array for per-class if average=None).
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    # Convert to numpy arrays for sklearn compatibility
+    y_true_np = np.asarray(y_true)
+    y_pred_np = np.asarray(y_pred)
+    return precision_score(y_true_np, y_pred_np, average=average, zero_division=0)
 
-      Parameters:
-      - y_true: Actual labels (binary or multi-class).
-      - y_pred: Predicted labels (binary or multi-class).
-      - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
-                Default is 'macro' for universal compatibility.
 
-      Returns:
-      - Recall value (scalar for binary/macro, array for per-class if average=None).
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      # Convert to numpy arrays for sklearn compatibility
-      y_true_np = np.asarray(y_true)
-      y_pred_np = np.asarray(y_pred)
-      return recall_score(y_true_np, y_pred_np, average=average, zero_division=0)
+def recall(y_true, y_pred, average="macro"):
+    """
+    Calculate the recall (sensitivity) between true and predicted classifications.
+    Supports both binary and multi-class classification.
 
-def f1score(y_true, y_pred, average='macro'):
-      """
-      Calculate the F1 Score between true and predicted values.
-      Supports both binary and multi-class classification.
+    For binary classification:
+          Recall = TP / (TP + FN)
 
-      The F1 Score is the harmonic mean of precision and recall, providing a balance
-      between the two, especially useful for imbalanced datasets.
+    For multi-class classification, computes macro-averaged recall:
+          Recall = (1/n_classes) * Σ(TP_i / (TP_i + FN_i))
 
-      For binary classification:
-            F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
-      
-      For multi-class classification, computes macro-averaged F1:
-            F1 = (1/n_classes) * Σ(F1_i)
-            where F1_i = 2 * (Precision_i * Recall_i) / (Precision_i + Recall_i)
+    Parameters:
+    - y_true: Actual labels (binary or multi-class).
+    - y_pred: Predicted labels (binary or multi-class).
+    - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
+              Default is 'macro' for universal compatibility.
 
-      Parameters:
-      - y_true: Actual labels (binary or multi-class).
-      - y_pred: Predicted labels (binary or multi-class).
-      - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
-                Default is 'macro' for universal compatibility.
-                - 'macro': Calculate metrics for each class and average (unweighted)
-                - 'micro': Calculate metrics globally by counting total TP, FN, FP
-                - 'weighted': Calculate metrics for each class and average (weighted by support)
-                - None: Return per-class F1 scores
+    Returns:
+    - Recall value (scalar for binary/macro, array for per-class if average=None).
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    # Convert to numpy arrays for sklearn compatibility
+    y_true_np = np.asarray(y_true)
+    y_pred_np = np.asarray(y_pred)
+    return recall_score(y_true_np, y_pred_np, average=average, zero_division=0)
 
-      Returns:
-      - F1 Score value (scalar for binary/macro/micro/weighted, array for per-class if average=None).
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      # Convert to numpy arrays for sklearn compatibility
-      y_true_np = np.asarray(y_true)
-      y_pred_np = np.asarray(y_pred)
-      return f1_score(y_true_np, y_pred_np, average=average, zero_division=0)
+
+def f1score(y_true, y_pred, average="macro"):
+    """
+    Calculate the F1 Score between true and predicted values.
+    Supports both binary and multi-class classification.
+
+    The F1 Score is the harmonic mean of precision and recall, providing a balance
+    between the two, especially useful for imbalanced datasets.
+
+    For binary classification:
+          F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
+
+    For multi-class classification, computes macro-averaged F1:
+          F1 = (1/n_classes) * Σ(F1_i)
+          where F1_i = 2 * (Precision_i * Recall_i) / (Precision_i + Recall_i)
+
+    Parameters:
+    - y_true: Actual labels (binary or multi-class).
+    - y_pred: Predicted labels (binary or multi-class).
+    - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
+              Default is 'macro' for universal compatibility.
+              - 'macro': Calculate metrics for each class and average (unweighted)
+              - 'micro': Calculate metrics globally by counting total TP, FN, FP
+              - 'weighted': Calculate metrics for each class and average (weighted by support)
+              - None: Return per-class F1 scores
+
+    Returns:
+    - F1 Score value (scalar for binary/macro/micro/weighted, array for per-class if average=None).
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    # Convert to numpy arrays for sklearn compatibility
+    y_true_np = np.asarray(y_true)
+    y_pred_np = np.asarray(y_pred)
+    return f1_score(y_true_np, y_pred_np, average=average, zero_division=0)
+
 
 def cross_entropy(y_true, y_pred):
-      """
-      Calculate the Cross-Entropy Loss between true and predicted probabilities.
+    """
+    Calculate the Cross-Entropy Loss between true and predicted probabilities.
 
-      Cross-Entropy Loss, also known as Log Loss, measures the performance of a classification
-      model whose output is a probability value between 0 and 1. It quantifies the difference
-      between two probability distributions: the true labels and the predicted probabilities.
-      It is calculated as:
+    Cross-Entropy Loss, also known as Log Loss, measures the performance of a classification
+    model whose output is a probability value between 0 and 1. It quantifies the difference
+    between two probability distributions: the true labels and the predicted probabilities.
+    It is calculated as:
 
-            Cross-Entropy Loss = -Σ [y_true * log(y_pred) + (1 - y_true) * log(1 - y_pred)]
+          Cross-Entropy Loss = -Σ [y_true * log(y_pred) + (1 - y_true) * log(1 - y_pred)]
 
-      where:
-      - y_true: Actual binary labels (0 or 1).
-      - y_pred: Predicted probabilities for the positive class (values between 0 and 1).
+    where:
+    - y_true: Actual binary labels (0 or 1).
+    - y_pred: Predicted probabilities for the positive class (values between 0 and 1).
 
-      Parameters:
-      - y_true: Actual binary labels.
-      - y_pred: Predicted probabilities.
+    Parameters:
+    - y_true: Actual binary labels.
+    - y_pred: Predicted probabilities.
 
-      Returns:
-      - Cross-Entropy Loss value.
-      """
-      y_true, y_pred = _to_np(y_true), _to_np(y_pred)
-      return (1 - y_true) * np.log(1 - y_pred) + y_true * np.log(y_pred)
+    Returns:
+    - Cross-Entropy Loss value.
+    """
+    y_true, y_pred = _to_np(y_true), _to_np(y_pred)
+    return (1 - y_true) * np.log(1 - y_pred) + y_true * np.log(y_pred)
 
 
 class Error:
-      """
-      Class to calculate various error metrics for regression and classification tasks.
-      """
+    """
+    Class to calculate various error metrics for regression and classification tasks.
+    """
 
-      def __init__(self, y_true, y_predicted) -> None:
-            """
-            Initialize the Error class with true and predicted values.
+    def __init__(self, y_true, y_predicted) -> None:
+        """
+        Initialize the Error class with true and predicted values.
 
-            Args:
-                  y_true (array-like): True values.
-                  y_predicted (array-like): Predicted values.
-            """
-            try:
-                  self.y_true, self.y_predicted = np.array(y_true, dtype=np.float32), np.array(y_predicted, dtype=np.float32)
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-            
-      def MSE(self) -> np.array:
-            """
-            Calculate the Mean Squared Error (MSE).
+        Args:
+              y_true (array-like): True values.
+              y_predicted (array-like): Predicted values.
+        """
+        try:
+            self.y_true, self.y_predicted = (
+                np.array(y_true, dtype=np.float32),
+                np.array(y_predicted, dtype=np.float32),
+            )
+        except Exception as e:
+            raise Exception(f"Error: {e}")
 
-            Returns:
-                  np.array: The calculated MSE value.
-            """
-            try:
-                  return np.mean(np.square((self.y_true - self.y_predicted)))
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-  
-      def RMSE(self) -> np.array:
-            """
-            Calculate the Root Mean Squared Error (RMSE).
+    def MSE(self) -> np.array:
+        """
+        Calculate the Mean Squared Error (MSE).
 
-            Returns:
-                  np.array: The calculated RMSE value.
-            """
-            try:
-                  return np.sqrt(np.mean(np.square((self.y_true - self.y_predicted))))
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-  
-      def MAE(self) -> np.array:
-            """
-            Calculate the Mean Absolute Error (MAE).
+        Returns:
+              np.array: The calculated MSE value.
+        """
+        try:
+            return np.mean(np.square((self.y_true - self.y_predicted)))
+        except Exception as e:
+            raise Exception(f"Error: {e}")
 
-            Returns:
-                  np.array: The calculated MAE value.
-            """
-            try:
-                  return np.mean(np.abs((self.y_true - self.y_predicted)))
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-  
-      def SOAE(self) -> np.array:
-            """
-            Calculate the Sum of Absolute Errors (SOAE).
+    def RMSE(self) -> np.array:
+        """
+        Calculate the Root Mean Squared Error (RMSE).
 
-            Returns:
-                  np.array: The calculated SOAE value.
-            """
-            try:
-                  return np.abs(np.sum(self.y_true - self.y_predicted))
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-  
-      def SOE(self) -> np.array:
-            """
-            Calculate the Sum of Errors (SOE).
+        Returns:
+              np.array: The calculated RMSE value.
+        """
+        try:
+            return np.sqrt(np.mean(np.square((self.y_true - self.y_predicted))))
+        except Exception as e:
+            raise Exception(f"Error: {e}")
 
-            Returns:
-                  np.array: The calculated SOE value.
-            """
-            try:
-                  return np.sum(self.y_true - self.y_predicted)
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-  
-      def RSquared(self) -> np.array:
-            """
-            Calculate the R-squared value.
+    def MAE(self) -> np.array:
+        """
+        Calculate the Mean Absolute Error (MAE).
 
-            Returns:
-                  np.array: The calculated R-squared value.
-            """
-            try:
-                  return 1 - (np.sum(np.square(self.y_true - self.y_predicted)) / np.sum(np.square(self.y_true - np.mean(self.y_true))))
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-  
-      def MAPE(self) -> np.array:
-            """
-            Calculate the Mean Absolute Percentage Error (MAPE).
+        Returns:
+              np.array: The calculated MAE value.
+        """
+        try:
+            return np.mean(np.abs((self.y_true - self.y_predicted)))
+        except Exception as e:
+            raise Exception(f"Error: {e}")
 
-            Returns:
-                  np.array: The calculated MAPE value.
-            """
-            try:
-                  return np.mean(np.abs((self.y_true - self.y_predicted) / self.y_true)) * 100
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-  
-      def AdjustedRSquared(self, n, p) -> np.array:
-            """
-            Calculate the Adjusted R-squared value.
+    def SOAE(self) -> np.array:
+        """
+        Calculate the Sum of Absolute Errors (SOAE).
 
-            Args:
-                  n (int): Number of observations.
-                  p (int): Number of predictors.
+        Returns:
+              np.array: The calculated SOAE value.
+        """
+        try:
+            return np.abs(np.sum(self.y_true - self.y_predicted))
+        except Exception as e:
+            raise Exception(f"Error: {e}")
 
-            Returns:
-                  np.array: The calculated Adjusted R-squared value.
-            """
-            try:
-                  return 1 - ((1 - self.RSquared()) * (n - 1) / (n - p - 1))
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-  
-      def Accuracy(self) -> np.array:
-            """
-            Calculate the Accuracy.
-            Supports both binary and multi-class classification.
+    def SOE(self) -> np.array:
+        """
+        Calculate the Sum of Errors (SOE).
 
-            Returns:
-                  np.array: The calculated Accuracy value.
-            """
-            try:
-                  # For multi-class, accuracy is simply the ratio of correct predictions
-                  y_true_np = np.asarray(self.y_true)
-                  y_pred_np = np.asarray(self.y_predicted)
-                  return np.mean(y_true_np == y_pred_np)
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-  
-      def Precision(self, average='macro') -> np.array:
-            """
-            Calculate the Precision.
-            Supports both binary and multi-class classification.
+        Returns:
+              np.array: The calculated SOE value.
+        """
+        try:
+            return np.sum(self.y_true - self.y_predicted)
+        except Exception as e:
+            raise Exception(f"Error: {e}")
 
-            Parameters:
-            - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
-                      Default is 'macro' for universal compatibility.
+    def RSquared(self) -> np.array:
+        """
+        Calculate the R-squared value.
 
-            Returns:
-                  np.array: The calculated Precision value.
-            """
-            try:
-                  y_true_np = np.asarray(self.y_true)
-                  y_pred_np = np.asarray(self.y_predicted)
-                  return precision_score(y_true_np, y_pred_np, average=average, zero_division=0)
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-  
-      def Recall(self, average='macro') -> np.array:
-            """
-            Calculate the Recall.
-            Supports both binary and multi-class classification.
+        Returns:
+              np.array: The calculated R-squared value.
+        """
+        try:
+            return 1 - (
+                np.sum(np.square(self.y_true - self.y_predicted))
+                / np.sum(np.square(self.y_true - np.mean(self.y_true)))
+            )
+        except Exception as e:
+            raise Exception(f"Error: {e}")
 
-            Parameters:
-            - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
-                      Default is 'macro' for universal compatibility.
+    def MAPE(self) -> np.array:
+        """
+        Calculate the Mean Absolute Percentage Error (MAPE).
 
-            Returns:
-                  np.array: The calculated Recall value.
-            """
-            try:
-                  y_true_np = np.asarray(self.y_true)
-                  y_pred_np = np.asarray(self.y_predicted)
-                  return recall_score(y_true_np, y_pred_np, average=average, zero_division=0)
-            except Exception as e:
-                  raise Exception(f"Error: {e}")  
-  
-      def F1Score(self, average='macro') -> np.array:
-            """
-            Calculate the F1 Score.
-            Supports both binary and multi-class classification.
+        Returns:
+              np.array: The calculated MAPE value.
+        """
+        try:
+            return np.mean(np.abs((self.y_true - self.y_predicted) / self.y_true)) * 100
+        except Exception as e:
+            raise Exception(f"Error: {e}")
 
-            Parameters:
-            - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
-                      Default is 'macro' for universal compatibility.
+    def AdjustedRSquared(self, n, p) -> np.array:
+        """
+        Calculate the Adjusted R-squared value.
 
-            Returns:
-                  np.array: The calculated F1 Score value.
-            """
-            try:
-                  y_true_np = np.asarray(self.y_true)
-                  y_pred_np = np.asarray(self.y_predicted)
-                  return f1_score(y_true_np, y_pred_np, average=average, zero_division=0)
-            except Exception as e:
-                  raise Exception(f"Error: {e}")
-  
-      def Cross_Entropy(self) -> np.array:
-            """
-            Calculate the Cross Entropy.
+        Args:
+              n (int): Number of observations.
+              p (int): Number of predictors.
 
-            Returns:
-                  np.array: The calculated Cross Entropy value.
-            """
-            try:
-                  return (1 - self.y_true) * np.log(1 - self.y_predicted) + self.y_true * np.log(self.y_predicted)
-            except Exception as e:  # Use the actual exception object 'e'
-                  # Consider a more informative error message or handling strategy
-                  print(f"Error during Cross Entropy calculation: {e}")
-                  return np.nan  # Or a more appropriate default value
+        Returns:
+              np.array: The calculated Adjusted R-squared value.
+        """
+        try:
+            return 1 - ((1 - self.RSquared()) * (n - 1) / (n - p - 1))
+        except Exception as e:
+            raise Exception(f"Error: {e}")
 
-            
-      
+    def Accuracy(self) -> np.array:
+        """
+        Calculate the Accuracy.
+        Supports both binary and multi-class classification.
 
-            
+        Returns:
+              np.array: The calculated Accuracy value.
+        """
+        try:
+            # For multi-class, accuracy is simply the ratio of correct predictions
+            y_true_np = np.asarray(self.y_true)
+            y_pred_np = np.asarray(self.y_predicted)
+            return np.mean(y_true_np == y_pred_np)
+        except Exception as e:
+            raise Exception(f"Error: {e}")
+
+    def Precision(self, average="macro") -> np.array:
+        """
+        Calculate the Precision.
+        Supports both binary and multi-class classification.
+
+        Parameters:
+        - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
+                  Default is 'macro' for universal compatibility.
+
+        Returns:
+              np.array: The calculated Precision value.
+        """
+        try:
+            y_true_np = np.asarray(self.y_true)
+            y_pred_np = np.asarray(self.y_predicted)
+            return precision_score(
+                y_true_np, y_pred_np, average=average, zero_division=0
+            )
+        except Exception as e:
+            raise Exception(f"Error: {e}")
+
+    def Recall(self, average="macro") -> np.array:
+        """
+        Calculate the Recall.
+        Supports both binary and multi-class classification.
+
+        Parameters:
+        - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
+                  Default is 'macro' for universal compatibility.
+
+        Returns:
+              np.array: The calculated Recall value.
+        """
+        try:
+            y_true_np = np.asarray(self.y_true)
+            y_pred_np = np.asarray(self.y_predicted)
+            return recall_score(y_true_np, y_pred_np, average=average, zero_division=0)
+        except Exception as e:
+            raise Exception(f"Error: {e}")
+
+    def F1Score(self, average="macro") -> np.array:
+        """
+        Calculate the F1 Score.
+        Supports both binary and multi-class classification.
+
+        Parameters:
+        - average: Averaging strategy for multi-class ('macro', 'micro', 'weighted', None).
+                  Default is 'macro' for universal compatibility.
+
+        Returns:
+              np.array: The calculated F1 Score value.
+        """
+        try:
+            y_true_np = np.asarray(self.y_true)
+            y_pred_np = np.asarray(self.y_predicted)
+            return f1_score(y_true_np, y_pred_np, average=average, zero_division=0)
+        except Exception as e:
+            raise Exception(f"Error: {e}")
+
+    def Cross_Entropy(self) -> np.array:
+        """
+        Calculate the Cross Entropy.
+
+        Returns:
+              np.array: The calculated Cross Entropy value.
+        """
+        try:
+            return (1 - self.y_true) * np.log(
+                1 - self.y_predicted
+            ) + self.y_true * np.log(self.y_predicted)
+        except Exception as e:  # Use the actual exception object 'e'
+            # Consider a more informative error message or handling strategy
+            print(f"Error during Cross Entropy calculation: {e}")
+            return np.nan  # Or a more appropriate default value

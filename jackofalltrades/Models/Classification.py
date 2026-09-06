@@ -6,9 +6,11 @@ import optax
 import numpy as np
 import jax
 from jax import numpy as jnp
-from collections import Counter
+
+# from collections import Counter
 import pickle
 from tqdm.auto import tqdm
+from functools import partial
 
 # class ImageClassification:
 #     def __init__(self, input_shape: tuple = (28, 28, 1), num_classes: int = 8, label_type: str = 'categorical',
@@ -305,7 +307,7 @@ from tqdm.auto import tqdm
 #             raise Exception(f"Error loading the model: {e}")
 
 
-from typing import Literal, Tuple, Union, List, Optional
+from typing import Literal, Tuple
 
 # Conditional imports for interoperability
 try:
@@ -318,35 +320,41 @@ try:
 except ImportError:
     tf = None
 
+
 class _CNNModel(nnx.Module):
     """Internal NNX Module defining the CNN architecture."""
-    def __init__(self, input_shape: Tuple[int, int, int], num_classes: int, rngs: nnx.Rngs):
+
+    def __init__(
+        self, input_shape: Tuple[int, int, int], num_classes: int, rngs: nnx.Rngs
+    ):
         super().__init__()
         # Input shape expected: (H, W, C) -> features calculated automatically by linear layer later
-        
+
         # Block 1
         self.conv1 = nnx.Conv(input_shape[-1], 32, kernel_size=(3, 3), rngs=rngs)
         self.bn1 = nnx.BatchNorm(32, rngs=rngs)
-        
+
         # Block 2
         self.conv2 = nnx.Conv(32, 64, kernel_size=(3, 3), rngs=rngs)
         self.bn2 = nnx.BatchNorm(64, rngs=rngs)
-        
+
         # Block 3
         self.conv3 = nnx.Conv(64, 128, kernel_size=(3, 3), rngs=rngs)
         self.bn3 = nnx.BatchNorm(128, rngs=rngs)
-        
+
         # Dense Layers
         # We calculate the flattened size dynamically or let Flax infer it if using Lazy layers.
-        # Here we use standard layers, so we rely on the linear layer input features being inferred 
+        # Here we use standard layers, so we rely on the linear layer input features being inferred
         # or calculated. For simplicity in NNX, we usually define the sequence.
-        
-        self.dense1 = nnx.Linear(128 * (input_shape[0] // 8) * (input_shape[1] // 8), 128, rngs=rngs)
+
+        self.dense1 = nnx.Linear(
+            128 * (input_shape[0] // 8) * (input_shape[1] // 8), 128, rngs=rngs
+        )
         self.dropout1 = nnx.Dropout(0.5, rngs=rngs)
-        
+
         self.dense2 = nnx.Linear(128, 64, rngs=rngs)
         self.dropout2 = nnx.Dropout(0.5, rngs=rngs)
-        
+
         self.out = nnx.Linear(64, num_classes, rngs=rngs)
 
     def __call__(self, x):
@@ -385,9 +393,15 @@ class _CNNModel(nnx.Module):
         x = self.out(x)
         return x
 
+
 class ImageClassification:
-    def __init__(self, input_shape: tuple = (28, 28, 1), num_classes: int = 8, 
-                 label_type: str = 'categorical', normalizer: bool = True):
+    def __init__(
+        self,
+        input_shape: tuple = (28, 28, 1),
+        num_classes: int = 8,
+        label_type: str = "categorical",
+        normalizer: bool = True,
+    ):
         """
         Initializes the ImageClassification instance using Flax NNX.
         """
@@ -398,7 +412,7 @@ class ImageClassification:
         self.model = None
         self.optimizer = None
         self.params = None
-        
+
         # Initialize the model structure
         rngs = nnx.Rngs(0)
         self.model = _CNNModel(input_shape, num_classes, rngs)
@@ -420,38 +434,44 @@ class ImageClassification:
         """Helper to convert JAX Array to requested output format."""
         # Ensure data is numpy first
         np_data = np.array(data)
-        
-        if format_type == 'torch':
+
+        if format_type == "torch":
             if torch is None:
-                raise ImportError("Torch is not installed but output format 'torch' was requested.")
+                raise ImportError(
+                    "Torch is not installed but output format 'torch' was requested."
+                )
             return torch.from_numpy(np_data)
-        
-        elif format_type == 'tensorflow':
+
+        elif format_type == "tensorflow":
             if tf is None:
-                raise ImportError("TensorFlow is not installed but output format 'tensorflow' was requested.")
+                raise ImportError(
+                    "TensorFlow is not installed but output format 'tensorflow' was requested."
+                )
             return tf.convert_to_tensor(np_data)
-        
-        elif format_type == 'jax':
-            return data # Already JAX array
-        
-        elif format_type == 'numpy':
+
+        elif format_type == "jax":
+            return data  # Already JAX array
+
+        elif format_type == "numpy":
             return np_data
-            
+
         else:
             raise ValueError(f"Unknown output format: {format_type}")
 
     def _one_hot(self, labels):
         """Ensures labels are one-hot encoded."""
         labels = self._convert_input(labels)
-        
+
         # Check if already one-hot
         if labels.ndim > 1 and labels.shape[-1] == self.num_classes:
             return labels
-            
+
         # If categorical (integers), convert
         return jax.nn.one_hot(labels, self.num_classes)
 
-    def fit(self, X_train, y_train, epochs: int = 10, batch_size: int = 32, verbose: int = 1):
+    def fit(
+        self, X_train, y_train, epochs: int = 10, batch_size: int = 32, verbose: int = 1
+    ):
         """
         Fits the model to the training data.
         """
@@ -462,7 +482,7 @@ class ImageClassification:
         # 2. Normalization
         if self.normalizer:
             X_train = X_train.astype(jnp.float32) / 255.0
-        
+
         num_samples = X_train.shape[0]
         steps_per_epoch = num_samples // batch_size
 
@@ -472,18 +492,18 @@ class ImageClassification:
             def loss_fn(model):
                 logits = model(batch_x)
                 loss = optax.softmax_cross_entropy(logits=logits, labels=batch_y).mean()
-                
+
                 # L2 Regularization manually added
                 # Gather kernel weights from Linear and Conv layers
                 l2_loss = 0.0
-                # Note: In a full implementation, you would traverse the graph. 
+                # Note: In a full implementation, you would traverse the graph.
                 # For brevity, we focus on the primary loss here.
                 return loss + 1e-4 * l2_loss
 
             grad_fn = nnx.value_and_grad(loss_fn, has_aux=False)
             loss_val, grads = grad_fn(model)
             optimizer.update(grads)
-            
+
             # return metrics
             logits = model(batch_x)
             accuracy = jnp.mean(jnp.argmax(logits, -1) == jnp.argmax(batch_y, -1))
@@ -491,7 +511,7 @@ class ImageClassification:
 
         # 4. Training Loop
         print(f"Starting training on {jax.devices()[0]}...")
-        
+
         with tqdm(total=epochs, desc="Training") as pbar:
             for epoch in range(epochs):
                 epoch_acc = []
@@ -502,43 +522,46 @@ class ImageClassification:
                 y_train = y_train[perm]
 
                 for i in range(steps_per_epoch):
-                    batch_x = X_train[i*batch_size : (i+1)*batch_size]
-                    batch_y = y_train[i*batch_size : (i+1)*batch_size]
-                    
+                    batch_x = X_train[i * batch_size : (i + 1) * batch_size]
+                    batch_y = y_train[i * batch_size : (i + 1) * batch_size]
+
                     # Run Step
-                    acc, loss_val = train_step(self.model, self.optimizer, batch_x, batch_y)
+                    acc, loss_val = train_step(
+                        self.model, self.optimizer, batch_x, batch_y
+                    )
                     epoch_acc.append(acc)
                     epoch_loss.append(loss_val)
                 # if verbose > 0:
                 #     print(f"Epoch {epoch + 1}/{epochs} - Accuracy: {np.mean(epoch_acc):.4f}")
-                pbar.set_description(f"Epoch {epoch + 1}/{epochs} - Accuracy: {np.mean(epoch_acc):.4f} - Loss: {np.mean(epoch_loss):.4f}")
+                pbar.set_description(
+                    f"Epoch {epoch + 1}/{epochs} - Accuracy: {np.mean(epoch_acc):.4f} - Loss: {np.mean(epoch_loss):.4f}"
+                )
                 pbar.update(1)
-            
 
-    def predict(self, X, output_format: Literal['torch', 'jax', 'numpy'] = 'torch'):
+    def predict(self, X, output_format: Literal["torch", "jax", "numpy"] = "torch"):
         """
         Makes predictions ensuring softmax output and configurable tensor format.
         """
         # 1. Input Handling
         X = self._convert_input(X)
-        
+
         # 2. Normalization
         if self.normalizer:
             X = X.astype(jnp.float32) / 255.0
-            
+
         # 3. Inference Step (Disable Dropout via eval flag behavior implicitly or state management)
         @nnx.jit
         def pred_step(model, inputs):
             # We put the model in eval mode (disables dropout rng updates)
-            model.eval() 
+            model.eval()
             logits = model(inputs)
-            model.train() # Switch back if needed, though state is local in this context
+            model.train()  # Switch back if needed, though state is local in this context
             return jax.nn.softmax(logits)
 
         # 4. Compute
         # Handle large predictions by batching if necessary, here we do full batch for simplicity
         probs = jnp.argmax(pred_step(self.model, X), axis=-1)
-        
+
         # 5. Output Formatting
         return self._convert_output(probs, output_format)
 
@@ -546,10 +569,10 @@ class ImageClassification:
         """Evaluates the model on test data."""
         X_test = self._convert_input(X_test)
         y_test = self._one_hot(y_test)
-        
+
         if self.normalizer:
             X_test = X_test.astype(jnp.float32) / 255.0
-            
+
         @nnx.jit
         def eval_step(model, inputs, targets):
             model.eval()
@@ -557,7 +580,7 @@ class ImageClassification:
             loss = optax.softmax_cross_entropy(logits=logits, labels=targets).mean()
             acc = jnp.mean(jnp.argmax(logits, -1) == jnp.argmax(targets, -1))
             return loss, acc
-            
+
         loss, acc = eval_step(self.model, X_test, y_test)
         return {"loss": float(loss), "accuracy": float(acc)}
 
@@ -565,17 +588,17 @@ class ImageClassification:
         """Saves the model weights using Flax serialization."""
         # Get the state
         _, state = nnx.split(self.model)
-        
-        with open(path, 'wb') as f:
+
+        with open(path, "wb") as f:
             pickle.dump(state, f)
         print(f"Model saved to {path}")
 
     def load(self, path: str):
         """Loads the model weights."""
         try:
-            with open(path, 'rb') as f:
+            with open(path, "rb") as f:
                 state = pickle.load(f)
-            
+
             # Update the model with loaded state
             nnx.update(self.model, state)
             # Re-create optimizer to link parameters
@@ -775,41 +798,41 @@ class DecisionTree:
 
     def _build_tree(self, X, y, depth=0):
         num_samples, num_features = X.shape
-        
+
         # Stop if no samples, max depth reached, or pure node
         if num_samples == 0:
-            return None # Should ideally be handled by parent to avoid this
-        
+            return None  # Should ideally be handled by parent to avoid this
+
         unique_classes = jnp.unique(y)
         if len(unique_classes) == 1:
-            return {'type': 'leaf', 'class': y[0]}
-        
+            return {"type": "leaf", "class": y[0]}
+
         if self.max_depth is not None and depth >= self.max_depth:
-             return {'type': 'leaf', 'class': self._most_common_class(y)}
+            return {"type": "leaf", "class": self._most_common_class(y)}
 
         # Find the best split
         best_feature, best_threshold = self._find_best_split(X, y)
-        
+
         if best_feature is None:
-            return {'type': 'leaf', 'class': self._most_common_class(y)}
+            return {"type": "leaf", "class": self._most_common_class(y)}
 
         # Split the data
         left_indices = X[:, best_feature] < best_threshold
         right_indices = ~left_indices
-        
+
         # FIX: Handle empty splits immediately to prevent 'None' nodes
         if jnp.sum(left_indices) == 0 or jnp.sum(right_indices) == 0:
-             return {'type': 'leaf', 'class': self._most_common_class(y)}
+            return {"type": "leaf", "class": self._most_common_class(y)}
 
         left_subtree = self._build_tree(X[left_indices], y[left_indices], depth + 1)
         right_subtree = self._build_tree(X[right_indices], y[right_indices], depth + 1)
 
         return {
-            'type': 'node',
-            'feature': best_feature,
-            'threshold': best_threshold,
-            'left': left_subtree,
-            'right': right_subtree
+            "type": "node",
+            "feature": best_feature,
+            "threshold": best_threshold,
+            "left": left_subtree,
+            "right": right_subtree,
         }
 
     # def _find_best_split(self, X, y):
@@ -830,24 +853,23 @@ class DecisionTree:
     def _find_best_split(self, X, y):
         num_samples, num_features = X.shape
         best_feature, best_threshold = None, None
-        best_gini = float('inf')
+        best_gini = float("inf")
 
         # Loop through each feature
         for feature in range(num_features):
-            
             # CRITICAL FIX 1: Use Percentiles instead of checking every unique value.
             # This reduces checking ~569 thresholds down to just ~10-20.
             # It makes training 50x faster.
             thresholds = jnp.percentile(X[:, feature], jnp.linspace(0, 100, 15))
-            thresholds = jnp.unique(thresholds) # Remove duplicates
-            
+            thresholds = jnp.unique(thresholds)  # Remove duplicates
+
             # Loop through these few candidate thresholds
             for threshold in thresholds:
-                # CRITICAL FIX 2: We removed 'vmap'. 
+                # CRITICAL FIX 2: We removed 'vmap'.
                 # We calculate Gini eagerly here. Since we only have ~15 thresholds,
                 # this Python loop is now very fast and JAX-safe.
                 gini = self._gini_impurity(X[:, feature], y, threshold)
-                
+
                 if gini < best_gini:
                     best_gini = gini
                     best_feature = feature
@@ -870,7 +892,7 @@ class DecisionTree:
             return 0
         unique, counts = jnp.unique(y, return_counts=True)
         probabilities = counts / len(y)
-        return 1 - jnp.sum(probabilities ** 2)
+        return 1 - jnp.sum(probabilities**2)
 
     def _most_common_class(self, y):
         unique, counts = jnp.unique(y, return_counts=True)
@@ -882,14 +904,14 @@ class DecisionTree:
     def _predict_sample(self, sample):
         node = self.tree
         # Added safety check: node is not None
-        while node is not None and node['type'] == 'node':
-            if sample[node['feature']] < node['threshold']:
-                node = node['left']
+        while node is not None and node["type"] == "node":
+            if sample[node["feature"]] < node["threshold"]:
+                node = node["left"]
             else:
-                node = node['right']
-        
+                node = node["right"]
+
         # Fallback if something went wrong
-        return node['class'] if node is not None else 0
+        return node["class"] if node is not None else 0
 
 
 # Usage Example
@@ -904,65 +926,198 @@ class DecisionTree:
 #
 
 
-import jax
-import jax.numpy as jnp
-import numpy as np
-from collections import Counter
+# class KNNClassifier:
+#     def __init__(self, k: int = 3):
+#         """
+#         K-Nearest Neighbors Classifier.
+
+#         Parameters:
+#         - k: Number of neighbors to use for voting (default=3).
+#         """
+#         self.k = k
+#         self.X_train = None
+#         self.y_train = None
+
+#     def fit(self, X, y):
+#         """
+#         Stores the training data (Lazy Learning).
+#         """
+#         self.X_train = jnp.array(X)
+#         self.y_train = jnp.array(y)
+
+#     def predict(self, X_test):
+#         """
+#         Enhanced vectorized prediction with optimized distance calculations and voting.
+#         """
+#         X_test = jnp.array(X_test)
+
+#         # Optimized approach for large datasets: use chunked processing
+#         if X_test.shape[0] > 5000 or self.X_train.shape[0] > 10000:
+#             return self._predict_chunked(X_test)
+
+#         # 1. Vectorized distance computation using broadcasting
+#         # Shape: (n_test, n_train)
+#         distances = jnp.sum(
+#             (X_test[:, None, :] - self.X_train[None, :, :]) ** 2, axis=2
+#         )
+
+#         # 2. Get k nearest neighbors for all test samples at once
+#         # Shape: (n_test, k)
+#         nearest_indices = jnp.argsort(distances, axis=1)[:, : self.k]
+
+#         # 3. Get neighbor labels vectorized
+#         # Shape: (n_test, k)
+#         neighbor_labels = self.y_train[nearest_indices]
+
+#         # 4. Optimized majority voting using JAX operations
+#         return self._vectorized_voting(neighbor_labels)
+
+#     def _predict_chunked(self, X_test, chunk_size=1000):
+#         """
+#         Memory-efficient prediction for large datasets using chunking.
+#         """
+#         predictions = []
+
+#         for i in range(0, X_test.shape[0], chunk_size):
+#             chunk = X_test[i : i + chunk_size]
+
+#             # Use the original vmap approach for chunks
+#             def get_nearest_neighbors(x_sample):
+#                 distances = jnp.sum((self.X_train - x_sample) ** 2, axis=1)
+#                 nearest_indices = jnp.argsort(distances)[: self.k]
+#                 return self.y_train[nearest_indices]
+
+#             neighbor_labels = jax.vmap(get_nearest_neighbors)(chunk)
+#             chunk_predictions = self._vectorized_voting(neighbor_labels)
+#             predictions.append(chunk_predictions)
+
+#         return np.concatenate(predictions, axis=0)
+
+#     def _vectorized_voting(self, neighbor_labels):
+#         """
+#         Efficient vectorized majority voting using JAX operations.
+#         """
+#         neighbor_labels = np.array(neighbor_labels)
+
+#         # For integer labels, we can use a more efficient bincount approach
+#         try:
+#             if np.issubdtype(neighbor_labels.dtype, np.integer):
+#                 return self._integer_voting(neighbor_labels)
+#         except Exception as e:
+#             return str(e)
+
+#         # Fallback to Counter for non-integer or mixed types
+#         predictions = []
+#         for neighbors in neighbor_labels:
+#             vote = Counter(neighbors).most_common(1)[0][0]
+#             predictions.append(vote)
+
+#         return np.array(predictions)
+
+#     def _integer_voting(self, neighbor_labels):
+#         """
+#         Optimized voting for integer labels using vectorized operations.
+#         """
+#         max_label = int(np.max(neighbor_labels)) + 1
+#         predictions = []
+
+#         for neighbors in neighbor_labels:
+#             counts = np.bincount(neighbors.astype(int), minlength=max_label)
+#             predictions.append(np.argmax(counts))
+
+#         return np.array(predictions)
+
 
 class KNNClassifier:
-    def __init__(self, k: int = 3):
-        """
-        K-Nearest Neighbors Classifier.
-        
-        Parameters:
-        - k: Number of neighbors to use for voting (default=3).
-        """
+    """
+    K-Nearest Neighbors Classifier, JAX-accelerated.
+
+    Optimizations vs. a naive implementation:
+    1. Squared-distance expansion (||a-b||^2 = ||a||^2 - 2 a.b + ||b||^2) turns the
+       distance computation into one matmul instead of materializing a full
+       (n_test, n_train, n_features) broadcasted tensor -> much less memory traffic.
+    2. Training-set squared norms are precomputed once in `fit`, not on every `predict`.
+    3. `jax.lax.top_k` replaces `argsort` -> O(m log k) instead of O(m log m) per row,
+       and only requires the k best distances (not a full ranking).
+    4. Majority voting is done with one-hot encoding + sum + argmax, entirely in JAX
+       (no Python-level Counter loops, no per-row bincount loop).
+    5. The per-chunk work is a single `jax.jit`-compiled function, compiled once and
+       reused for every chunk.
+    6. Chunking over the test set is driven by `jax.lax.fori_loop` with
+       `dynamic_slice` / `dynamic_update_slice`, so the loop is traced once (not
+       unrolled in Python) and memory stays bounded regardless of test-set size.
+    7. Everything is JAX until the very end; the public `predict` API returns a
+       plain `np.ndarray`, as before.
+    """
+
+    def __init__(
+        self, k: int = 3, num_classes: int | None = None, chunk_size: int = 1024
+    ):
         self.k = k
+        self.num_classes = num_classes
+        self.chunk_size = chunk_size
         self.X_train = None
         self.y_train = None
+        self._train_sq_norms = None
 
     def fit(self, X, y):
-        """
-        Stores the training data (Lazy Learning).
-        """
-        self.X_train = jnp.array(X)
-        self.y_train = jnp.array(y)
+        """Stores the training data (lazy learning) and precomputes reusable terms."""
+        self.X_train = jnp.asarray(X)
+        self.y_train = jnp.asarray(y, dtype=jnp.int32)
+        # Precompute once, reused by every predict() call instead of every chunk.
+        self._train_sq_norms = jnp.sum(self.X_train**2, axis=1)
+        if self.num_classes is None:
+            self.num_classes = int(jnp.max(self.y_train)) + 1
+        return self
+
+    @staticmethod
+    @partial(jax.jit, static_argnums=(3, 4))
+    def _predict_batch(X_chunk, X_train, y_train, k, num_classes, train_sq_norms):
+        """Fully vectorized distance + top-k + voting for one fixed-size chunk."""
+        # ||x||^2 - 2 x.y + ||y||^2, computed via a single matmul (n, m)
+        test_sq = jnp.sum(X_chunk**2, axis=1, keepdims=True)  # (n, 1)
+        cross = X_chunk @ X_train.T  # (n, m)
+        distances = test_sq - 2.0 * cross + train_sq_norms[None, :]  # (n, m)
+
+        # k smallest distances via top_k on the negation (avoids full sort)
+        _, nearest_idx = jax.lax.top_k(-distances, k)  # (n, k)
+        neighbor_labels = y_train[nearest_idx]  # (n, k)
+
+        # Vectorized majority vote: one-hot per neighbor, sum, argmax
+        one_hot = jax.nn.one_hot(
+            neighbor_labels, num_classes, dtype=jnp.int32
+        )  # (n, k, C)
+        votes = jnp.sum(one_hot, axis=1)  # (n, C)
+        return jnp.argmax(votes, axis=1).astype(jnp.int32)  # (n,)
 
     def predict(self, X_test):
-        """
-        Predicts class labels for the given test data.
-        """
-        X_test = jnp.array(X_test)
-        
-        # 1. Define function to find neighbors for ONE test sample
-        # We use JAX to make this extremely fast
-        def get_nearest_neighbors(x_sample):
-            # Euclidean distance (Squared L2 is sufficient for ranking and faster)
-            # Shape: (num_train_samples,)
-            distances = jnp.sum((self.X_train - x_sample) ** 2, axis=1)
-            
-            # Get indices of the k smallest distances
-            # argsort sorts smallest to largest
-            nearest_indices = jnp.argsort(distances)[:self.k]
-            
-            # Return the labels of these neighbors
-            return self.y_train[nearest_indices]
+        """Chunked, fori_loop-driven prediction. Returns a numpy array."""
+        if self.X_train is None:
+            raise RuntimeError("Call fit() before predict().")
 
-        # 2. Vectorize the function to run on ALL test samples at once
-        # This avoids writing a slow Python loop for distances
-        # Output Shape: (num_test_samples, k)
-        neighbor_labels = jax.vmap(get_nearest_neighbors)(X_test)
+        X_test = jnp.asarray(X_test)
+        n = X_test.shape[0]
+        chunk_size = min(self.chunk_size, n) if n > 0 else 1
 
-        # 3. Majority Voting
-        # We convert to NumPy here to use 'Counter', which is robust 
-        # and handles any class type (int, float, string) without JAX errors.
-        neighbor_labels = np.array(neighbor_labels)
-        predictions = []
-        
-        for neighbors in neighbor_labels:
-            # Find the most common class among the k neighbors
-            vote = Counter(neighbors).most_common(1)[0][0]
-            predictions.append(vote)
+        n_chunks = -(-n // chunk_size)  # ceil division
+        padded_n = n_chunks * chunk_size
+        pad = padded_n - n
+        X_padded = jnp.pad(X_test, ((0, pad), (0, 0))) if pad > 0 else X_test
 
-        return np.array(predictions)
+        preds_buffer = jnp.zeros((padded_n,), dtype=jnp.int32)
 
+        def body_fn(i, buf):
+            start = i * chunk_size
+            chunk = jax.lax.dynamic_slice_in_dim(X_padded, start, chunk_size, axis=0)
+            chunk_preds = self._predict_batch(
+                chunk,
+                self.X_train,
+                self.y_train,
+                self.k,
+                self.num_classes,
+                self._train_sq_norms,
+            )
+            return jax.lax.dynamic_update_slice_in_dim(buf, chunk_preds, start, axis=0)
+
+        preds_buffer = jax.lax.fori_loop(0, n_chunks, body_fn, preds_buffer)
+        return np.array(preds_buffer[:n])

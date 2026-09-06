@@ -164,7 +164,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- 📧 Email: [contact@jackofalltrades.ml](mailto:contact@jackofalltrades.ml)
+- 📧 Email: [patil.ojas.250202@gmail.com](mailto:patil.ojas.250202@gmail.com)
 - 🐛 Issues: [GitHub Issues](https://github.com/sanepunk/jackofalltrades/issues)
 - 💬 Discussions: [GitHub Discussions](https://github.com/sanepunk/jackofalltrades/discussions)
 

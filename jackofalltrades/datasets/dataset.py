@@ -4,7 +4,12 @@ import numpy as np
 import importlib.resources as pkg_resources
 
 
-class get_dataset:
+def get_real_estate():
+    with pkg_resources.open_text("jackofalltrades.datasets", "Real estate.csv") as file:
+        df = pd.read_csv(file)
+    return df.drop(["Y house price of unit area"], axis=1), df[
+        "Y house price of unit area"
+    ]
 
     def __init__(self):
         self.X = None
@@ -12,9 +17,13 @@ class get_dataset:
         self.df = None
 
     def get_real_estate(self):
-        with pkg_resources.open_text('jackofalltrades.datasets', 'Real estate.csv') as file:
+        with pkg_resources.open_text(
+            "jackofalltrades.datasets", "Real estate.csv"
+        ) as file:
             self.df = pd.read_csv(file)
-        return self.df.drop(['Y house price of unit area'], axis=1), self.df['Y house price of unit area']
+        return self.df.drop(["Y house price of unit area"], axis=1), self.df[
+            "Y house price of unit area"
+        ]
 
     def get_california_housing(self):
         housing = datasets.fetch_california_housing()
@@ -22,50 +31,51 @@ class get_dataset:
         self.y = pd.Series(housing.target)
         return self.X, self.y
 
-    def get_bitcoin(self):
-        with pkg_resources.open_text('jackofalltrades.datasets', 'BTC-USD.csv') as file:
-            self.df = pd.read_csv(file)
-        cols = self.df.columns
-        for i in cols:
-            if self.df[i].dtype==object:
-                self.df.drop(columns=[i], inplace=True)
-            else:
-                self.df[i].fillna(np.mean(self.df[i]))
-        return self.df.drop(columns=['Adj Close']), self.df['Adj Close']
 
-    def get_london_housing(self):
-        with pkg_resources.open_text('jackofalltrades.datasets', 'london_house_prices.csv') as file:
-            self.df = pd.read_csv(file)
-        cols = self.df.columns
-        for i in cols:
-            if self.df[i].dtype == object:
-                self.df.drop(columns=[i], inplace=True)
-            else:
-                self.df[i].fillna(np.mean(self.df[i]))
-        return self.df.drop(columns=['price_pounds']), self.df['price_pounds']
-
-    def get_fuels_data(self):
-        with pkg_resources.open_text('jackofalltrades.datasets', 'all_fuels_data.csv') as file:
-            self.df = pd.read_csv(file)
-        cols = self.df.columns
-        for i in cols:
-            if self.df[i].dtype==object:
-                self.df.drop(columns=[i], inplace=True)
-            else:
-                self.df[i].fillna(np.mean(self.df[i]))
-        return self.df.drop(columns=['close']), self.df['close']
+def get_bitcoin():
+    with pkg_resources.open_text("jackofalltrades.datasets", "BTC-USD.csv") as file:
+        df = pd.read_csv(file)
+    cols = df.columns
+    for i in cols:
+        if df[i].dtype == object:
+            df.drop(columns=[i], inplace=True)
+        else:
+            df[i].fillna(np.mean(df[i]))
+    return df.drop(columns=["Adj Close"]), df["Adj Close"]
 
     def get_mnist(self):
-        mnist = datasets.fetch_openml('mnist_784')
+        mnist = datasets.fetch_openml("mnist_784")
         self.X = pd.DataFrame(mnist.data)
         self.y = pd.Series(mnist.target, dtype=int)
         return self.X, self.y
 
-    def get_boston_housing(self):
-        boston = datasets.load_boston()
-        self.X = pd.DataFrame(boston.data, columns=boston.feature_names)
-        self.y = pd.Series(boston.target)
-        return self.X, self.y
+
+def get_london_housing():
+    with pkg_resources.open_text(
+        "jackofalltrades.datasets", "london_house_prices.csv"
+    ) as file:
+        df = pd.read_csv(file)
+    cols = df.columns
+    for i in cols:
+        if df[i].dtype == object:
+            df.drop(columns=[i], inplace=True)
+        else:
+            df[i].fillna(np.mean(df[i]))
+    return df.drop(columns=["price_pounds"]), df["price_pounds"]
+
+
+def get_fuels_data():
+    with pkg_resources.open_text(
+        "jackofalltrades.datasets", "all_fuels_data.csv"
+    ) as file:
+        df = pd.read_csv(file)
+    cols = df.columns
+    for i in cols:
+        if df[i].dtype == object:
+            df.drop(columns=[i], inplace=True)
+        else:
+            df[i].fillna(np.mean(df[i]))
+    return df.drop(columns=["close"]), df["close"]
 
     def get_iris(self):
         iris = datasets.load_iris()
@@ -73,8 +83,30 @@ class get_dataset:
         self.y = pd.Series(iris.target)
         return self.X, self.y
 
-    def get_breast_cancer(self):
-        bc = datasets.load_breast_cancer()
-        self.X = pd.DataFrame(bc.data, columns=bc.feature_names)
-        self.y = pd.Series(bc.target, dtype=int)
-        return self.X, self.y
+
+def get_mnist():
+    mnist = datasets.fetch_openml("mnist_784")
+    X = pd.DataFrame(mnist.data)
+    y = pd.Series(mnist.target, dtype=int)
+    return X, y
+
+
+def get_boston_housing():
+    boston = datasets.load_boston()
+    X = pd.DataFrame(boston.data, columns=boston.feature_names)
+    y = pd.Series(boston.target)
+    return X, y
+
+
+def get_iris():
+    iris = datasets.load_iris()
+    X = pd.DataFrame(iris.data, columns=iris.feature_names)
+    y = pd.Series(iris.target)
+    return X, y
+
+
+def get_breast_cancer():
+    bc = datasets.load_breast_cancer()
+    X = pd.DataFrame(bc.data, columns=bc.feature_names)
+    y = pd.Series(bc.target, dtype=int)
+    return X, y

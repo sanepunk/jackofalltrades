@@ -20,7 +20,7 @@ Tired of complex machine learning libraries? Introducing jackofalltrades, a stre
 
 Embrace simplicity and unlock the power of machine learning with jackofalltrades!
 """
-authors = [{ name = "Sane Punk", email = "punk00pp@gmail.com" }]
+authors = [{ name = "Ojas Patil", email = "patil.ojas.250202@gmail.com" }]
 license = { text = "MIT" }
 dependencies = ["pandas>=2.2.2", "numpy>=1.26.4", "scikit-learn>=1.5.0", "matplotlib>=3.9.0", "jax>=0.4.28", "tqdm>=4.66.4", "tensorflow>=2.14.1", "optax>=0.2.2", "flax>=0.8.1", "torch>=1.10.0"]
 classifiers = [
@@ -38,5 +38,5 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project.urls]
-homepage = "https://lazy-punk.github.io/"
-Documentation = "https://lazy-punk.github.io/"  # Replace with your documentation URL (coming soon)
+homepage = "https://jackofalltrades-py.netlify.app/"
+Documentation = "https://jackofalltrades-py.netlify.app/"  # Replace with your documentation URL (coming soon)

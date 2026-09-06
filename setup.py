@@ -68,9 +68,9 @@ setup(
 
         Embrace simplicity and unlock the power of machine learning with jackofalltrades!
         """,
-    author="Sane Punk",
-    author_email="punk00pp@gmail.com",
-    url="https://lazy-punk.github.io/",  # Replace with your project URL
+    author="Ojas Patil",
+    author_email="patil.ojas.250202@gmail.com",
+    url="https://jackofalltrades-py.netlify.app/",  # Replace with your project URL
     version="0.0.3",
     package_data={"jackofalltrades": ["datasets/*.csv", "*.txt"]},
     include_package_data=True,

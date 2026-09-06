@@ -1,13 +1,13 @@
-from functools import partial
-import jax.numpy as jnp
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from matplotlib import pyplot as plt
-from tqdm.auto import tqdm
+from tqdm import tqdm as tqdm
 from sklearn.preprocessing import StandardScaler
 from typing import Union
 import jax
+import jax.numpy as jnp
+from functools import partial
 from scipy import optimize
 import optax
 from jackofalltrades.Errors import r2score

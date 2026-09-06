@@ -11,12 +11,25 @@ def get_real_estate():
         "Y house price of unit area"
     ]
 
+    def __init__(self):
+        self.X = None
+        self.y = None
+        self.df = None
 
-def get_california_housing():
-    housing = datasets.fetch_california_housing()
-    X = pd.DataFrame(housing.data, columns=housing.feature_names)
-    y = pd.Series(housing.target)
-    return X, y
+    def get_real_estate(self):
+        with pkg_resources.open_text(
+            "jackofalltrades.datasets", "Real estate.csv"
+        ) as file:
+            self.df = pd.read_csv(file)
+        return self.df.drop(["Y house price of unit area"], axis=1), self.df[
+            "Y house price of unit area"
+        ]
+
+    def get_california_housing(self):
+        housing = datasets.fetch_california_housing()
+        self.X = pd.DataFrame(housing.data, columns=housing.feature_names)
+        self.y = pd.Series(housing.target)
+        return self.X, self.y
 
 
 def get_bitcoin():
@@ -29,6 +42,12 @@ def get_bitcoin():
         else:
             df[i].fillna(np.mean(df[i]))
     return df.drop(columns=["Adj Close"]), df["Adj Close"]
+
+    def get_mnist(self):
+        mnist = datasets.fetch_openml("mnist_784")
+        self.X = pd.DataFrame(mnist.data)
+        self.y = pd.Series(mnist.target, dtype=int)
+        return self.X, self.y
 
 
 def get_london_housing():
@@ -57,6 +76,12 @@ def get_fuels_data():
         else:
             df[i].fillna(np.mean(df[i]))
     return df.drop(columns=["close"]), df["close"]
+
+    def get_iris(self):
+        iris = datasets.load_iris()
+        self.X = pd.DataFrame(iris.data, columns=iris.feature_names)
+        self.y = pd.Series(iris.target)
+        return self.X, self.y
 
 
 def get_mnist():
